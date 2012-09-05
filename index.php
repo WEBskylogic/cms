@@ -1,10 +1,10 @@
 <?php
 /*
-*WEB ))
+*WEB  2
 */
 
     //echo phpversion();
-	error_reporting(E_ALL);
+	error_reporting(0);
 	if(version_compare(phpversion(), '5.1.0', '<') == true){die('PHP 5.1 Only');}
 
 	define('SITE_PATH', dirname(__FILE__)."/");
