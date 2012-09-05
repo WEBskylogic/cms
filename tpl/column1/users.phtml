@@ -1,0 +1,34 @@
+<?php if(isset($vars['message']))echo $vars['message'];?>
+<div id="sign_up" style="width:290px; margin:20px auto;">
+	<div class="title"><?=$vars['translate']['my_data']?></div>
+	
+	<form action="" method="post" id="formID2">
+		
+		<label for="email_save"><?=$vars['translate']['email']?>:</label>
+		<input type="text" name="email_save" size="30" id="email_save" class="validate[required]" value="<?=$vars['user_info']['email']?>" disabled="disabled" />
+		
+		<label for="old_pass"><?=$vars['translate']['old_pass']?> </label>
+		<input type="text" name="old_pass" size="30" id="old_pass" class="validate[required]" value="" />
+		
+		<label for="new_pass"><?=$vars['translate']['new_pass']?>:</label>
+		<input type="text" name="new_pass" size="30" id="new_pass" class="validate[required]" value="" />
+		
+		<br /><br />
+		<label for="name_save"><?=$vars['translate']['fio']?>:</label>
+		<input type="text" name="name_save" size="30" id="name_save" class="validate[required]" value="<?=$vars['user_info']['name']?>" />
+		
+		<label for="phone_save"><?=$vars['translate']['phone']?>:</label>
+		<input type="text" name="phone_save" size="30" id="phone_save" class="validate[required]" value="<?=$vars['user_info']['phone']?>" />
+		
+		<label for="address"><?=$vars['translate']['address']?>:</label>
+		<input type="text" name="address" size="30" id="address" class="validate[required]" value="<?=$vars['user_info']['address']?>" />
+		
+		<label for="city"><?=$vars['translate']['city']?>:</label>
+		<input type="text" name="city" size="30" id="city" class="validate[required]" value="<?=$vars['user_info']['city']?>" />
+		
+		<label for="post_index"><?=$vars['translate']['post_index']?>:</label>
+		<input type="text" name="post_index" size="30" id="post_index" class="validate[required]" value="<?=$vars['user_info']['post_index']?>" />
+		
+		<input type="submit" name="save_data" value="<?=$vars['translate']['save']?>" class="submit" />
+	</form>
+</div>		

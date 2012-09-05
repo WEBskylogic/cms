@@ -1,0 +1,3 @@
+﻿﻿Товары
+Просмотреть, добавить и редактировать товары, которые показываются посетителям Вашего магазина.
+ru_product,ru_product_photo,product_photo,product_status_set,product_catalog,product_status,product

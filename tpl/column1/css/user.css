@@ -1,0 +1,48 @@
+#sign_up label{
+	display:block;
+	margin:5px 0 2px 0;	
+}
+#sign_up input[type=text], #sign_up input[type=password]{
+	width:250px;	
+}
+#sign_up input[type=text]#captcha{
+	width:100px;	
+}
+#sign_up input[type=submit]{
+	margin:5px 0 2px 0;		
+}
+#col_leftU{
+	width:350px;
+	float:left;
+	min-height:400px;
+	margin:0 108px 0 0;	
+}
+#col_rightU{
+	width:265px;
+	float:left;
+	min-height:400px;	
+}
+
+.orders{
+    border: 1px solid #eee;
+    border-collapse: collapse;
+}
+.orders, .price_tab a{
+	color:#af8274;
+}
+.orders th{
+	color:#646464;
+    border: 1px solid #ccc;
+    background-color: #e0f1fa;
+    padding: 3px;
+}
+.orders td{
+    text-align: center;
+	color:#000;
+}
+.orders tr{
+	background-color: #eee;
+}
+.orders tr:nth-child(2n){
+	background-color: #fff;
+}

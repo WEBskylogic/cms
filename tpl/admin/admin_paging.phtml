@@ -1,0 +1,27 @@
+<div class="pagination clear cm-pagination-wraper">
+    <div class="float-left"></div>
+    <div class="float-right">
+<?
+	$page_size = $vars['page_size'];
+	$link_padding = 5;
+	$cur_page=$vars['page'];
+	$page_var="page";
+	$total_pages=$vars['count'];
+    $page_link_list = array();
+    $start = $cur_page - $link_padding;
+    if ( $start < 1 ) $start = 1;
+    $end = $cur_page + $link_padding-1;
+    if ( $end > $total_pages ) $end = $total_pages;
+
+    if ( $start > 1 ){$page_link_list[] = $this->get_page_link($start-1, $cur_page, $page_var, $start - 2 > 0 ? '...' : '');}
+    for ($i=$start; $i <= $end; $i++)
+	{
+		$page_link_list[] = $this->get_page_link($i, $cur_page, $page_var);
+	}
+    if ($end + 1 < $total_pages) $page_link_list[] = $this->get_page_link($end +1, $cur_page, $page_var, $end + 2 == $total_pages ? '' : '...');
+    if ($end + 1 <= $total_pages) $page_link_list[] = $this->get_page_link($total_pages, $cur_page, $page_var);
+
+    echo implode('', $page_link_list);
+?>
+    </div>
+</div>

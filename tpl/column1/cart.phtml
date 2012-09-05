@@ -1,0 +1,106 @@
+<?php 
+if(count($vars['product'])!=0&&$vars['message']=="")
+{
+	?>
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#formID").validationEngine();
+	$("#formID2").validationEngine();
+});
+</script>
+	<form method="post" id="update_order">
+		<table width="100%" class="orders" cellpadding="0" cellspacing="0">
+         <tr>
+                <th>Название</th>
+				<th width="60">Кол-во</th>
+				<th width="120">Цена</th>
+                <th width="120">Сумма</th>
+				<th width="120">Удалить</th>
+			</tr>
+        <?
+			$i=0;
+			$summa2=0;
+			foreach($vars['product'] as $row)
+			{
+				$price = viewPrice($row['price'], $row['discount']);
+				$summa = formatPrice($price['cur_price']*$row['amount']);
+				$summa2+=$price['cur_price']*$row['amount'];
+
+				echo"<tr>
+						<td style='text-align:left;'>{$row['name']}</td>
+						<td><input type='text' value='{$row['amount']}' name='amount[]' class='amount' />
+										   <input type='hidden' value='{$row['cart_id']}' name='id[]' />
+						</td>
+						<td>{$price['price']}</td>
+						<td>{$summa}</td>
+						<td><a href='/orders/all/del/{$row['cart_id']}'><img src='/images/del.png' /></a></td>
+					</tr>";
+				$i++;	
+			}
+			//$summa = viewPrice($vars['order']['price'], $_SESSION['currency'], 0);
+		?>
+			<tr>
+				<th align='center' colspan="5" style="text-align:right;">Итого: <?=formatPrice($summa2)?></th>
+			</tr>
+        </table>
+	</form>	
+	
+	<div id="sign_up" style="width:290px; margin:20px auto;">
+	<form action="" method="post" id="formID2">
+		
+		<br /><br />
+		<label for="name_save"><?=$vars['translate']['fio']?> *:</label>
+		<input type="text" name="name" size="30" id="name_save" class="validate[required]" value="<? if(isset($vars['user_info']['name']))echo $vars['user_info']['name']?>" />
+		
+		<label for="email_save"><?=$vars['translate']['email']?> *:</label>
+		<input type="text" name="email" size="30" id="email_save" class="validate[required]" value="<? if(isset($vars['user_info']['email']))echo $vars['user_info']['email']?>" />
+
+
+		<label for="phone_save"><?=$vars['translate']['phone']?>:</label>
+		<input type="text" name="phone" size="30" id="phone_save" value="<? if(isset($vars['user_info']['phone']))echo $vars['user_info']['phone']?>" />
+		
+		<label for="address"><?=$vars['translate']['address']?>:</label>
+		<input type="text" name="address" size="30" id="address" value="<? if(isset($vars['user_info']['address']))echo $vars['user_info']['address']?>" />
+		
+		<label for="city"><?=$vars['translate']['city']?>:</label>
+		<input type="text" name="city" size="30" id="city" value="<? if(isset($vars['user_info']['city']))echo $vars['user_info']['city']?>" />
+		
+		<label for="post_index"><?=$vars['translate']['post_index']?>:</label>
+		<input type="text" name="post_index" size="30" id="post_index" value="<? if(isset($vars['user_info']['post_index']))echo $vars['user_info']['post_index']?>" />
+		
+		<?
+			if(isset($vars['delivery'])&&count($vars['delivery'])!=0)
+			{
+				echo'<label for="delivery">'.$vars['translate']['delivery'].':</label><select name="delivery" id="delivery" class="validate[required]">
+				<option value=""></option>';
+				foreach($vars['delivery'] as $row)
+				{
+					echo'<option value="'.$row['name'].'"';if(false)echo' selected';echo'>'.$row['name'].'</option>';
+				}
+				echo'</select>';
+			}
+			
+			if(isset($vars['payment'])&&count($vars['payment'])!=0)
+			{
+				echo'<label for="delivery">'.$vars['translate']['payment'].':</label><select name="payment" id="payment" class="validate[required]">
+				<option value=""></option>';
+				foreach($vars['payment'] as $row)
+				{
+					echo'<option value="'.$row['name'].'"';if(false)echo' selected';echo'>'.$row['name'].'</option>';
+				}
+				echo'</select>';
+			}
+		?>
+		<label for="comment"><?=$vars['translate']['comments_order']?>:</label>
+		<textarea rows="5" cols="45" id="comment" name="text"></textarea>
+		
+		<input type="submit" name="order" value="<?=$vars['translate']['to_order']?>" class="submit" />
+	</form>
+	</div>
+<?
+}
+else{
+	if($vars['message']=="")echo"<h3 align='center'>".$vars['translate']['cart_empty']."</h3>";
+	else echo $vars['message'];	
+}
+?>	

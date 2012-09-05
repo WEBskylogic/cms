@@ -1,0 +1,23 @@
+<div id="menu">
+	<ul>
+        <?
+			$i=0;
+			$cnt=count($vars['menu'])-1;
+            foreach($vars['menu'] as $row)
+            {
+				if($i==0)$style=' id="first"';
+				elseif($i==$cnt)$style=' id="last"';
+				else $style='';
+				
+                $pos = strpos($row['url'], "http://");
+                if($pos !== false)$link=$row['url'].'" target="_blank" rel="nofollow';
+                elseif($row['url']=="/")$link=$row['url'];
+                else $link="/".$row['url'];
+               
+			    echo'<li'.$style.'';if($_SERVER['REQUEST_URI']==$link)echo' class="cur_menu"';echo'><a href="'.$link.'">'.$row['name'].'</a></li>';
+				$i++;
+            }
+        ?>
+    </ul>
+</div>
+<div class="clear"></div>

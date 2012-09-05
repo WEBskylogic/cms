@@ -1,0 +1,14 @@
+<?
+	echo htmlspecialchars_decode($vars['page']['text']);
+	if(isset($vars['product'])&&count($vars['product'])!=0)
+	{
+		echo'<div class="title_text" style="color:#9d7d39;">Новинки</div>';
+		$i=1;
+		foreach($vars['product'] as $row)
+		{
+			include "product.phtml";
+			$i++;
+		}
+	}
+	include'slider.phtml';
+?>

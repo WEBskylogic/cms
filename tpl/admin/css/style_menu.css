@@ -1,0 +1,173 @@
+.main{
+width:100%; height:41px;
+background:url('/tpl/images/admin/menu/menu_fon.jpg') ;
+position:fixed; 
+    left: 0;
+    margin-top: -6px;
+    padding-top: 3px;
+    position: fixed;
+    top: 6px;
+    width: 100%;
+    z-index: 9999;
+}
+	
+.exit{
+position:fixed;
+margin-top:-3px;
+top:10px;
+right: 10px;
+z-index:9999;
+}
+.start span{
+position:absolute; 
+z-index:99;
+width:64px;
+height:62px;
+background-image:url(../../images/admin/start.png);
+}
+.start:hover span{
+background-image:url(../../images/admin/start_hov.png);
+cursor:pointer;
+}
+.start ul{
+position:absolute;
+margin:0px;
+padding:0px;
+z-index:1;
+	background-image:url(../../images/admin/menu_bg.png);
+	background-position:right;
+	width:173px;
+	margin-top:34px;
+	padding-top:35px;
+	padding-bottom:10px;
+	border:1px solid #878787; 
+	border-top:none;
+	list-style:none;
+	display:none;
+}	
+.start ul li{
+margin:0px;
+padding:0px;
+}
+.start a {
+display:block;
+height:27px;
+
+width:100%;
+text-align:left;
+text-decoration:none;
+font-weight:bold;
+color:#7d7d7d;
+font-size:15px;
+padding-top:6px;
+
+}
+.start a:hover{
+background-image:url(../../images/admin/but_bg.png);
+color:#4478b4;
+}
+.start a img{
+float:left;padding:0px;
+margin:0px;
+padding:0px 10px;
+margin-top:-2px;
+}
+/* navigation */
+#nav2, #nav2 ul {
+	
+	margin:0;
+	list-style:none;
+}
+#nav2 li {
+	float:left;
+	margin-right:20px;
+	display:inline;
+	position:relative;
+	
+}
+
+.but2{
+display:block;
+background-image:url(/tpl/images/admin/menu/button.png);
+background-position:bottom;
+background-repeat:repeat-x;
+background-color:#ffffff;
+opacity:0.5;
+border:1px solid #7399ae;  	
+	border-radius: 				5px;
+	-moz-border-radius: 		5px;
+	-webkit-border-radius: 		5px;
+	
+width: auto;
+height:20px;
+text-align:left;
+text-decoration:none;
+color:#003366;
+font-weight:bold;
+padding:4px  8px 0 0;
+background-repeat:no-repeat;
+font-size:12px;
+margin:0 4px 0 0;
+}
+.but2 img{
+float:left;
+padding:0px 5px;
+}
+
+#nav2 li:hover .but2{
+background-image:url(/tpl/images/admin/menu/button_hov.png);
+background-position:bottom;
+background-repeat:repeat-x;
+}
+#nav2 li .but2:hover{
+background-image:url(/tpl/images/admin/menu/button_active.png);
+background-position:bottom;
+background-repeat:repeat-x;
+}
+#nav2 li.hover {
+	
+}
+#nav2 ul li {
+	padding:0;
+	float:none;
+	border:none;
+	display:block;
+}
+#nav2 li.hover li {border:none;}
+
+#nav2 li.hover ul {left:0;}
+
+
+/**/
+.example2 li ul {
+    position:absolute;
+    top:23px;
+	background-image:url(../../images/admin/menu_bg2.png);
+	background-repeat:no-repeat;
+	background-position:bottom;
+	width:157px;
+	border-top:none;
+	padding:0px;
+	z-index:99;
+}
+.example2 li ul li{
+    text-decoration:none;
+    display:block;
+    height:21px;
+    text-align:left; 
+    width:155px;
+    background-image:none;
+    background-repeat:repeat-x;
+    font-size:12px;
+    margin:0px auto;
+    padding:0px;
+    padding-top:3px;
+    margin-left:1px;
+}
+
+.example2 li ul li:hover{ 
+    background-image:url(../../images/admin/but_bg2.jpg);
+}
+
+.example2 li ul li a{ display:block; margin:0px 0 0 10px; padding-top:3px; height:21px;   color:#7d7d7d; text-decoration:none;}
+.example2 li ul li a:hover{  color:#4478b4;}

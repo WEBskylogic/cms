@@ -1,0 +1,45 @@
+<?
+	echo $vars['slider'];
+	if(count($vars['product_n'])!=0)
+	{
+		echo'<div class="start_title">'.$vars['translate']['novetly'].'</div>';
+		$i=0;
+		foreach($vars['product_n'] as $row)
+		{
+			include "product.phtml";
+			$i++;
+		}
+		echo'<div class="clear"></div>';
+	}
+	
+	echo '<div style="margin:25px 0 35px 0;">'.htmlspecialchars_decode($vars['bot_ban']['body']).'</div>';
+	
+	if(count($vars['product_t'])!=0)
+	{
+		echo'<div class="start_title">'.$vars['translate']['top-sellers'].'</div>';
+		$i=0;
+		foreach($vars['product_t'] as $row)
+		{
+			include "product.phtml";
+			$i++;
+		}
+		echo'<div class="clear"></div>';
+	}
+	
+	echo '<div style="margin:25px 0 35px 0;">'.htmlspecialchars_decode($vars['top_ban']['body']).'</div>';
+	
+	if(count($vars['product_r'])!=0)
+	{
+		echo'<div class="start_title">'.$vars['translate']['recommend'].'</div>';
+		$i=0;
+		foreach($vars['product_r'] as $row)
+		{
+			include "product.phtml";
+			$i++;
+		}
+		echo'<div class="clear"></div>';
+	}
+    echo htmlspecialchars_decode($vars['body']['body']);
+?>
+<script type="text/javascript" src="/js/slider.js"></script>
+<link rel="stylesheet" type="text/css" href="/css/slider.css" media="screen" />

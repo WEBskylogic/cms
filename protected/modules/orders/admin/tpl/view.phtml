@@ -1,0 +1,40 @@
+<div class="items-container multi-level">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+	<tr>
+		<th width="3%" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+		<th width="2%">ID</th>
+        <th width="15%">Дата заказа</th>
+		<th>Пользователь</th>
+        <th>E-mail</th>
+		<th width="15%">Сумма</th>
+		<th width="10%">Статус</th>
+		<th width="15%">&nbsp;</th>
+	</tr>
+	<?php
+		foreach($vars['list'] as $row)
+		{
+			echo'<tr>
+					<td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="id[]" /></td>
+					<td><span>'.$row['id'].'</span></td>
+					<td><span>'.$this->date_view($row['date_add'], "dd/mm/YY, hh:ii").'</span></td>
+					<td>'.$row['username'].'</td>
+					<td><a href="mailto:'.$row['email'].'" class="tool-link">'.$row['email'].'</a></td>
+					<td>'.$row['sum'].'</td>
+					<td>'.$row['status'].'</td>
+					<td width="10%">
+						<a href="/admin/'.$vars['action'].'/edit/'.$row['id'].'" class="tool-link">Редактировать</a>
+						&nbsp;&nbsp;|		
+						<ul class="cm-tools-list tools-list">
+							<li><a href="/admin/'.$vars['action'].'/delete/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+						</ul>
+					</td>
+				</tr>';
+		}
+	?>
+</table>
+</div>
+<div class="table-tools">
+	<a class="check_all" href="javascript:void(0);">Выбрать все</a>| 
+	<a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+</div>
+<? echo $vars['paging']?>

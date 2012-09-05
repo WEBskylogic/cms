@@ -1,0 +1,42 @@
+<div class="items-container multi-level">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+	<tr class="noDrop">
+		<th width="3%" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+		<th width="3%">ID</th>
+        <th width="155">Дата добавления</th>
+		<th>Автор</th>
+		<th width="25%">Комментарий</th>
+		<th width="15%">Статус</th>
+		<th width="15%">&nbsp;</th>
+	</tr>
+	<?php
+		foreach($vars['list'] as $row)
+		{
+			if($row['active']==1)$active='<div class="selected-status status-a"><a> Вкл. </a></div>';
+			else $active='<div class="selected-status status-d"><a> Выкл. </a></div>';
+			
+			echo'<tr>
+					<td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="id[]" /></td>
+					<td><span>'.$row['id'].'</span></td>
+					<td>'.$this->date_view($row['date'], "dd/mm/YY, hh:ii").'</td>
+					<td><a href="/admin/'.$vars['action'].'/edit/'.$row['id'].'">'.$row['author'].'</a></td>
+					<td>'.substr($row['text'], 0, 50).'</td>
+					<td><input type="hidden" value="'.$row['id'].'" name="save_id[]" />
+						<div class="select-popup-container active_status" id="active'.$row['id'].'">'.$active.' </div>
+					</td>
+					<td width="10%">
+						<a href="/admin/'.$vars['action'].'/edit/'.$row['id'].'" class="tool-link">Редактировать</a>
+						&nbsp;&nbsp;|		
+						<ul class="cm-tools-list tools-list">
+							<li><a href="/admin/'.$vars['action'].'/delete/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+						</ul>
+					</td>
+				</tr>';
+		}
+	?>
+</table>
+</div>
+<div class="table-tools">
+	<a class="check_all" href="javascript:void(0);">Выбрать все</a>| 
+	<a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+</div>

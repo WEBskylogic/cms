@@ -1,0 +1,51 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Новый раздел:&nbsp;</h1>
+	</div>
+	<div class="extra-tools">
+		
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="" enctype="multipart/form-data">
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Информация </h2>
+						<div class="form-field">
+							<label class="cm-required" for="page">Подпись:</label>
+							<input type="text" class="input-text-large main-input" value="" size="55" name="name" />
+						</div>
+						<div class="form-field">
+							<label for="page">URL:</label>
+							<input type="text" class="input-text-large main-input" value="" size="55" name="url" />
+						</div>
+					</fieldset>
+                    <fieldset>
+                        <h2 class="subheader"> Фото </h2>
+                        <div class="form-field">
+                            <label class="cm-required" for="page"></label>
+                            <input type="file" name="photo" />
+                        </div>
+
+                    </fieldset>
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Создать" name="add" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Создать и закрыть" name="add_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp; 
+							<a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

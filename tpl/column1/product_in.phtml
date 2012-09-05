@@ -1,0 +1,27 @@
+<div class="product_in" id="MessForPrint">
+	<?
+		$price=viewPrice($vars['product']['price'], $vars['product']['discount']);
+		$dir=createDir($vars['product']['id']);
+		
+        echo"<div id='img_load'><a href='/{$dir[0]}{$vars['product']['id']}.jpg' rel='lightbox' title='{$vars['product']['name']}'><img src='/{$dir[0]}{$vars['product']['id']}.jpg' /></a></div>";
+		
+		echo"<h1 id='product_name'>{$vars['product']['name']}</h1>";
+		
+		echo"<div style='margin-right:20px;'>".htmlspecialchars_decode($vars['product']['body'])."</div>";
+		echo'<div style="text-align:left;" class="price">'.$price['price'].'</div>
+			 <button class="buy" name="'.$vars['product']['id'].'" type="button">'.$vars['translate']['buy'].'</button>
+			 <div class="clear"></div>';
+		 
+		if(isset($vars['photo']))
+		{
+			echo'<div id="more_photo">';
+			foreach($vars['photo'] as $row)
+			{
+				echo'<a href="/'.$dir[0].'more/'.$row['id'].'.jpg"><img src="/'.$dir[0].'more/'.$row['id'].'_s.jpg" /><span>'.$row['name'].'</span></a>';	
+			}
+			echo'<div class="clear"></div></div>';
+		}
+
+        if($vars['product']['body_m']!='')echo"<div class='desc'><h4>".$vars['translate']['param']."</h4>".htmlspecialchars_decode($vars['product']['body_m'])."</div><br class='clear' />";
+    ?>
+</div>

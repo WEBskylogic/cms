@@ -1,0 +1,97 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Редактирование:&nbsp;<?=$vars['edit']['comment']?></h1>
+	</div>
+	<div class="extra-tools">
+	<a class="tool-link cm-confirm" href="/admin/<?=$vars['action']?>/delete/<?=$vars['edit']['id']?>">Удалить этот раздел</a>
+	<a class="tool-link" href="/admin/<?=$vars['action']?>/add">Добавить раздел</a>
+	</div>
+	<div class="mainbox-body">
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Информация </h2>
+						<div class="form-field">
+							<label class="cm-required" for="page">Название:</label>
+							<input type="text" class="input-text-large main-input" value="<?=$vars['edit']['name']?>" size="55" name="name" />
+						</div>
+                        <div class="form-field">
+                            <label class="cm-required" for="page">Таблицы:</label>
+                            <input type="text" class="input-text-large main-input" value="<?=$vars['edit']['tables']?>" size="55" name="tables" />
+                        </div>
+                        <div class="form-field">
+                            <label for="page_meta_keywords">Описание:</label>
+                            <textarea class="input-textarea-long" rows="2" cols="55" name="comment"><?=$vars['edit']['comment']?></textarea>
+                        </div>
+                        <div class="form-field">
+                            <label for="page_meta_keywords">Описание:</label>
+                            <select name="sub">
+                                <option value="">Выберите раздел...</option>
+                                <?php
+                                    foreach($vars['menu'] as $row)
+                                    {
+                                        echo'<option value="'.$row['id'].'"';if($row['id']==$vars['edit']['sub'])echo' selected';echo'>'.$row['name'].'</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
+					</fieldset>
+                    <fieldset>
+                        <h2 class="subheader"> Права доступа </h2>
+                        <table width="50%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort" id="photos" style="margin-top: 0;">
+                            <tr>
+                                <th>Название модуля</th>
+                                <th style="text-align:center;" width="80">Чтение</th>
+                                <th style="text-align:center;" width="140">Изменение/Удаление</th>
+                                <th style="text-align:center;" width="80">Добавление</th>
+                            </tr>
+                            <?php
+                            //echo count($_POST['read']).'<br />'.count($_POST['del']).'<br />'.count($_POST['add']).'<br />';
+                            foreach($vars['modules'] as $row)
+                            {
+                                $read='';
+                                $del='';
+                                $add='';
+                                if($row['permission']==700||$row['permission']==600)$add=' checked="checked"';
+                                if($row['permission']==700||$row['permission']==500)$del=' checked="checked"';
+                                if($row['permission']!=000)$read=' checked="checked"';
+
+                                echo'<tr>
+                                        <td>'.$row['name'].'<input type="hidden" value="'.$row['id'].'" name="module_id[]" /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="read'.$row['id'].'" '.$read.' id="read'.$row['id'].'" class="read_chmod" /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="del'.$row['id'].'" '.$del.' id="del'.$row['id'].'" class="del_chmod" /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="add'.$row['id'].'" '.$add.' id="add'.$row['id'].'" class="add_chmod" /></td>
+                                    </tr>';
+                            }
+                                echo'<tr>
+                                        <td></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="" id="read_all" /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="" id="del_all" /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="" id="add_all" /></td>
+                                    </tr>';
+                            ?>
+                        </table>
+                    </fieldset>
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Сохранить и закрыть" name="update_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp;
+							<a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,15 @@
+#menu li{
+    float: left;
+    width: auto;
+}
+#menu li.razd img{
+    margin-top: 8px;
+}
+.more{
+    height: 31px;
+    padding-top: 7px;
+}
+.button_green, .button_red{
+    height: 42px;
+    padding-top: 10px;
+}

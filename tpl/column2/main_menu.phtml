@@ -1,0 +1,25 @@
+<div id="menu">
+	<ul>
+        <?
+            $i=0;
+            $cnt=count($vars['menu']);
+            foreach($vars['menu'] as $row)
+            {
+				if($i==0)$class=' class="first"';
+				else $class='';
+				if($vars['this_link']==$row['urln'])echo'<li id="hov_top" '.$class.'><a href="'.$row['urln'].'">'.$row['text'].'</a></li>';
+				else echo'<li '.$class.'><a href="'.$row['urln'].'">'.$row['text'].'</a></li>';
+				echo'<li class="razd"></li>';
+				$i++;
+            }
+		?>
+        	<li id="search">
+                	<form method="post" action="/catalog/search">
+                    	<input type="text" name="search" value="" />
+                        <input type="image" src="/tpl/images/search_submit.png" />
+                    </form>
+            </li>
+            <li class="last"></li>
+	</ul>        
+	<div class="clear"></div>
+</div>

@@ -1,0 +1,16 @@
+<br />
+<?php
+    if(isset($vars['news']))
+    {
+		echo '<div class="block_title">'.$vars['translate']['news'].'</div>';
+		foreach($vars['news'] as $row)
+		{
+			echo'<div class="news_block">';
+				echo'<div class="date">'.$this->date_view($row['date'], "dd.mm.yy").'</div>';
+				echo'<img src="/files/news/'.$row['id'].'_s.jpg" />';
+				echo'<a href="/news/'.$row['url'].'" class="news_title">'.$row['name'].'</a>';
+			echo"</div>";
+		}
+		
+    }
+?>

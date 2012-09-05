@@ -1,0 +1,42 @@
+<div class="cm-notification-container cm-notification-container-top">
+<?php 
+	if($vars['err']!="")
+	{
+?>
+<?=$vars['err'];?>
+<?php }?>
+</div>
+<div class="clear" id="main_column_login">
+	<div class="login-wrap">
+		<h1 class="clear"> <a class="float-left" href="/admin">Skylogic CMS!</a> <span>Администраторская часть</span> </h1>
+		<form class="cm-form-highlight cm-skip-check-items cm-check-changes" name="main_login_form" method="post" action="/admin">
+			<div class="login-content">
+				<div class="clear-form-field">
+					<p>
+						<label class="cm-required " for="username">Логин:</label>
+					</p>
+					<input type="text" tabindex="1" class="input-text cm-focus" value="" size="20" name="login" id="username" />
+				</div>
+				<div class="clear-form-field">
+					<p>
+						<label class="cm-required" for="password">Пароль:</label>
+					</p>
+					<input type="password" tabindex="2" class="input-text" value="" size="20" name="password" id="password" />
+				</div>
+				<div class="clear-form-field">
+					<p>
+						<label class="cm-required" for="password"><img src="/captcha" alt="#Enable images to see captcha." /><br />
+							Введите текст с картинки:</label>
+					</p>
+					<input type="text" tabindex="2" class="input-text" value="" size="20" name="captcha" id="captcha" />
+				</div>
+				<div class="buttons-container nowrap">
+					<div class="float-left"> <span class="submit-button cm-button-main ">
+						<input type="submit" tabindex="3" value="Авторизация" name="dispatch[auth.login]" />
+						</span> </div>
+<!--					<div class="float-right"> <a class="underlined" href="/adm">Забыли пароль?</a> </div>-->
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

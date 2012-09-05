@@ -1,0 +1,28 @@
+<?
+	echo '<h2 class="title">'.$vars['curr_cat']['name'].'</h2>';
+	if(isset($vars['curr_cat']['body']))echo htmlspecialchars_decode($vars['curr_cat']['body']);
+	if(isset($vars['sub'])&&count($vars['sub'])!=0)
+	{
+		$i=0;
+		foreach($vars['sub'] as $row)
+		{
+			if($i==2)
+			{
+				$i=-1;
+				$style=' style="margin-right:0;"';
+			}
+			else $style='';
+			echo'<div class="cat"'.$style.'><a href="/catalog/'.$row['url'].'"><img src="/files/catalog/'.$row['id'].'_s.jpg" alt="" /><br />'.$row['name'].'</a></div>';
+			$i++;
+		}
+	}
+	else{
+		$i=0;
+		foreach($vars['product'] as $row)
+		{
+			include "product.phtml";
+			$i++;
+		}
+		echo $vars['paging'];
+	}
+?>

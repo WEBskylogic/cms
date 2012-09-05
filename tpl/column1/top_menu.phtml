@@ -1,0 +1,37 @@
+<ul id="cat_menu" class="sf-menu">
+	<?
+		$i=0;
+		foreach($vars['menu'] as $row)
+		{
+			if($row['sub']==0)
+			{
+				if($i==3)$style='  style="margin-right:0;"';
+				else $style='';
+				
+				$pos = strpos($row['url'], "http://");
+				if($pos !== false)$link=$row['url'].'" target="_blank" rel="nofollow';
+				elseif($row['url']=="/")$link=$row['url'];
+				else $link="/catalog/".$row['url'];
+			   
+				echo'<li'.$style.'><a href="'.$link.'">'.$row['name'].'</a>';
+				
+				$sub='';
+				foreach($vars['menu'] as $row2)
+				{
+					if($row['id']==$row2['sub'])
+					{
+						$pos = strpos($row2['url'], "http://");
+						if($pos !== false)$link=$row2['url'].'" target="_blank" rel="nofollow';
+						elseif($row2['url']=="/")$link=$row2['url'];
+						else $link="/catalog/".$row2['url'];
+						$sub.='<li><a href="'.$link.'">'.$row2['name'].'</a>';
+					}
+				}
+				if($sub!='')echo'<ul><span class=cat_menu></span>'.$sub.'</ul>';
+				echo'</li>';
+				$i++;
+			}
+		}
+	?>
+	<div class="clear"></div>
+</ul>

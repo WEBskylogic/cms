@@ -1,0 +1,101 @@
+<?
+
+	echo'<h2>'.$vars['curr_cat']['name'];
+	if(isset($vars['count']))echo'<span class="cnt">'.$vars['count'].' товара</span>';
+	echo'</h2>';
+	if(isset($vars['curr_cat']['text']))echo'<div class="cat_desc">'.htmlspecialchars_decode($vars['curr_cat']['text']).'</div>';
+	
+	if(isset($vars['params']))
+	{
+		echo"<div class='params'><span style='margin-bottom:1px; display:block;'>Характиристики:</span>";
+		foreach($vars['params'] as $row)
+		{
+			if(count($vars['variants'])!=0&&($row['id']!='1' && $row['id']!='46' && $row['id']!='47') )
+			{
+				$filter="filter{$row['id']}";
+				echo"<span>{$row['name']}:</span> ";
+				if(isset($vars[$filter]))echo"<a href='".$this->getUrl2($filter)."'>Все</a>";
+				else echo"<span style='font-weight:100;'>Все</span>";
+				foreach($vars['variants'] as $row2)
+				{
+					if($row2['param_id']==$row['id'])
+					{
+						echo" | ";
+						if(isset($vars[$filter])&&$vars[$filter]==$row2['id'])echo"<span style='font-weight:100;'>{$row2['name']}</span>";
+						else echo"<a href='".$this->getUrl($filter, $row2['id'])."'>{$row2['name']}</a>";
+						
+					}
+				}
+				echo"<br />";
+			}
+		}
+		if(isset($vars['brend'])&&count($vars['brend'])!=0)
+		{
+			echo"<span>Производитель:</span> ";
+			if(isset($vars['brend_id']))echo"<a href='".$this->getUrl2("brend")."'>Все</a>";
+			else echo"<span style='font-weight:100;'>Все</span>";
+			foreach($vars['brend'] as $row)
+			{
+				echo" | ";
+				if(isset($vars['brend_id'])&&$vars['brend_id']==$row['url'])echo"<span style='font-weight:100;'>{$row['name']}</span>";
+				else echo"<a href='".$this->getUrl("brend", $row['url'])."'>{$row['name']}</a>";
+				
+			}
+		}
+		echo"</div>";
+	}
+	
+	if(isset($vars['sub'])&&count($vars['sub'])!=0)
+	{
+		echo'<!-- Subcategories -->
+			<div id="subcat">
+				<h3>Подкатегории</h3>';
+		foreach($vars['sub'] as $row)
+		{
+			echo'<a href="/catalog/'.$row['url'].'">'.$row['name'].'</a> ';
+		}
+		echo'
+				<br class="clear">
+			</div>';
+	}
+?>
+<div id="page_block">
+        <form method="post" action="">
+               <label for="nb_item">на страницу: </label>
+               <select id="nb_item" name="onpage" onchange="submit();" style="width:200px;">
+               		<option value="9"<? if($_SESSION['onpage']==9)echo' selected="selected"';?>>10</option>
+                    <option value="18"<? if($_SESSION['onpage']==18)echo' selected="selected"';?>>20</option>
+                    <option value="48"<? if($_SESSION['onpage']==48)echo' selected="selected"';?>>50</option>
+                </select>
+         </form>
+</div>
+
+<form action="" id="sort_block" method="post">
+	<label for="selectPrductSort">Сортировка: </label>
+		<select id="selectPrductSort" name="sort" onchange="submit();">
+			<option selected="selected" value="">--</option>
+			<option value="price:asc"<? if($_SESSION['sort']=="price asc")echo' selected="selected"';?>>по цене, сначала дешевые</option>
+			<option value="price:desc"<? if($_SESSION['sort']=="price desc")echo' selected="selected"';?>>по цене, сначала дорогие</option>
+			<option value="name:asc"<? if($_SESSION['sort']=="name asc")echo' selected="selected"';?>>по наименованию: А-Я</option>
+			<option value="name:desc"<? if($_SESSION['sort']=="name desc")echo' selected="selected"';?>>по наименованию: Я-А</option>
+		</select>
+		
+</form>
+<div class="clear"></div>
+		<?
+		if(isset($vars['product'])&&count($vars['product'])!=0)
+		{
+			$i=1;
+			foreach($vars['product'] as $row)
+			{
+				include "product.phtml";
+				$i++;
+			}
+		}
+		else echo'<p class="err">Каталог пуст</p>';
+		?>
+<div class="clear"></div>
+		
+<!-- Pagination -->
+	<? echo $vars['paging'];?>
+<!-- /Pagination -->

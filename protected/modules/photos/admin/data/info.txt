@@ -1,0 +1,3 @@
+﻿Фотогалерея
+Фотогалерея с разделами
+ru_photo,photo,ru_photos,photos

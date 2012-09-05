@@ -1,0 +1,38 @@
+<div class="cm-notification-container"></div>
+<div id="message"><?=$vars['message']?></div>
+<div>
+	<div class="clear mainbox-title-container">
+		<div class="tools-container"><span class="action-add"> <a href="/admin/<?=$vars['action']?>/add">Добавить</a> </span> </div>
+		<h1 class="mainbox-title float-left"><?=$vars['name']?></h1>
+	</div>
+	<div class="mainbox-body">
+		<div id="ds_15014" class="clear">
+			
+		</div>
+		<div id="content_manage_users">
+			<form name="userlist_form" method="post" action="/admin/<?=$vars['action']?>/update">
+				<div id="pagination_contents">
+					<?php echo $vars['list'];?>
+				</div>
+				<div class="buttons-container buttons-bg">
+					<div class="cm-buttons-placeholder">
+						<div class="float-left">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" class="">
+							</span>или
+							<span class="submit-button cm-button-main cm-confirm cm-process-items">
+								<input type="submit" value="Удалить выбранные" name="delete" class="cm-process-items">
+							</span>
+						</div>
+					</div>
+					<div class="cm-buttons-floating hidden"></div>
+					
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+			<div style="text-align:right;"><a href="http://tables.finance.ua/ru/currency/official" target="_blank">Конвертер валют, НБУ</a></div>
+			</div>
+			
+		</div>
+	</div>
+</div>

@@ -1,0 +1,43 @@
+<div class="items-container multi-level">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+	<tr class="noDrop">
+        <th width="20"></th>
+		<th width="3%" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+		<th width="2%">ID</th>
+        <th width="130">Фото</th>
+		<th>Подпись</th>
+		<th>URL</th>
+        <th width="20%">Загрузить</th>
+        <th width="10%">Статус</th>
+		<th width="7%">&nbsp;</th>
+	</tr>
+	<?php
+		foreach($vars['list'] as $row)
+		{
+            if($row['active']==1)$active='<div class="selected-status status-a"><a> Вкл. </a></div>';
+            else $active='<div class="selected-status status-d"><a> Выкл. </a></div>';
+            echo'<tr id="sort'.$row['id'].'">
+					<td class="move"></td>
+                    <td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="id[]" /></td>
+                    <td><span>'.$row['id'].'</span><input type="hidden" value="'.$row['id'].'" name="save_id[]" /></td>
+                    <td><img src="/files/slider/'.$row['id'].'.jpg" width="130" /></td>
+                    <td><input type="text" value="'.$row['name'].'" name="name[]" class="input-text" style="width:170px;"></td>
+                    <td><input type="text" value="'.$row['url'].'" name="url[]" class="input-text" style="width:170px;" /></td>
+                    <td><input type="file" name="photo[]" /></td>
+                    <td>
+						<div class="select-popup-container active_status" id="active'.$row['id'].'">'.$active.' </div>
+					</td>
+                    <td width="10%">
+                        <ul class="cm-tools-list tools-list">
+                            <li><a href="/admin/'.$vars['action'].'/delete/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+                        </ul>
+                    </td>
+                </tr>';
+		}
+	?>
+</table>
+</div>
+<div class="table-tools">
+	<a class="check_all" href="javascript:void(0);">Выбрать все</a>| 
+	<a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+</div>

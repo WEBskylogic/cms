@@ -1,0 +1,60 @@
+.stick {
+	margin:5px;
+	padding:15px;
+	width:200px;
+	color:#000;
+	z-index:99;
+	position:relative;
+	text-align:center;
+}
+.exit {
+	background:url('exit.png') no-repeat;
+	width:16px;
+	height:16px;
+	float:right;
+	margin:-5px -5px 0 0;
+	cursor:pointer;
+}
+.classic {
+	border:1px solid #5bcf5d;
+	background-color:#ecfae3;
+
+
+}
+.classic.error {
+	border:1px solid #5bcf5d;
+	background-color:#F7C8D2;
+}
+.opacity {
+	background:url('bg.png');
+	color:#555;
+}
+.next {
+	border:1px solid #5bcf5d;
+	background-color:#ecfae3;
+}
+.prev {
+	border:2px solid #fff;
+	background-color:#cae1f2;
+
+}
+/*.last {
+	background-color:#CBECFA;
+	border:1px solid #15A6E3;
+}*/
+.click-ex {
+	width:50px;
+	height:20px;
+	border:1px solid #5bcf5d;
+	background:url('pointer.gif') no-repeat left center #ecfae3;
+	color:#555;
+	float:left;
+
+	padding-left:25px;
+	padding-top:10px;
+	margin-right:10px;
+	cursor:pointer;
+}
+.ex pre {
+	width:80%;
+}

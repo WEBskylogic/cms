@@ -1,0 +1,117 @@
+<div class="header-wrap">
+	<div id="header">
+		<div id="logo"> <a href="/" target="_blank">Перейти на сайт</a><a title="Перейти в магазин" target="_blank" class="view-storefront-icon" href="../">&nbsp;</a> </div>
+		<div id="top_quick_links">
+			<div class="nowrap"><a href="/admin/manager"><span>
+				<? //$_SESSION['admin']['login'];?>
+				</span></a><span title="выйти" class="top-signout"> <a class="text-link" href="/admin/logout">&nbsp;</a> </span> </div>
+		</div>
+		<div id="top_menu">
+			<ul id="alt_menu">
+                <?php
+                    $menu='';
+                    foreach($vars['menu'] as $row)
+                    {
+                        if($row['sub']==6)
+                        {
+                            $menu.='<li class=""><a href="/admin/'.$row['controller'].'">'.$row['name'].'</a></li>';
+                        }
+                    }
+
+                    if($menu!='')
+                    echo'<li> <a class="drop administration">Администрирование</a>
+                            <div class="dropdown-column">
+                                <div class="col">
+                                    <ul>'.$menu.'</ul>
+                                </div>
+                            </div>
+                        </li>';
+
+                    $menu='';
+                    foreach($vars['menu'] as $row)
+                    {
+                        if($row['sub']==5)
+                        {
+                            $menu.='<li class=""><a href="/admin/'.$row['controller'].'">'.$row['name'].'</a></li>';
+                        }
+                    }
+
+                if($menu!='')
+                    echo'<li> <a class="drop settings">Настройки</a>
+                            <div class="dropdown-column">
+                                <div class="col">
+                                    <ul>'.$menu.'</ul>
+                                </div>
+                            </div>
+                        </li>';
+                ?>
+
+
+			</ul>
+		</div>
+		<ul id="menu">
+			<li class="dashboard dashboard-active"> <a title="Панель инструментов" href="">&nbsp;</a> </li>
+			<?php
+				$menu='';
+				foreach($vars['menu'] as $row)
+				{
+					if($row['sub']==1)
+					{
+						if(file_exists('tpl/admin/images/icons/menu/'.$row['controller'].'.png'))$style=' style="background-image:url(/tpl/admin/images/icons/menu/'.$row['controller'].'.png);"';
+						else $style='';
+						$menu.='<li class="blank">
+									<a href="/admin/'.$row['controller'].'" '.$style.'>
+										<span>'.$row['name'].'</span> <span class="hint">'.$row['comment'].'</span>
+									</a>
+								</li>';
+					}
+				}
+				if($menu!='')echo'<li><a class="drop">Веб сайт</a><div class="dropdown-column"><div class="col"><ul>'.$menu.'</ul></div></div></li>';
+
+               $menu='';
+                foreach($vars['menu'] as $row)
+                {
+                    if($row['sub']==2)
+                    {
+                        if(file_exists('tpl/admin/images/icons/menu/'.$row['controller'].'.png'))$style=' style="background-image:url(/tpl/admin/images/icons/menu/'.$row['controller'].'.png);"';
+                        else $style='';
+                        $menu.='<li class="blank">
+                                        <a href="/admin/'.$row['controller'].'" '.$style.'>
+                                            <span>'.$row['name'].'</span> <span class="hint">'.$row['comment'].'</span>
+                                        </a>
+                                    </li>';
+                    }
+                }
+                if($menu!='')echo'<li><a class="drop">Магазин</a><div class="dropdown-column"><div class="col"><ul>'.$menu.'</ul></div></div></li>';
+
+                $menu='';
+                foreach($vars['menu'] as $row)
+                {
+                    if($row['sub']==3)
+                    {
+                        if(file_exists('tpl/admin/images/icons/menu/'.$row['controller'].'.png'))$style=' style="background-image:url(/tpl/admin/images/icons/menu/'.$row['controller'].'.png);"';
+                        else $style='';
+                        $menu.='<li class="blank">
+                                            <a href="/admin/'.$row['controller'].'" '.$style.'>
+                                                <span>'.$row['name'].'</span> <span class="hint">'.$row['comment'].'</span>
+                                            </a>
+                                        </li>';
+                    }
+                }
+                if($menu!='')echo'<li><a class="drop">Пользователи</a><div class="dropdown-column"><div class="col"><ul>'.$menu.'</ul></div></div></li>';
+			?>
+<!--			<li class="search">-->
+<!--				<form action="admin.php" method="get" id="global_search">-->
+<!--					<input type="hidden" value="search.results" name="dispatch">-->
+<!--					<input type="hidden" value="Y" name="compact">-->
+<!--					<div>-->
+<!--						<button id="search_button" type="submit">Go</button>-->
+<!--						<label for="gs_text"><a>-->
+<!--							<input type="text" autocomplete="off" name="q" id="gs_text" class="cm-tooltip">-->
+<!--							</a></label>-->
+<!--					</div>-->
+<!--				</form>-->
+<!--			</li>-->
+		</ul>
+	</div>
+</div>

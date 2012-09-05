@@ -1,0 +1,10 @@
+<?php
+    echo'<div class="title">'.$vars['translate']['video_name'].'</div>'.htmlspecialchars_decode($vars['body']['body']).'';
+    foreach($vars['video'] as $row)
+    {
+        echo'<div class="video"> > '.$row['name'].' <br />'.htmlspecialchars_decode($row['body']).'</div>';
+    }
+    //echo"</div>";
+    //echo $vars['paging'];
+?>
+<div class="clear"></div>

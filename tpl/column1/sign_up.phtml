@@ -1,0 +1,52 @@
+<script type="text/javascript">
+$(document).ready(function(){
+    $("#formID").validationEngine();
+	$("#formID2").validationEngine();
+});
+</script>
+<div id="sign_up">
+	<?php if(isset($vars['message']))echo $vars['message'];?>
+
+	<div id="col_leftU">
+		<div class="title"><?=$vars['translate']['auth']?></div>
+		
+		<form action="" method="post" id="formID">
+		<label for="email_auth"><?=$vars['translate']['email']?> *:</label>
+		<input type="text" name="email_auth" size="30" id="email_auth" class="validate[required,custom[email]]" value="<? if(isset($_POST['email_auth']))echo $_POST['email_auth'];?>" />
+		
+		<label for="pass_auth"><?=$vars['translate']['password']?> *:</label>
+		<input type="password" name="pass_auth" size="30" id="pass_auth" class="validate[required]" value="<? if(isset($_POST['email_auth']))echo $_POST['email_auth'];?>" />
+		
+		<input type="submit" name="auth" value="<?=$vars['translate']['enter']?>" class="submit" />
+		</form>
+	</div>
+	<div id="col_rightU">
+		<div class="title"><?=$vars['translate']['sign_up']?></div>
+		
+		<form action="" method="post" id="formID2">
+		<label for="email_sign"><?=$vars['translate']['email']?> *:</label>
+		<input type="text" name="email_sign" size="30" id="email_sign" class="validate[required]" value="<? if(isset($_POST['email_sign']))echo $_POST['email_sign'];?>" />
+		
+		<label for="pass_sign"><?=$vars['translate']['password']?> *:</label>
+		<input type="password" name="pass_sign" size="30" id="pass_sign" class="validate[required]" value="<? if(isset($_POST['pass_sign']))echo $_POST['pass_sign'];?>" />
+		
+		<br /><br />
+		<label for="name_sign"><?=$vars['translate']['fio']?> *:</label>
+		<input type="text" name="name_sign" size="30" id="name_sign" class="validate[required]" value="<? if(isset($_POST['name_sign']))echo $_POST['name_sign'];?>" />
+		
+		
+		
+		<label for="phone_sign"><?=$vars['translate']['phone']?> *:</label>
+		<input type="text" name="phone_sign" size="30" id="phone_sign" class="validate[required]" value="<? if(isset($_POST['phone_sign']))echo $_POST['phone_sign'];?>" />
+		
+		<label for="captcha"><img src="/captcha" alt="#Enable images to see captcha." /></label>
+		<input type="text" name="captcha" id="captcha" size="30" class="validate[required]" value="<? if(isset($_POST['captcha']))echo $_POST['captcha'];?>" />
+		
+		<input type="submit" name="sign_up" value="<?=$vars['translate']['send_message']?>" class="submit" />
+		</form>
+		<h5>* - <?=$vars['translate']['fields']?></h5>
+	</div>
+
+<br /><br />
+<?=htmlspecialchars_decode($vars['body']['body'])?>
+</div>

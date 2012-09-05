@@ -1,0 +1,25 @@
+<div id="slider">
+    <div id="wowslider-container">
+        <div id="wowslider-images">
+            <?php
+            $i=0;
+            foreach($vars['slider'] as $row)
+            {
+                echo'<a href="'.$row['url'].'"><img src="/files/slider/'.$row['id'].'.jpg" alt="'.$row['name'].'" title="'.$row['name'].'" id="wows'.$i.'"/></a>';
+                $i++;
+            }
+            ?>
+        </div>
+
+            <?php
+        /* <div class="ws_bullets">
+            $i=0;
+            foreach($vars['slider'] as $row)
+            {
+                echo'<a href="#wows'.$i.'" title="'.$row['name'].'"><img src="/files/slider/'.$row['id'].'.jpg" alt="'.$row['name'].'"/></a>';
+                $i++;
+            }</div>*/
+            ?>
+
+    </div>
+</div>

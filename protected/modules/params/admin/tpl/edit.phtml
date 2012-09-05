@@ -1,0 +1,70 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Редактирование раздел меню:&nbsp;<?=$vars['edit']['name']?></h1>
+	</div>
+	<div class="extra-tools">
+	<a class="tool-link cm-confirm" href="/admin/<?=$vars['action']?>/delete/<?=$vars['edit']['id']?>">Удалить этот раздел</a>
+	<a class="tool-link" href="/admin/<?=$vars['action']?>/add">Добавить раздел</a>
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Информация </h2>
+						<div class="form-field">
+							<label class="cm-required" for="page">Название:</label>
+							<input type="text" class="input-text-large main-input" value="<?=$vars['edit']['name']?>" size="55" name="name" />
+						</div>
+						<div class="form-field">
+							<label class="cm-required" for="page">URL:</label>
+							<input type="text" class="input-text-large main-input" value="<?=$vars['edit']['url']?>" size="55" name="url" />
+						</div>
+                        <div class="form-field">
+                            <label class="cm-required" for="page">Раздел:</label>
+                            <select name="sub">
+                                <option value="0">Корень...</option>
+                                <?php
+                                foreach($vars['params'] as $row)
+                                {
+                                	echo"<option value='{$row['id']}'";if($row['id']==$vars['edit']['sub'])echo" selected";echo">{$row['name']}</option>";    
+                                }
+                                ?>
+                            </select>
+                        </div>
+						<div class="form-field">
+							<label for="page_descr">Описание:</label>
+							<?=$this->showEditor('body', $vars['edit']['info']);?>
+						</div>
+						<div class="form-field">
+							<label class="cm-required">Статус:</label>
+							<div class="select-field">
+								<input type="radio" class="radio" value="1" id="page_data_0_a" name="active" <? if($vars['edit']['active']==1)echo' checked="checked"';?>>
+								<label for="page_data_0_a">Вкл.</label>
+								<input type="radio" class="radio" value="0" id="page_data_0_d" name="active" <? if($vars['edit']['active']==0)echo' checked="checked"';?>>
+								<label for="page_data_0_d">Выкл.</label>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Сохранить и закрыть" name="update_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp; 
+							<a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

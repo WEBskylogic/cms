@@ -1,0 +1,102 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Редактирование записи:</h1>
+	</div>
+	<div class="extra-tools">
+        <a class="tool-link cm-confirm" href="/admin/<?=$vars['action']?>/delete/<?=$vars['edit']['id']?>">Удалить эту запись</a>
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Информация </h2>
+
+						<div class="form-field">
+							<label class="cm-required" for="page">Автор:</label>
+							<input type="text" class="input-text-large main-input" value="<?=$vars['edit']['author']?>" size="55" name="name" />
+						</div>
+                        <div class="form-field">
+                            <label for="page_meta_descr">Комментарий:</label>
+                            <textarea class="input-textarea-long" rows="2" cols="55" name="text"><?=$vars['edit']['text']?></textarea>
+                        </div>
+
+						<div class="form-field">
+							<label class="cm-required">Статус:</label>
+							<div class="select-field">
+								<input type="radio" class="radio" value="1" id="page_data_0_a" name="active" <? if($vars['edit']['active']==1)echo' checked="checked"';?>>
+								<label for="page_data_0_a">Вкл.</label>
+								<input type="radio" class="radio" value="0" id="page_data_0_d" name="active" <? if($vars['edit']['active']==0)echo' checked="checked"';?>>
+								<label for="page_data_0_d">Выкл.</label>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Сохранить и закрыть" name="update_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp; 
+							<a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+			<div id="input"></div>
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="" onsubmit="return addComment(<?=$vars['edit']['id']?>);">
+					<fieldset>
+						<h2 class="subheader"> Ответить </h2>
+
+						<div class="form-field">
+							<label class="cm-required" for="page">Автор:</label>
+							<input type="text" class="input-text-large main-input" value="" size="55" id="name_form" />
+						</div>
+                        <div class="form-field">
+                            <label for="page_meta_descr">Комментарий:</label>
+                            <textarea class="input-textarea-long" rows="2" cols="55" id="text_form"></textarea>
+                        </div>
+					</fieldset>
+				</div>
+				<span class="submit-button cm-button-main"><input type="submit" value="Ответить" /></div>
+			</form>
+			<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs" id="answers">
+			<?
+			if(count($vars['comments'])!=0)
+			{
+				echo'
+					<tr>
+						<th width="50">ID</th>
+						<th width="10%">Дата добавления</th>
+						<th width="10%">Автор</th>
+						<th>Комментарий</th>
+						<th width="5%">&nbsp;</th>
+					</tr>';
+				foreach($vars['comments'] as $row)
+				{
+					echo'<tr>
+							<td><span>'.$row['id'].'</span></td>
+							<td>'.$this->date_view($row['date'], "dd/mm/YY, hh:ii").'</td>
+							<td>'.$row['author'].'</td>
+							<td>'.$row['text'].'</td>
+							<td width="10%">
+								<input type="hidden" name="product_id[]" value="'.$row['id'].'" />
+								<ul class="cm-tools-list tools-list">
+									<li><a href="/admin/comments/edit/'.$vars['edit']['id'].'/delanswer/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+								</ul>
+							</td>
+						</tr>';
+				}
+			}
+			?>
+			</table>
+		</div>
+	</div>
+</div>

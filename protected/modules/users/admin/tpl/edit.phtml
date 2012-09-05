@@ -1,0 +1,101 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Редактирование пользователя:&nbsp;<?=$vars['edit']['name']?></h1>
+	</div>
+	<div class="extra-tools">
+	<a class="tool-link cm-confirm" href="/admin/<?=$vars['action']?>/delete/<?=$vars['edit']['id']?>">Удалить этого пользователя</a>
+	<a class="tool-link" href="/admin/<?=$vars['action']?>/add">Добавить нового пользователя</a>
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="" enctype="multipart/form-data">
+				<input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+				<div id="content_basic" style="display: block;">
+                    <fieldset>
+                        <h2 class="subheader"> Информация об учетной записи пользователя  </h2>
+                        <div class="form-field">
+                            <label class="cm-required" for="page">E-mail:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['email']?>" size="32" name="email" />
+                        </div>
+                        <div class="form-field">
+                            <label class="cm-required" for="page">Пароль:</label>
+                            <input type="password" class="input-text" value="" size="32" name="password" />
+                        </div>
+                        <div class="form-field">
+                            <label class="cm-required" for="page">Подтвердите пароль:</label>
+                            <input type="password" class="input-text" value="" size="32" name="password2" />
+                        </div>
+
+                        <div class="form-field">
+                            <label class="cm-required">Статус:</label>
+                            <div class="select-field">
+                                <input type="radio" class="radio" value="1" id="page_data_0_a" name="active" <? if($vars['edit']['active']==1)echo' checked="checked"';?>>
+                                <label for="page_data_0_a">Вкл.</label>
+                                <input type="radio" class="radio" value="0" id="page_data_0_d" name="active" <? if($vars['edit']['active']==0)echo' checked="checked"';?>>
+                                <label for="page_data_0_d">Выкл.</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="subheader"> Личные данные  </h2>
+                        <div class="form-field">
+                            <label class="cm-required" for="page">Имя:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['name']?>" size="32" name="name" />
+                        </div>
+                        <div class="form-field">
+                            <label for="page">Фамилия:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['surname']?>" size="32" name="surname" />
+                        </div>
+                        <div class="form-field">
+                            <label for="page">Отчество:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['patronymic']?>" size="32" name="patronymic" />
+                        </div>
+                        <div class="form-field">
+                            <label for="page_page_title">Доп. информация:</label>
+                            <textarea class="input-textarea" rows="10" cols="55" name="info"><?=$vars['edit']['info']?></textarea>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="subheader"> Контактные данные </h2>
+                        <div class="form-field">
+                            <label for="page">Телефон:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['phone']?>" size="32" name="phone" />
+                        </div>
+                        <div class="form-field">
+                            <label for="page">Skype:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['skype']?>" size="32" name="skype" />
+                        </div>
+                        <div class="form-field">
+                            <label for="page">Город:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['city']?>" size="32" name="city" />
+                        </div>
+                        <div class="form-field">
+                            <label for="page">Адрес:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['address']?>" size="32" name="address" />
+                        </div>
+                        <div class="form-field">
+                            <label for="page">Почтовый индекс:</label>
+                            <input type="text" class="input-text" value="<?=$vars['edit']['post_index']?>" size="32" name="post_index" />
+                        </div>
+                    </fieldset>
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Сохранить и закрыть" name="update_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp; 
+							<a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

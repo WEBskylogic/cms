@@ -1,0 +1,77 @@
+
+
+
+
+<!--  CALCULATOR  -->
+
+<link rel="stylesheet" type="text/css" media="all" href="/tpl/column1/calc/style000.css">
+<script type="text/javascript" src="/tpl/column1/calc/jquery-1.js"></script>
+<script type="text/javascript" src="/tpl/column1/calc/jquery-u.js"></script>
+
+<table border="0" cellspacing="0" cellpadding="0" align="center">
+    <tr valign="top">
+        <td style="vertical-align: top; padding-top: 120px;">
+            <div id="vklad_container">
+                <div id="vklad_ammount_container" class="field">
+                    <label for="vklad_ammount" class="main-label">Я хочу приумножить свои деньги:</label></p>
+                    <div id="vklad_currency">
+                        <input type="hidden" id="vklad_currency_RUB" name="vklad_currency_switch" value="1" checked>
+                    </div>
+                    <div id="vklad_ammount_RUB_container" class="field-container">
+                        <div id="vklad_ammount_RUB_slider" class="ui-slider"></div>
+                        <input type="text" class="number" id="vklad_ammount_RUB" name="vklad_ammount_RUB" min="100" max="1000000" value="10000" labels="1000|1 тыс.,50000|50 тыс.,100000|100 тыс.,1000000|1 млн." step="1000" labelsuffix>
+                    </div>
+                    </p></div>
+                <div id="vklad_period_container" class="field">
+                    <label for="vklad_period" class="main-label">за время</label></p>
+                    <div class="field-container">
+                        <div id="vklad_period_slider" class="ui-slider" for="vklad_period"></div>
+                        <input type="text" class="number" id="vklad_period" name="vklad_period" min="1" max="12" value="3" labels="1|1 мес,3|3 мес,6|6 мес,12|12 мес" step="1" labelsuffix>
+                        <span class="vklad-suffix">месяцев</span>
+                    </div>
+                    </p></div>
+                <p></p>
+            </div>
+        </td>
+        <td valign="top">
+            <div id="vklad_tubes">
+                <div id="vklad_depositTubes"></div>
+                <div id="vklad_investment_xtext">
+                    Вложил<br>
+                    <span></span>
+                </div>
+                <div id="vklad_raising_xtext">
+                    Получил<br>
+                    <span></span>
+                </div>
+                <div id="vklad_months_text">
+                    За <span></span> я получу <a class="TCS-tooltip" id="vklad_calculator_help" title="Данный расчет приведен исключительно в справочных целях и может отличаться от реальной доходности выбранного вклада.">?</a>
+                </div>
+                <div id="vklad_raising_text"></div>
+                <table border="0" cellspacing="0" cellpadding="0" style="border-top:0px; border-bottom:0px">
+                    <tr>
+                        <td style="border-top:0px; border-bottom:0px">Начисленные проценты:</td>
+                        <td style="border-top:0px; border-bottom:0px">
+                            <p id="vklad_profit_text" style="margin-bottom: 0px;"><span></span></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-top:0px; border-bottom:0px">Мой денежный вклад:</td>
+                        <td style="border-top:0px; border-bottom:0px">
+                            <p id="vklad_investment_text" style="margin-bottom: 0px;"><span></span></p>
+                        </td>
+                    </tr>
+                </table></div>
+        </td>
+    </tr>
+</table>
+<p><script type="text/javascript" src="/tpl/column1/calc/raphael0.js"></script>
+    <script type="text/javascript" src="/tpl/column1/calc/DepositU.js"></script>
+    <script type="text/javascript" src="/tpl/column1/calc/DepositT.js"></script>
+    <script type="text/javascript" src="/tpl/column1/calc/tooltip0.js"></script>
+    <script type="text/javascript" src="/tpl/column1/calc/ui000000.js"></script>
+    <script type="text/javascript" src="/tpl/column1/calc/VCalc000.js"></script></p>
+<link rel="stylesheet" type="text/css" href="/tpl/column1/calc/VKLADcal.css">
+
+
+<!--  CALCULATOR  -->

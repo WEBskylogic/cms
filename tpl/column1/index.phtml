@@ -1,0 +1,100 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <title><?php echo $vars['meta']['title'];?></title>
+		<meta name="keywords" content="<?php echo $vars['meta']['keywords']; ?>" />
+		<meta name="description" content="<?php echo $vars['meta']['description']; ?>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="copyright" content="" />
+		<meta name="Author-Corporate" content="" />
+		<meta name="Publisher-Email" content="" />
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <?php echo $vars['styles']; ?>
+        <!--[if lte IE 7]>
+            <link href="<?php echo $this->LoadResource('styles', 'style_ie.css'); ?>" rel="stylesheet" type="text/css" />
+        <![endif]-->
+        <?php echo $vars['scripts']; //?>
+</head>
+<body>
+<div id="container">
+	<div id="head">
+		<div id="logo"><a href="/"><img src="/tpl/column1/images/logo.png" alt="" /></a></div>
+		
+		<div id="top_right">
+			<div style="width:229px; float:left;">
+				<?=htmlspecialchars_decode($vars['phone']['body']);?>
+			</div>
+			<div style="width:171px; float:left;">
+				<?
+					if(!isset($_SESSION['user_id']))
+					{
+						echo'<a href="/users/sign-up" class="blue_but"><img src="/tpl/column1/images/key.png" alt="" /> '.$vars['translate']['enter'].'</a>';	
+						echo'<a href="/users/sign-up" class="blue_but"><img src="/tpl/column1/images/sign.png" alt="" /> '.$vars['translate']['sign_up'].'</a>';	
+					}
+					else{
+						echo'<a href="/users/cabinet" class="blue_but">'.$vars['translate']['my_data'].'</a>';	
+						echo'<a href="/users/orders" class="blue_but">'.$vars['translate']['my_orders'].'</a>';
+						echo'<a href="/users/logout" class="blue_but">'.$vars['translate']['exit'].'</a>';		
+					}
+				?>
+				<a href="/orders" class="blue_but" id="bascket"></a>
+			</div>
+		</div>
+		<div class="clear"></div>
+		<div id="search">
+			<form method="post" action="/catalog/search">
+				<input type="text" name="search" value="Search" />
+				<input type="image" src="/tpl/column1/images/search_icon.jpg" />
+			</form>
+		</div>
+        <?php echo $vars['menu'];?>
+		<?php echo $vars['top_menu'];?>
+	</div>
+	<? if(isset($vars['breadcrumbs']))echo $vars['breadcrumbs'];?>
+	<div id="left_col">
+		<?php echo $vars['left_menu'];?>
+		<?=htmlspecialchars_decode($vars['bonus']['body']);?>
+		
+		<div id="mailer">
+			<div id="message_mailer"></div>
+			<p><?=$vars['translate']['mailer2']?></p>
+			<form method="post" onsubmit="mail_to(); return false;">
+				<input type="text" value="E-mail" name="mailer" />
+				<input type="submit" value="<?=$vars['translate']['mailer']?>" />
+			</form>
+			<div class="clear"></div>
+		</div>
+		
+		<?=htmlspecialchars_decode($vars['brands']['body']);?>
+		<?php echo $vars['news'];?>
+	</div>
+	<div id="right_col">
+		<?php echo $vars['content'];?>
+		<?='<div class="clear"></div><div id="recomand">'.htmlspecialchars_decode($vars['recomand']['body']).'</div>';?>
+		<?php if(isset($vars['meta']['text']))echo'<div class="bot_text">'.htmlspecialchars_decode($vars['meta']['text']).'</div>';?>
+	</div>
+	<div class="clear"></div>
+    <div id="footer">
+        <div style="width:252px; float:left;"><?=$vars['translate']['copyright']?><br /><a href="http://skylogic.com.ua" target="_blank"><?=$vars['translate']['skylogic']?></a></div>
+        <div style="width:730px; float:left; text-align:right;">
+			<?php echo $vars['menu'];?>
+		</div>
+        <div class="clear"></div>
+    </div>
+</div>
+<?php
+if(isset($vars['google']))
+echo"<script type=\"text/javascript\">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', '".$vars['google']."']);
+	  _gaq.push(['_trackPageview']);
+	
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>";
+?>
+</body>
+</html>

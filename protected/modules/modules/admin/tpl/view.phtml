@@ -1,0 +1,41 @@
+<div class="items-container multi-level">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+    <tr class="noDrop">
+        <th width="25"></th>
+		<th width="3%" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+		<th width="2%">ID</th>
+        <th>Название</th>
+        <th>Раздел</th>
+		<th width="15%">&nbsp;</th>
+	</tr>
+	<?php
+		foreach($vars['list'] as $row)
+		{
+			$style='';
+			if($row['cat']=='Товары')$style=' style="background-color:#f4f4f4;"';
+			elseif($row['cat']=='Пользователи')$style=' style="background-color:#fff1de;"';
+			elseif($row['cat']=='Настройки')$style=' style="background-color:#dce8ff;"';
+			elseif($row['cat']=='Администрирование')$style=' style="background-color:#ecfaff;"';
+			
+            echo'<tr id="sort'.$row['id'].'">
+					<td class="move"></td>
+                    <td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="id[]" /></td>
+                    <td><span>'.$row['id'].'</span><input type="hidden" value="'.$row['id'].'" name="save_id[]" /></td>
+                    <td><input type="text" value="'.$row['name'].'" name="name[]" class="input-text" /></td>
+                    <td'.$style.'>'.$row['cat'].'</td>
+                    <td width="10%">
+                        <a href="/admin/'.$vars['action'].'/edit/'.$row['id'].'" class="tool-link">Редактировать</a>
+						&nbsp;&nbsp;|
+                        <ul class="cm-tools-list tools-list">
+                            <li><a href="/admin/'.$vars['action'].'/delete/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+                        </ul>
+                    </td>
+                </tr>';
+		}
+	?>
+</table>
+</div>
+<div class="table-tools">
+	<a class="check_all" href="javascript:void(0);">Выбрать все</a>| 
+	<a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+</div>

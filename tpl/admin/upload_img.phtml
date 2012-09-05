@@ -1,0 +1,45 @@
+<link href="/tpl/admin/css/jquery.Jcrop.css" rel="stylesheet" type="text/css" />
+<link href="/tpl/admin/css/fileuploader.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/tpl/admin/js/resize.js"></script>
+<script type="text/javascript" src="/tpl/admin/js/fileuploader.js"></script>
+<script type="text/javascript" src="/tpl/admin/js/jquery.Jcrop.min.js"></script>
+<script type="text/javascript" charset="utf-8">  
+	$(document).ready(function(){
+		createUploader('<?=$vars['width']?>', '<?=$vars['height']?>', '/<?=$vars['path']?>');    
+	});
+	$("#loading_ac").ajaxStart(function(){$(this).show();});
+	$("#loading_ac").ajaxStop(function(){$(this).hide();});
+</script>
+<?
+	$_SESSION['tovar_write']=$vars['image_id'];
+	$_SESSION['path']=$vars['path'];
+?>
+<div class='paylog' align='left' id="thumb1">
+	<img class='bord_img' src='/<?=$vars['path']?><?=$vars['image_id']?>_s.jpg' />
+</div>
+<?
+	//if(file_exists("{$vars['path']}/{$vars['image_id']}_s.jpg"))echo'<br /><a href="'.$_SERVER['REQUEST_URI'].'/delphoto"><img src="/tpl/images/admin/delete_16.gif"></a>';
+?>
+<div class="clear"></div><br />
+
+<input type="hidden" name="resize_photo_id" id="resize_photo_id" value="<?=$vars['image_id']?>" />
+<div id="file-uploader" style="height:25px;"></div>
+
+<div id="cut_avatar" style="display: none;">
+	<br />
+	<input type="hidden" name="x" id="x_<?=$vars['image_id']?>" />
+	<input type="hidden" name="y" id="y_<?=$vars['image_id']?>" />
+	<input type="hidden" name="w" id="w_<?=$vars['image_id']?>" />
+	<input type="hidden" name="h" id="h_<?=$vars['image_id']?>" />
+	<input type="hidden" name="usr" id="usr" value="<?=$vars['image_id']?>" />
+	<input type="hidden" name="src" id="src" />
+	<br />
+	<br />
+	<span class="red" id="create_t" >
+	<input type="button" value=" Вырезать " onclick="javascript:createAvatar('<?=$vars['image_id']?>', '<?=$vars['path']?>', <?=$vars['width']?>, <?=$vars['height']?>);" id="create" class="button" />
+	<br />
+	<br />
+	</span>
+	<span id="thumb" style="display: none;"></span>
+</div>
+<br />
