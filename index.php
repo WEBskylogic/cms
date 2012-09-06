@@ -1,7 +1,7 @@
 <?php
 /*
-*WEB  3
-//ok
+*PHP  3
+//ok ok ok
 */
 
     //echo phpversion();
