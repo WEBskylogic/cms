@@ -1,0 +1,94 @@
+#soc_auth{
+	margin:5px 0;	
+}
+.cnt_comment{
+	font-size:16px;
+	margin:25px 0 10px 0;	
+}
+#comment_block{
+	margin:0 auto;
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:11px;
+}
+#comment_form textarea{
+	height:100px;
+	padding:3px;
+	width:500px;	
+    resize: none;
+	margin:3px 0;
+	font-size:12px;
+	border:1px solid #bbb;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+#comment_form input[type=text]{
+	width:300px;
+	margin:3px 0;
+	padding: 3px;
+	font-size:12px;
+	border:1px solid #bbb;
+	font-family:Tahoma, Geneva, sans-serif;
+}
+#comment_form input[type=submit]{
+	border:1px solid #ccc;
+	cursor:pointer;
+	font-size:12px;
+	margin-top:3px;
+	padding:3px 5px 5px 5px;
+	-moz-border-radius: 5px; /* Firefox */
+    -webkit-border-radius: 5px; /* Safari, Chrome */
+    -khtml-border-radius: 5px; /* KHTML */
+    border-radius: 5px; /* CSS3 */
+    /* IE */
+	behavior: url(/css/PIE.htc); /* ���� IE border-radius */
+}
+#comment_form input[type=submit]:hover{
+	border:1px solid #aaa;
+}
+#photo_comment{
+	width:50px;
+	display:table-cell;
+	vertical-align:top;
+	padding:3px 10px 0 0;
+	text-align:center;
+}
+#photo_comment img{
+	margin-bottom:3px;	
+}
+#comment_form{
+	width:630px;
+	display:table-cell;
+	vertical-align:top;
+}
+.photo_comment{
+	width:50px;
+	display:table-cell;
+	padding:3px 10px 0 0;
+	text-align:center;
+	vertical-align:top;
+}
+.info_comment{
+	width:630px;
+	display:table-cell;
+	vertical-align:top;
+}
+.date_comment{
+	font-size:11px;
+	color:#aaa;
+	margin-top:5px;
+}
+.title_comment{
+	color:#2B587A;
+	margin:2px 0 5px 0;
+}
+.comment_record{
+	border-top:1px solid #E9EDF1;
+	margin:10px 0;
+	padding:10px 0;	
+}
+.message{
+	margin:10px 0;
+	color:#060;	
+}
+.comment_record.answer_comment{
+	margin-left:50px;
+}

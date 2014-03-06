@@ -1,0 +1,36 @@
+<div id="registration_form">
+<script>
+	$("#phone2").keydown(function(event) {
+        if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 107 ||
+            (event.keyCode == 65 && event.ctrlKey === true) ||
+            (event.keyCode >= 35 && event.keyCode <= 39)) {
+                 return;
+        }
+        else {
+            if (((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) || ($(this).val().length > 25)) {
+                event.preventDefault();
+            }  
+        }
+    });
+	
+</script>
+		<div class="title"><?=$vars['translate']['sign_up']?>
+			<a href="#" id="close_btn"><img src="/images/close.png" /></a>
+		</div>
+		<form action="/send" method="post" id="formID2" onsubmit="return register();">
+
+			<input type="text" name="name" id="name" class="validate[required] reg_input" placeholder="ФИО" required></br>
+			<input type="email" name="email" id="email" class="validate[required] reg_input" placeholder="E-Mail"  required></br>
+			<input type="text" name="phone2" id="phone2" class="validate[required] reg_input" placeholder="Телефон"  required></br>
+			<input type="text" name="city" id="city" class="validate[required] reg_input" placeholder="Город"  required></br>
+			
+			<p><?=$vars['translate']['password']?> *:</p>
+			<input type="password" name="pass" id="pass" class="validate[required] reg_input" value="" required></br>
+			<p>Подтвердите пароль *:</p>
+			<input type="password" name="pass2" id="pass2" class="validate[required] reg_input" value="" required></br></br>
+			
+			<input type="checkbox" name="try_opt" id="try_opt" style="float:left;margin-right:10px;" value="" ><p>Я оптовый покупатель</p>
+			<div id="zzz"></div>
+			<input type="submit" name="sign_up" id="sign_up" value="<?=$vars['translate']['send_message']?>" class="submit" />
+		</form>
+</div>

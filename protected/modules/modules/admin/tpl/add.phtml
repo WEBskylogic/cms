@@ -1,0 +1,183 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div class="cm-tabs-content">
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Новый модуль:&nbsp;</h1>
+	</div>
+	<div class="extra-tools">
+		
+	</div>
+	<div class="mainbox-body"> 
+		
+        <div class="tabs cm-j-tabs cm-track">
+            <ul>
+                <li id="basic" class="cm-js cm-active"><a >Общее</a></li>
+                <li id="chmod" class="cm-js"><a >Права доступа</a></li>
+                <li id="chmod2" class="cm-js"><a >Права доступа к подсистемы</a></li>
+            </ul>
+        </div>
+        <form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+            <div id="content_basic" class="cm-tabs">
+                <fieldset>
+                    <h2 class="subheader"> Информация </h2>
+                    <div class="form-field">
+                        <label class="cm-required" for="page">Название:</label>
+                        <input type="text" class="input-text-large main-input" value="" size="55" name="name" id="name_module" />
+                    </div>
+                    <div class="form-field">
+                        <label for="page">URL:</label>
+                        <input type="text" class="input-text-large main-input" value="" size="55" name="url" />
+                    </div>
+                    <div class="form-field">
+                        <label for="page">Таблицы:</label>
+                        <input type="text" class="input-text-large main-input" value="" size="55" name="tables" id="tables_module" />
+                    </div>
+                    <div class="form-field">
+                        <label for="page_meta_keywords">Описание:</label>
+                        <textarea class="input-textarea-long" rows="2" cols="55" name="comment" id="comment_module"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="page">Подключаемый модуль:</label>
+                        <select name="module" id="add_module">
+                            <option value="">Выберите модуль...</option>
+                            <?php
+                                foreach($vars['dir'] as $row)
+                                {
+                                    $active=0;
+                                    foreach($vars['list'] as $row2)
+                                    {
+                                        if($row==$row2['controller'])$active=1;
+                                    }
+                                    if($active==0)echo "<option value='$row'>$row</option>";
+                                }
+                            ?>
+                        </select>
+                    </div>
+                    
+                    <div class="form-field">
+                        <input type="hidden" value="0" name="sort" />
+                        <label for="page_meta_keywords">Раздел:</label>
+                        <select name="sub" id="menu_id">
+                            <option value="">Выберите раздел...</option>
+                            <?php
+                            foreach($vars['menu'] as $row)
+                            {
+                                echo'<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="create_dir">Создать папку для файлов:</label>
+                        <input type="checkbox" name="create_dir" id="create_dir" />
+                    </div>
+                    <div class="form-field">
+                        <label for="get_translate">Загрузить переводы(интерфейс):</label>
+                        <input type="checkbox" id="get_translate" name="get_translate" disabled="disabled" />
+                    </div>
+                    <div class="form-field">
+                        <label for="get_config">Загрузить настройки:</label>
+                        <input type="checkbox" name="get_config" id="get_config" disabled="disabled" />
+                    </div>
+                </fieldset>
+            </div>
+            <!--Basic end-->
+            
+            <!--text_page start-->
+            <div id="content_chmod" class="cm-tabs hidden">    
+                <fieldset>
+                    <h2 class="subheader"> Права доступа </h2>
+                    <table width="50%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort" id="photos" style="margin-top: 0;">
+                        <tr>
+                            <th>Группы модераторов</th>
+                            <th style="text-align:center;" width="80">Чтение</th>
+                            <th style="text-align:center;" width="80">Изменение</th>
+                            <th style="text-align:center;" width="80">Удаление</th>
+                            <th style="text-align:center;" width="80">Добавление</th>
+                        </tr>
+                        <?php
+                        //echo count($_POST['read']).'<br />'.count($_POST['del']).'<br />'.count($_POST['add']).'<br />';
+                        foreach($vars['modules'] as $row)
+                        {
+                            echo'<tr>
+                                    <td>'.$row['name'].'<input type="hidden" value="'.$row['id'].'" name="module_id[]" /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="read'.$row['id'].'" id="read'.$row['id'].'" class="read_chmod" /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="edit'.$row['id'].'" id="edit'.$row['id'].'" class="edit_chmod" /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="del'.$row['id'].'" id="del'.$row['id'].'" class="del_chmod" /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="add'.$row['id'].'" id="add'.$row['id'].'" class="add_chmod" /></td>
+                                </tr>';
+                        }
+                        echo'<tr>
+                                    <td></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="" id="read_all" /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="" id="edit_all" /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="" id="del_all" /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="" id="add_all" /></td>
+                                </tr>';
+                        ?>
+                    </table>
+                </fieldset>
+            </div>
+            <!--Basic end-->
+            
+            <!--text_page start-->
+            <div id="content_chmod2" class="cm-tabs hidden">   
+                <fieldset>
+                    <h2 class="subheader"> Подсистемы </h2>
+                    <table width="60%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort" id="photos" style="margin-top: 0;">
+                        <?php
+                        //echo count($_POST['read']).'<br />'.count($_POST['del']).'<br />'.count($_POST['add']).'<br />';
+                        
+                        $config=0;
+                        $help=0;
+                        $translate=0;
+                        $chmod=0;
+                        
+                        $cnt=count($vars['modules']);
+                        
+                        echo'<tr><th>Модули</th>';
+                        foreach($vars['subsystem2'] as $row)
+                        {
+                            echo'<th style="text-align:center;" width="100">'.$row['title'].'</th>';	
+                        }
+                        echo'</tr>';
+                        foreach($vars['modules'] as $row)
+                        {
+                            echo'<tr><td>'.$row['name'].'<input type="hidden" value="'.$row['id'].'" name="module_id[]" /></td>';
+                            
+                            foreach($vars['subsystem2'] as $row2)
+                            {
+                                echo'<td style="text-align:center;">
+                                        <input type="checkbox" value="'.$row['id'].'-'.$row2['id'].'" name="subsystem_id[]" id="subsystem'.$row2['id'].'" />
+                                     </td>';
+                            }
+                        }
+                        echo'<tr>
+                                    <td></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="" id="config_all"';if($cnt==$config)echo' checked="checked"';echo' /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="" id="help_all"';if($cnt==$help)echo' checked="checked"';echo' /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="" id="translate_all"';if($cnt==$translate)echo' checked="checked"';echo' /></td>
+                                    <td style="text-align:center;"><input type="checkbox" value="" id="chmod_all"';if($cnt==$chmod)echo' checked="checked"';echo' /></td>
+                                </tr>';
+                        
+                        ?>
+                    </table>
+                </fieldset>    
+            </div>
+            <div class="buttons-container cm-toggle-button buttons-bg">
+                <div class="cm-buttons-floating hidden" style="display: block;">
+                    <div class="cm-buttons-placeholder">
+                        <span class="submit-button cm-button-main">
+                            <input type="submit" value="Создать" name="add" />
+                        </span>&nbsp;
+                        <span class="submit-button cm-button-main cm-save-and-close">
+                            <input type="submit" value="Создать и закрыть" name="add_close" class="cm-save-and-close" />
+                        </span> &nbsp;или&nbsp;&nbsp; 
+                        <a class="underlined tool-link" href="/admin/menu">Отменить</a>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" value="<?=$vars['action']?>" id="action" />
+        </form>
+	</div>
+</div>

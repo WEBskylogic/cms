@@ -1,0 +1,19 @@
+<?php
+    if(isset($vars['brend']))
+    {
+    	echo "<h1 class='title'>{$vars['brend']['name']}</h1>".htmlspecialchars_decode($vars['brend']['body']);
+    }
+    else{
+        echo'<div class="title">'.$vars['translate']['brend'].'</div>';
+        echo'<div class="news">';
+        foreach($vars['list']['list'] as $row)
+        {
+            if(file_exists("files/brend/".$row['id']."_s.jpg"))$img="<br /><a href='".LINK."/brend/".$row['url']."'><img src='/files/brend/".$row['id']."_s.jpg' alt='' style='padding:5px 5px 0 0;' /></a>";
+            else $img="";
+            //echo'<div class="news_left"><span>'.Numeric::printDate($row['data']).'</span></div>';
+            echo'<div class="news_right"><a href="'.LINK.'/brend/'.$row['url'].'">'.$row['name'].''.$img.'</a></div>';
+        }
+        echo"</div>";
+        echo $vars['list']['paging'];
+    }
+?>

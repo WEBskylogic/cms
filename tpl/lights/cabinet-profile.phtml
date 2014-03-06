@@ -1,0 +1,30 @@
+<div class="cabinet" style="position: absolute; display: none;">
+	<div id="title_basket">
+		</a><h4>Мои данные</h4>
+	</div>
+	<? if(isset($_SESSION['user_id'])) { ?>
+		<div id="scrollbarY">
+			<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+			<div class="viewport">
+				<div class="overview">
+					<div id="address1" style="width: 200px; !important">
+						<label>Имя:</label></br></br>
+						<label>E-mail (логин):</label></br></br>
+						<label>Пароль:</label></br></br>
+						<label>Город:</label></br></br>
+						<label>Телефон:</label></br></br>
+					</div>
+					<div id="address2">
+						<input type="text" id="n_name" value="<?=$vars['user']['name'];?>"/></br>
+						<label><b><?=$vars['user']['email'];?></b></label></br></br>
+						<input type="password"  id="n_pass"value=""/></br>
+						<input type="text"  id="n_city" value="<?=$vars['user']['city'];?>"/></br>
+						<input type="text" id="n_phone" value="<?=$vars['user']['phone'];?>"/></br>
+					</div>
+				</div>
+			</div>
+		</div>
+	<? } else
+		echo "Вы не авторизованы на сайте."
+	?>
+</div>

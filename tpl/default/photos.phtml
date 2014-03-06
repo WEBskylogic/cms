@@ -1,0 +1,37 @@
+<?php
+    if(isset($vars['photos']))
+    {
+        $dir="/files/photos/{$vars['photos']['id']}/";
+		echo "<h1 class='title'>{$vars['photos']['name']}</h1>".htmlspecialchars_decode($vars['photos']['body']);
+		if(count($vars['photo'])!=0)
+		{
+			$i=0;
+			echo'<div class="photos2">';
+			foreach($vars['photo']['list'] as $row)
+			{
+				$i++;
+				if(file_exists("files/photos/{$vars['photos']['id']}/".$row['id']."_s.jpg"))$img="<img src='/files/photos/{$vars['photos']['id']}/".$row['id']."_s.jpg' alt='' />";
+				else $img="";
+				echo'<div class="photo"';if($i==5){echo' style="margin-right:0;"';$i=0;}echo'><a href="'.$dir.$row['id'].'.jpg" rel="lightbox">'.$img.'</a></div>';
+
+			}
+			echo $vars['photo']['paging'];
+			echo"</div>";
+		}
+    }
+    else{
+        echo'<h1 class="title">'.$vars['translate']['photos'].'</h1>';
+        echo'<div class="photos2">';
+        $i=0;
+        foreach($vars['list']['list'] as $row)
+        {
+            if(file_exists("files/photos/".$row['id']."_s.jpg"))$img="<img src='/files/photos/".$row['id']."_s.jpg' alt='' />";
+            else $img="";
+            $i++;
+            echo'<div class="photo"';if($i==5){echo' style="margin-right:0;"';$i=0;}echo'><a href="'.LINK.'/photos/'.$row['url'].'">'.$img.'<br />> '.$row['name'].'</a></div>';
+        }
+        echo"</div>";
+        echo $vars['list']['paging'];
+    }
+?>
+<div class="clear"></div>

@@ -1,0 +1,45 @@
+<script type="text/javascript">
+function mycarousel_initCallback(carousel)
+{
+    // Disable autoscrolling if the user clicks the prev or next button.
+    carousel.buttonNext.bind('click', function() {
+        carousel.startAuto(0);
+    });
+
+    carousel.buttonPrev.bind('click', function() {
+        carousel.startAuto(0);
+    });
+
+    // Pause autoscrolling if the user moves with the cursor over the clip.
+    carousel.clip.hover(function() {
+        carousel.stopAuto();
+    }, function() {
+        carousel.startAuto();
+    });
+};
+
+jQuery(document).ready(function() {
+    jQuery('#mycarousel').jcarousel({
+        auto: 5,
+        wrap: 'last',
+        initCallback: mycarousel_initCallback
+    });
+});
+
+</script>
+<div id="title_slide" class="peterburg">Блюда от нашего шеф-повара:</div>
+<div id="wrap">
+	<ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
+	<?
+		$i=0;
+		while(true)
+		{
+			if(file_exists("images/odin.png"))
+			echo"<li><img src='/images/odin.png' /><div class='wt'>350 <font>гр.</font></div><div class='price_bg'>54 <font>грн.</font></div></li>";
+			$i++;
+			if($i==5)break;	
+		}
+	?>
+	</ul>
+</div>
+<div class="clear"></div>

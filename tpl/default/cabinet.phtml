@@ -1,0 +1,45 @@
+<div id="cabinet-new"<? if($_SESSION['expand_basket']==2)echo' class="expandview"';?>>
+    <div class="holder" style="overflow:hidden;">
+    	<div id="view">
+            	<a href="javascript:expand();" id="eview"><img src="/images/expand<? if($_SESSION['expand_basket']=='2')echo'2';?>.png" alt=""></a>
+                <a href="javascript:change_view('gridview');" id="gridview_but"><img src="/images/gridview<? if($_SESSION['view_basket']=='gridview')echo'2';?>.png" alt=""></a>
+                <a href="javascript:change_view('tableview');" id="tableview_but"><img src="/images/tableview<? if($_SESSION['view_basket']=='tableview')echo'2';?>.png" alt=""></a>
+            </div>
+        <div class="basket">
+
+        </div>    
+        <div class="cabinet-main-menu">
+            <h4>Мой кабинет</h4>
+            <?
+				if(isset($_SESSION['user_id']))
+				{
+					echo'<button value="" class="cabinet-submit" id="cabinet-show">Мои данные</button>
+                		 <button value="" class="cabinet-submit" id="orders-show">Мои заказы</button>';
+            	}
+				echo'<button value="" class="cabinet-submit active" id="basket-show">Корзина</button>';
+			?>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div id="bottom_bar">
+        <div class="holder">
+            <div id="sum">
+                <p><?=$vars['translate']['total'];?>: <span id="sum_p"></span></p>
+            </div>
+            <a href="javascript:makeorder();" class="bot_link_basket go">
+                Оформить заказ
+            </a>
+            <a href="javascript:saveprofile();" class="bot_link_basket save">
+                Сохранить
+            </a>
+            <a href="javascript:send_order();" class="bot_link_basket send">
+                Отправить
+            </a>
+            <div id="back">
+                <a id="close-cabinet" href="javascript:close_cabinet();">
+                    Вернуться к покупкам
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

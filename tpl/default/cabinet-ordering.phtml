@@ -1,0 +1,68 @@
+<div id="order_block">
+	 <div class="title_basket">
+        Оформление заказа
+    </div>
+    <div class="overview">
+    	<a href="javascript:loadCabinet('');" class="back_orders"><< <?=$vars['translate']['return_orders']?></a>
+    	<div class="message_order error"></div>
+        <form action="<?=LINK?>/orders/send" method="post" id="order_form">
+            <div class="message_basket"></div>
+            <div class="profile_form">
+                <div class="profile_left">
+                    <label for="o_name"><?=$vars['translate']['fio'];?> *:</label>
+                    <input type="text" name="name_sign" id="o_name" value="<? if(isset($vars['user']['name']))echo $vars['user']['name']?>" />
+ 
+                    <label for="o_email"><?=$vars['translate']['email'];?> *:</label>
+                    <input type="text" name="email_sign" id="o_email" value="<? if(isset($vars['user']['email']))echo $vars['user']['email']?>" />
+                    
+                    <label for="o_phone"><?=$vars['translate']['phone'];?> *:</label>
+                    <input type="text" name="phone_sign" id="o_phone" value="<? if(isset($vars['user']['phone']))echo $vars['user']['phone']?>" />
+                    
+                    <label for="o_city"><?=$vars['translate']['city'];?>:</label>
+                    <input type="text" name="city_sign" id="o_city" value="<? if(isset($vars['user']['city']))echo $vars['user']['city']?>" />
+                    
+                    <label for="o_address"><?=$vars['translate']['address'];?>:</label>
+                    <input type="text" name="address_sign" id="o_address" value="<? if(isset($vars['user']['address']))echo $vars['user']['address']?>" />
+                    
+                    <label for="o_post_index"><?=$vars['translate']['post_index'];?>:</label>
+                    <input type="text" name="post_index_sign" id="o_post_index" value="<? if(isset($vars['user']['post_index']))echo $vars['user']['post_index']?>" />
+                </div>
+                <div class="profile_right">
+                    <label for="o_comment"><?=$vars['translate']['comments_order'];?>:</label>
+                    <textarea rows="5" cols="45" id="o_comment" name="text"></textarea>
+                    <?
+                        if(isset($vars['delivery'])&&count($vars['delivery'])!=0)
+                        {
+                            echo'<label for="o_delivery">'.$vars['translate']['delivery'].'</label>
+                                 <select id="o_delivery" name="delivery">
+                                    <option value=""></option>';
+                            foreach($vars['delivery'] as $row)
+                            {
+                                $price='';
+                                if($row['price']!=0.00)
+                                {
+                                    $price = Numeric::viewPrice($row['price']);
+                                    $price=" +".$price['price'];
+                                }
+                                echo'<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                            }
+                            echo'</select>';
+                        }
+                        
+                        if(isset($vars['payment'])&&count($vars['payment'])!=0)
+                        {
+                            echo'<label for="o_payment">'.$vars['translate']['payment'].'</label>
+                                 <select id="o_payment" name="payment">
+                                    <option value=""></option>';
+                            foreach($vars['payment'] as $row)
+                            {
+                                echo'<option value="'.$row['id'].'">'.$row['name'].'</option>';
+                            }
+                            echo'</select>';
+                        }
+                    ?>
+                </div>
+            </div>
+        </form>
+	</div>   
+</div>

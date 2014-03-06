@@ -1,0 +1,4 @@
+
+RewriteEngine On
+#TURN ON VIEW SUBDIRS AS ROOTDIRS (включаем просмотр поддиректорий как главных директорий)
+RewriteRule  ^(images|downloaded|documents|media|other+)/(.*)$ /tinymce/uploads/$1/$2

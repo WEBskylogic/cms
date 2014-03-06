@@ -1,0 +1,8 @@
+ALTER TABLE `ru_photo`
+  ADD FOREIGN KEY (`photo_id`) REFERENCES `photo` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+#@@#
+ALTER TABLE `ru_photos`
+  ADD FOREIGN KEY (`photos_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+#@@#
+ALTER TABLE `photo`
+  ADD FOREIGN KEY (`photos_id`) REFERENCES `photos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;  

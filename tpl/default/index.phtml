@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+        <title><?php echo $vars['meta']['title'];?></title>
+		<meta name="keywords" content="<?php echo $vars['meta']['keywords']; ?>" />
+		<meta name="description" content="<?php echo $vars['meta']['description']; ?>" />
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="copyright" content="" />
+		<meta name="Author-Corporate" content="" />
+		<meta name="Publisher-Email" content="" />
+        <?=$vars['webmaster']?>
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <!--<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
+        <?php echo $vars['styles']; ?>
+        <!--[if lte IE 7]>
+            <?php echo $this->LoadResource('styles', 'style_ie.css'); ?>
+        <![endif]-->
+        <?php echo $vars['scripts']; //?>
+        <?php
+			if(isset($vars['google']))
+			echo"<script type=\"text/javascript\">
+				  var _gaq = _gaq || [];
+				  _gaq.push(['_setAccount', '".$vars['google']."']);
+				  _gaq.push(['_trackPageview']);
+				
+				  (function() {
+					var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+					ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+					var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+				  })();
+				</script>";
+		?>
+	</head>
+<body>
+<?
+	if(isset($vars['sign_in']))echo $vars['sign_in'];
+	if(isset($vars['feedback']))echo $vars['feedback'];
+?>
+<div id="wrapper">
+    <div id="head">
+        <div id="banner"></div>
+    </div>
+	<div id="header">
+        <div class="holder">
+            <div id="logo"><a href="<?=LINK?>/"><img src="<?=IMAGES?>logo.png" alt="" /></a></div>
+            <?php echo $vars['menu'];?>
+            <div id="login">
+               <?
+                    if(!isset($_SESSION['user_id']))
+                    {
+                        ?>
+                        <a href="#login_form" data-toggle="modal" class="enter"> <?=$vars['translate']['enter']?></a> <span>или</span>
+                        <a href="<?=LINK?>/users/sign-up" class="reg"><?=$vars['translate']['sign_up3']?></a>
+                        <?
+                    }
+                    else
+                    {
+                        echo '<a href="javascript:void(0);" class="enter"><b>'.$_SESSION['user_info']['email'].'</b></a>
+                    <a href="/'.$vars['lang'].'/users/logout" class="reg">'.$vars['translate']['exit'].'</a>';
+                    }
+                ?>
+            </div>
+        </div>
+	</div>
+    <div class="holder">
+        <div id="head_menu">
+                <div id="logo_big">
+                      <a href="/"><img src="<?=IMAGES?>logo_big.png" alt="" /></a>
+                </div>
+                <? echo htmlspecialchars_decode($vars['info_blocks']['7']);?>
+                <div id="phones">
+                    <? echo htmlspecialchars_decode($vars['info_blocks']['2']);?>
+                </div>
+                <div id="bascket"></div>
+        </div>
+        <?php echo $vars['cat_menu'];?>
+        <div class="search-bar">
+            <div class="search">
+                <div id="results_search"></div>
+                <form action="/catalog/all" method="get" autocomplete="off">
+                    <input type="text" id="live-search-input" name="search" placeholder="<?=$vars['translate']['search_placeholder']?>" value="<? if(isset($_GET['search'])) echo $_GET['search'];?>" >
+                    <button type="submit"><?=$vars['translate']['find']?></button>
+                </form>
+            </div>
+            <a class="button leave-message" href="/contacts"><img src="<?=IMAGES?>cloud.png"><?=$vars['translate']['post_message']?></a>
+            <a class="link" href="<?=LINK?>/catalog/novetly"><?=$vars['translate']['novelty']?></a>
+        </div>
+
+        <div id="content">
+            <? 
+				if(isset($vars['breadcrumbs']))echo $vars['breadcrumbs'];
+				if(isset($vars['content_text']['body']))echo htmlspecialchars_decode($vars['content_text']['body']);
+				echo $vars['content'];
+				if(isset($vars['meta']['text']))
+				{
+					//EXCERPT
+					echo'<div id="exc_seo" class="bot_text">'.htmlspecialchars_decode($vars['meta']['excerpt']).'<a href="#" onclick="document.getElementById(\'seo_div\').style.display = \'block\'; document.getElementById(\'exc_seo\').style.display = \'none\'; return false;" >'.$vars['translate']['read_more'].'</a></div>';
+					//FULLTEXT
+					echo'<div id="seo_div" class="bot_text" style="display: none;">'.htmlspecialchars_decode($vars['meta']['text']).'<a href="#" onclick="document.getElementById(\'seo_div\').style.display = \'none\'; document.getElementById(\'exc_seo\').style.display = \'block\'; return false;" >'.$vars['translate']['turn'].'</a></div>';
+            	}
+			?>
+            <div class="clear"></div>
+        </div>
+
+    <div class="subscribe-block">
+        <div class="left">
+            <? echo htmlspecialchars_decode($vars['info_blocks']['8']);?>
+        </div>
+        <form id="subscribe_form">
+              <div>
+				<label><?=$vars['translate']['your_name']?>:</label><br />
+              	<input type="text" name="subscribe-name" id="subscribe-name" value="" />
+              </div>
+              <div>
+              	<label><?=$vars['translate']['your_email']?>:</label><br />
+              	<input type="text" name="subscribe-email" id="subscribe-email" value="" />
+              </div>
+              <input type="submit" value="OK" />
+        </form>
+        <div class="right">
+            <a href="/chto-vas-ozhidaet-v-rassylke-"><span>Что вас ожидает в рассылке?</span></a>
+        </div>
+    </div>
+
+    </div>
+    <div class="footer-fix"></div>
+</div>
+<div id="footer">
+    <div class="holder">
+        <div class="exchange-block">
+            <div>
+                <span class="title">Что делать,
+                если не подошло бельё?</span>
+                <p>
+                    Мы с удовольствием</br>
+                    <a href="/">поменяем его</a> >>
+                </p>
+            </div>
+        </div>
+
+        <div class="addr-menu">
+            <?=htmlspecialchars_decode($vars['info_blocks']['6'])?>
+        </div>
+            <div class="bot_text">
+				<?=htmlspecialchars_decode($vars['info_blocks']['5'])?>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div id="overlay"></div>
+</body>
+</html>

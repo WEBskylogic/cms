@@ -1,0 +1,18 @@
+<?
+	if(isset($vars['filter']))
+	{
+?>
+        <div id="left_menu2">
+        	<noindex>
+            <p>Подбор по параметрам:</p>
+            <form id="filters" method="post" onsubmit="return false;">
+                <ul id="load_filter">
+					<? echo $vars['filter'];?>
+                    <div class="clear"></div>
+                </ul>
+            </form>
+            </noindex>
+        </div>
+<?
+	}
+?>

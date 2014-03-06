@@ -1,0 +1,37 @@
+<div class="basket" style="position: absolute; ">
+    <div id="title_basket">
+        <h4>Ваша корзина <span>(товаров: <? if ($vars['count'] == '') echo '0'; else echo $vars['count']; ?>  шт.)</span></h4>
+
+        <div id="view">
+            <a href="javascript:void(0);" id="tview" onclick="tableview();"><img src="/images/table.png" alt=""></a>
+            <a href="javascript:void(0);" id="mview" onclick="mainview();"><img src="/images/grid.png" alt=""></a>
+            <a href="javascript:void(0);" id="eview" onclick="expand();"><img src="/images/expand.png" alt=""></a>
+        </div>
+
+    </div>
+
+    <div id="scrollbarY">
+        <div class="scrollbar">
+            <div class="track">
+                <div class="thumb">
+                    <div class="end"></div>
+                </div>
+            </div>
+        </div>
+        <div class="viewport">
+            <div class="overview">
+                <form method="post" id="update_order" action="<?= LINK ?>/orders/send">
+                    <?
+                    $i = 0;
+                    $summa2 = 0;
+                    foreach ($vars['product'] as $row) {
+                        include 'cabinet-product.phtml';
+                        $i++;
+                    }
+                    ?>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

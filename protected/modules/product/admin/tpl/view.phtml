@@ -1,0 +1,68 @@
+<input type="hidden" value="<?=$vars['curr_cat']?>" id="curr_cat">
+<div class="items-container multi-level">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+        <tr>
+            <th width="20" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+            <th width="50">
+            	<a href="/admin/product/order/id/by/<?=$_SESSION['by']?>"<? if($_SESSION['order']=='tb.id')echo' class="sort-link-'.$_SESSION['by'].'"';?>>ID</a>
+            </th>
+            <th width="80" class="center">Фото</th>
+            <th>
+            	<a href="/admin/product/order/name/by/<?=$_SESSION['by']?>"<? if($_SESSION['order']=='tb_lang.name')echo' class="sort-link-'.$_SESSION['by'].'"';?>>Название</a>
+            </th>
+			<th width="150">
+            	<a href="/admin/product/order/catalog/by/<?=$_SESSION['by']?>"<? if($_SESSION['order']=='tb_cat_lang.name')echo' class="sort-link-'.$_SESSION['by'].'"';?>>Каталог</a>
+            </th>
+			<th width="100">
+            	<a href="/admin/product/order/price/by/<?=$_SESSION['by']?>"<? if($_SESSION['order']=='tb.price')echo' class="sort-link-'.$_SESSION['by'].'"';?>>Цена (<?=$vars['currency']['icon']?>)</a>
+            </th>
+            <th width="55">
+            	<a href="/admin/product/order/sort/by/<?=$_SESSION['by']?>"<? if($_SESSION['order']=='tb.sort')echo' class="sort-link-'.$_SESSION['by'].'"';?>>Сорт.</a>
+            </th>
+            <th width="100">
+            	<a href="/admin/product/order/active/by/<?=$_SESSION['by']?>"<? if($_SESSION['order']=='tb.active')echo' class="sort-link-'.$_SESSION['by'].'"';?>>Статус</a>
+            </th>
+            <th width="180" style="text-align:center;">Действие</th>
+        </tr>
+        <?php
+        foreach($vars['list']['list'] as $row)
+        {
+            if($row['active']==1)$active='<div class="selected-status status-a"><a> Вкл. </a></div>';
+            else $active='<div class="selected-status status-d"><a> Выкл. </a></div>';
+
+            if(file_exists($row['photo']))$src="/".$row['photo']."?".time();
+            else $src="/tpl/admin/images/no_image.gif";
+
+           echo'<tr>
+					<td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="id[]" /></td>
+					<td><span>'.$row['id'].'</span></td>
+					<td><a href="/admin/'.$vars['action'].'/edit/'.$row['id'].'"><img src="'.$src.'" width="60" /></a></td>
+					<td><a href="/admin/'.$vars['action'].'/edit/'.$row['id'].'" class="strong">'.$row['name'].'</a>
+						<div>
+							<span class="product-code-label">Арт. товара: </span>
+							<input type="text" class="input-text product-code" value="'.$row['code'].'" name="code[]" style="width:100px;">
+						</div>
+					</td>
+					<td>'.$row['catalog'].'</td>
+					<td><input type="text" value="'.$row['price'].'" name="price[]" class="input-text" style="width:90px;" /></td>
+					<td><input type="text" value="'.$row['sort'].'" name="sort[]" class="input-text" style="width:30px;" /></td>
+					<td><input type="hidden" value="'.$row['id'].'" name="save_id[]" />
+						<div class="select-popup-container active_status" id="active'.$row['id'].'">'.$active.' </div>
+					</td>
+					<td width="10%">
+						<a href="/admin/'.$vars['action'].'/edit/'.$row['id'].'" class="tool-link">Редактировать</a>
+						&nbsp;&nbsp;|		
+						<ul class="cm-tools-list tools-list">
+							<li><a href="/admin/'.$vars['action'].'/delete/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+						</ul>
+					</td>
+				</tr>';
+        }
+        ?>
+    </table>
+</div>
+<div class="table-tools">
+    <a class="check_all" href="javascript:void(0);">Выбрать все</a>|
+    <a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+</div>
+<? echo $vars['list']['paging']?>

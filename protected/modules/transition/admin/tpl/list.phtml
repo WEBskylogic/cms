@@ -1,0 +1,44 @@
+<div class="cm-notification-container"></div>
+<div id="message"><?=$vars['message']?></div>
+<div>
+	<div class="clear mainbox-title-container">
+		<div class="tools-container">
+            <form enctype="multipart/form-data" method="post" action="/admin/<?=$vars['action']?>">
+                Product list <input type="file" name="import_list">
+                <br />
+                Joomla Cats<input type="file" name="import_list_cat">
+                <br />
+                <span class="action-add"><input type="submit" name="import" value="Импортировать из"></span>
+                <select name="import">
+                    <option value="regular">Яндекс Маркет</option>
+                    <option value="virtuemart">Virtuemart 2</option>
+                    <option value="opencart">OpenCart</option>
+                </select>
+                <br />
+                <label for="empty">Очистить списки категорий и товаров</label>
+                <input type="checkbox" name="empty" value="true">
+            </form>
+            <br /><br />
+        </div>
+        <div class="tools-container">
+            <form enctype="multipart/form-data" method="post" action="/admin/<?=$vars['action']?>">
+                <span class="action-add"><input type="submit" name="export" value="Экспортировать"></span>
+            </form>
+        </div>
+
+		<h1 class="mainbox-title float-left"><?=$vars['name']?></h1>
+	</div>
+</div>
+
+	<div class="mainbox-body">
+		<div id="ds_15014" class="clear">
+		<div id="content_manage_users">
+			<form name="userlist_form" method="post" action="/admin/<?=$vars['action']?>/">
+				<div id="pagination_contents">
+					<?php echo $vars['list'];?>
+				</div> 
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+			</div>
+		</div>
+	</div>

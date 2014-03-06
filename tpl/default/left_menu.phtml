@@ -1,0 +1,55 @@
+<div id="cat_menu">
+	<ul>
+		<?
+            $count = 0;
+			if(!isset($vars['open_link']['level_1']))$vars['open_link']['level_1']=9;
+            foreach($vars['menu'] as $row)
+            {
+				if($row['sub']==0)
+				{
+					$pos = strpos($row['url'], "http://");
+					if($pos !== false)$link=$row['url'].'" target="_blank" rel="nofollow';
+					else $link=LINK."/catalog/".$row['url'];
+					echo'<li><a href="'.$link.'">'.$row['name'].'</a>';
+
+                    $sub = '<div class="sub-menu"><div class="subcats">
+                        <p>Подкатегории</p>';
+
+                    $subcheck = false;
+                    foreach($vars['menu'] as $row2)
+                    {
+                        if($row2['sub']==$row['id'])
+                        {
+                            $pos = strpos($row2['url'], "http://");
+                            if($pos !== false)$link=$row2['url'].'" target="_blank" rel="nofollow';
+                            else $link=LINK."/catalog/".$row2['url'];
+                            $sub.='<a href="'.$link.'">'.$row2['name'].'</a></br>';
+                            $subcheck = true;
+                        }
+                    }
+                    $sub .= '</div><div class="subbrands">
+                                <p>Бренды</p>';
+
+                    foreach($vars['brend'] as $row3)
+                    {
+                        if($row3['catalog_id']==$row['id'])
+                        {
+                            $link=LINK."/brend/".$row3['url'];
+                            $sub.='<a href="'.$link.'"><img src="/files/brend/'.$row3['id'].'_s.jpg" alt=""></a></br>';
+                            $subcheck = true;
+                        }
+                    }
+
+                    $sub .= '</div></div>';
+
+                    if($subcheck) echo '<ul>'.$sub.'</ul>';
+
+                    echo '</li>';
+                    if ( $count < (count($vars['menu'])-1)) echo '<li class="razd"></li>';
+				}
+                $count++;
+            }
+        ?>
+	</ul>
+    <a href="<?=LINK?>/catalog/hit-the-sales"><img src="<?=IMAGES?>sale.png" alt="" /></a>
+</div>

@@ -1,0 +1,7 @@
+google#@@##@@#text#@@#Google Analitics#@@#1
+main_domain#@@#0#@@#text#@@#Основной домен#@@#0
+sitemap_generation#@@#0#@@#text#@@#Динамическое формирование sitemap#@@#0
+targets_for_google#@@#send, sendform#@@#text#@@#Цели для Google#@@#1
+webmaster_g#@@#JWlkx0dObZ0T4bqU3RKamZO7X7079yu7_lU2pViO4AI#@@#text#@@#Google webmaster ID#@@#1
+webmaster_y#@@#JWlkx0dObZ0T4bqU3RKamZO7X7079yu7#@@#text#@@#Yandex webmaster ID#@@#1
+yandex_market#@@#1#@@#text#@@#Динамическое формирование sitemap yandex market#@@#0

@@ -1,0 +1,123 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#gogo').html('<img src="/images/send2.png" />');
+        $('#gogo').parent().css('height', '30px');
+        $('#gogo').parent().css('padding-top', '15px');
+        $('#gogo').attr('onclick','ordernow()');
+
+        $('#addresses').show();
+        $('#o_city').show();
+        $('#o_city').addClass('nums_only');
+        $('#o_city').attr('placeholder', '<?=$vars['translate']['address_num'];?>');
+
+
+        $("#o_phone").keydown(function(event) {
+            if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 107 ||
+                (event.keyCode == 65 && event.ctrlKey === true) ||
+                (event.keyCode >= 35 && event.keyCode <= 39)) {
+                return;
+            }
+            else {
+                if (((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) || ($(this).val().length > 25)) {
+                    event.preventDefault();
+                }
+            }
+        });
+        $("#o_city").keydown(function(event) {
+            if ( event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 9 || event.keyCode == 27 || event.keyCode == 107 ||
+                (event.keyCode == 65 && event.ctrlKey === true) ||
+                (event.keyCode >= 35 && event.keyCode <= 39)) {
+                return;
+            }
+            else {
+                if (((event.keyCode < 48 || event.keyCode > 57) && (event.keyCode < 96 || event.keyCode > 105 )) || ($(this).val().length > 25)) {
+                    event.preventDefault();
+                }
+            }
+        });
+    });
+
+    $('.o_delivery').click( function(){
+
+        if ($(this).attr('odev') == 3) {
+            $('#addresses').show();
+            $('#o_city').show();
+            $('#o_city').addClass('nums_only');
+            $('#o_city').attr('placeholder', '<?=$vars['translate']['address_num'];?>');
+        }
+        else if($(this).attr('odev') == 1) {
+            $('#addresses').hide();
+            $('#o_city').show();
+            $('#o_city').removeClass('nums_only');
+            $('#o_city').attr('placeholder', '<?=$vars['translate']['address'];?>');
+        }
+        else if($(this).attr('odev') == 2) {
+            $('#addresses').hide();
+            $('#o_city').hide();
+            $('#o_city').removeClass('nums_only');
+        }
+    });
+</script>
+<div id="order_block">
+    <form action="<?=LINK?>/orders/send" method="post" id="formID">
+        <div id="fields">
+            <div id="address1">
+                <input type="text" placeholder="<?=$vars['translate']['name'];?>" name="o_name" size="30" id="o_name" class="validate[required]" value="<? if(isset($vars['user'][0]['name']))echo $vars['user'][0]['name']?>" required>
+
+                <input type="text"  placeholder="<?=$vars['translate']['city'];?>" name="o_cityname" size="30" id="o_cityname" value="<? if(isset($vars['user'][0]['city']))echo $vars['user'][0]['city']?>" required>
+
+                <input type="text"  placeholder="<?=$vars['translate']['address'];?>" name="o_city" size="30" id="o_city" value="" required>
+
+                <input type="text" name="o_phone"  placeholder="<?=$vars['translate']['phone'];?>" size="30" id="o_phone" value="<? if(isset($vars['user'][0]['phone']))echo $vars['user'][0]['phone']?>" required>
+
+                <input type="text" name="o_email"  placeholder="E-Mail"  size="30" id="o_email" class="validate[required]" value="<? if(isset($vars['user'][0]['email']))echo $vars['user'][0]['email']?>" required>
+                </br></br>
+
+
+                <div id="delivery">
+                    <?
+                    if(isset($vars['delivery'])&&count($vars['delivery'])!=0)
+                    {
+                        $i = 1;
+                        echo'<p><b>'.$vars['translate']['delivery'].':</b></p>';
+                        foreach($vars['delivery'] as $row)
+                        {
+                            $price='';
+                            if($row['price']!=0.00)
+                            {
+                                $price = Numeric::viewPrice($row['price']);
+                                $price=" +".$price['price'];
+                            }
+                            echo'<input type="radio" name="delivery" id="o_delivery'.$row['id'].'" class="o_delivery" odev="'.$row['id'].'" value="'.$row['name'].'"';
+                            if($i==1)echo' checked'; $i = 0;
+                            echo'><label for="o_delivery'.$row['id'].'">'.$row['name'].'</label> '.$price.'</br>';
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <div id="address2">
+                <textarea rows="5" cols="45" style="height: 125px;" placeholder="<?=$vars['translate']['comment'];?>" id="o_comment" name="text"></textarea>
+
+                </br></br>
+                <div id="payment">
+                    <?
+                    if(isset($vars['payment'])&&count($vars['payment'])!=0)
+                    {
+                        echo '<p><b>'.$vars['translate']['payment'].':</b></p>';
+                        foreach($vars['payment'] as $row)
+                        {
+                            echo'<input type="radio" id="o_payment"  opay="'.$row['id'].'"name="payment" value="'.$row['name'].'"';
+                            if(false)echo' selected';
+                            echo'>'.$row['name'].'</br>';
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+
+
+
+    </form>
+</div>

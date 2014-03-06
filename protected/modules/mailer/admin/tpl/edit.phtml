@@ -1,0 +1,141 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Редактирование раздел шаблон:&nbsp;<?=$vars['edit']['name']?></h1>
+	</div>
+	<div class="extra-tools">
+	
+	<a class="tool-link" href="/admin/<?=$vars['action']?>/add">Добавить шаблон</a>
+    <a class="tool-link cm-confirm" href="/admin/<?=$vars['action']?>/delete/<?=$vars['edit']['id']?>">Удалить этот шаблон</a>
+	</div>
+	<div class="mainbox-body"> 
+		<div class="tabs cm-j-tabs cm-track">
+		<ul>
+			<li id="basic" class="cm-js cm-active"><a >Общее</a></li>
+			<li id="images" class="cm-js"><a >Список получателей</a></li>
+		</ul>
+	</div>
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+						<div id="content_basic" class="cm-tabs">
+							<fieldset>
+								<h2 class="subheader"> Информация </h2>
+							<?
+								$sended = 0;
+								$total = count($vars['list']);
+								
+								foreach($vars['list'] as $row)
+								{
+									if($row['delivered'] == '1') $sended++;
+								}	
+							?>
+								<fieldset>
+									<div class="form-field">
+										<label>Всего E-Mail адресов: <?=$total;?></label>
+										<label>Отправлено: <?=$sended;?></label>
+									</div>
+								</fieldset>
+								<fieldset>
+									<div class="form-field">
+										<label for="reset">Сбросить пароль пользователям:</label>
+										<input type="checkbox" id="reset" name="reset" <? if($vars['edit']['reset_pass']==1) echo 'checked'; ?>/>
+									</div>
+								</fieldset>
+	
+								<div class="form-field">
+									<label class="cm-required">Статус:</label>
+									<div class="select-field">
+										<input type="radio" class="radio" value="0" id="page_data_0_a" name="active" <? if($vars['edit']['active']==0)echo' checked="checked"';?>>
+										<label for="page_data_0_a">Выкл.</label>
+										<input type="radio" class="radio" value="1" id="page_data_0_d" name="active" <? if($vars['edit']['active']==1)echo' checked="checked"';?>>
+										<label for="page_data_0_d">Вкл.</label>
+									</div>
+								</div>
+								<hr>
+								
+								<div></br>
+									<p> Разрешены следующие подстановки в шаблон:</br></br>
+										<b>{{SERVER_NAME}}</b> - название сайта,  </br>
+										<b>{{USERNAME}}</b> - имя пользователя,  </br>
+										<b>{{PASSWD}}</b> - новый пароль пользователя,  </br>
+										<b>{{EMAIL}}</b> - E-Mail пользователя,  </br>
+										<b>{{PHONE}}</b> - телефон пользователя.
+									</p></br>
+								</div>
+								
+						<div class="form-field">
+							<label class="cm-required" for="page">Название (тема письма):</label>
+							<input type="text" class="input-text-large main-input" value="<?=$vars['edit']['name']?>" size="55" name="name" />
+						</div>
+						<div class="form-field">
+							<label for="page_descr">Шаблон:</label>
+							<?=showEditor('body', $vars['edit']['text']);?>
+						</div>
+					</fieldset>
+				</div>
+				<div id="content_images" class="cm-tabs hidden">
+					<fieldset>
+						<div class="items-container multi-level">
+							<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+								<tr class="noDrop">
+									<th width="20" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+									<th width="10%">Имя</th>
+									<th>E-Mail</th>
+									<th width="15%">Дата добавления:</th>
+									<th width="15%">Дата отправки:</th>
+									<th width="15%">Отправлен:</th>
+									<th width="15%">&nbsp;</th>
+								</tr>
+								<?php
+									//var_info($vars['list']);
+									foreach($vars['list'] as $row)
+									{
+										if($row['delivered']==1)$active='<b>Да</b>';
+										else $active='Нет';
+										
+										echo'<tr id="sort-'.$row['id'].'">
+												<td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="u_id[]" /></td>
+												<td><span>'.$row['name'].'</span></td>
+												<td><span>'.$row['email'].'</span></td>
+												<td><span>'.$row['date_add'].'</span></td>
+												<td><span>'.$row['date_sent'].'</span></td>
+												<td><input type="hidden" value="'.$row['email'].'" />
+													<div class="select-popup-container active_status" id="active'.$row['email'].'">'.$active.' </div>
+												</td>
+												<td width="10%">	
+													<ul class="cm-tools-list tools-list">
+														<li><a onclick="del_from_queue('.$vars['edit']['id'].','.$row['id'].');" >Удалить</a></li>
+													</ul>
+												</td>
+											</tr>';
+									}
+								?>
+							</table>
+						</div>
+				</fieldset>
+							</br>
+							<span class="submit-button cm-button-main cm-confirm cm-process-items">
+								<input type="submit" value="Удалить выбранные" name="deleteusers" class="cm-process-items">
+							</span>
+				</div>
+				
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Сохранить и закрыть" name="update_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp; 
+							<a class="underlined tool-link" href="/admin/menu">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

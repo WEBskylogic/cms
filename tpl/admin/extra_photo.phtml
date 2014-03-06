@@ -1,0 +1,75 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#uploadify").uploadify({
+            'swf'       : '/files/flash/uploadify.swf',
+			'buttonText' 	 : 'Выберите файлы',
+            'uploader'       : '/admin/ajax/uploadify',
+            'formData'	 : {'id':'<?=$vars['edit']['id']?>','fk':'<?=$vars['action']?>','tb':'<?=$vars['action2']?>','width':'<?=$vars['width_extra']?>','height':'<?=$vars['height_extra']?>','path':'<?=$vars['path']?>'},
+            'auto'           : true,
+            'multi'          : true,
+            'queueID'        : 'fileQueue',
+            'onUploadComplete'	 : function (evt, queueID, fileObj, response, data){
+                var dataString = 'id=<?=$vars['edit']['id']?>&fk=<?=$vars['action']?>&tb=<?=$vars['action2']?>&path=<?=$vars['path']?>';
+                $.ajax
+                    ({
+                        type: "POST",
+                        url: "/admin/ajax/loadextraphoto",
+                        data: dataString,
+                        cache: false,
+                        success: function(html)
+                        {
+                            $("#tb_extra_photo").html(html);
+                            $("#tb_extra_photo").tableDnD({onDragClass:"hover"});
+                        }
+                    });
+            }
+        });
+    });
+</script>
+
+<table width="100%">
+  <tr>
+    
+    <td valign="top">
+    	<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort" id="tb_extra_photo" style="margin-top: 0;">
+        	<? echo $vars['photo'];?>
+     	</table>
+		<div class="table-tools">
+        	<a class="check_all" href="javascript:void(0);">Выбрать все</a> | 
+            <a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a> 
+            <span class="submit-button cm-button-main">
+        		<input type="submit" name="dell" value="Удалить выбранные" class="cm-confirm" />
+       		</span>
+        </div>
+      	<input type="hidden" value="<?=$vars['action']?>" id="action" />
+      	<input type="hidden" value="<?=$vars['action2']?>" id="action2" />
+    </td>
+    <td valign="top" width="400">
+        <h3 class="subheader" style="font-size:16px;">Загрузка файлов</h3>
+        <input type="file" name="extra_files[]" />
+        <input type="file" name="extra_files[]" />
+        <input type="file" name="extra_files[]" /><br /><br />
+        <span class="submit-button cm-button-main">
+        	<input type="submit" name="update" value="Загрузить файлы">
+        </span>
+<br /><br />
+    	<h3 class="subheader" style="font-size:16px; margin-top:20px;">Мультизагрузка файлов</h3>
+        <div id="fileQueue"></div>
+    	<input type="file" name="uploadify" id="uploadify" />
+    </td>
+  </tr>
+</table>
+<div aria-hidden="true" aria-labelledby="myModalLabel" role="dialog" tabindex="-1" class="modal hide fade" id="myModal" style="display: none; width:1111px; margin-left:-550px; height:701px; top:5%;">
+  <div class="modal-header">
+    <button aria-hidden="true" data-dismiss="modal" class="close close_extra" type="button">×</button>
+    <h3 id="myModalLabel">Выделите область</h3>
+  </div>
+  <div class="modal-body">
+    <?
+        	include $_SERVER['DOCUMENT_ROOT']."/tpl/admin/upload_img_extra.phtml";
+		?>
+  </div>
+  <div class="modal-footer">
+    <button data-dismiss="modal" class="btn btn-primary close_extra">Закрыть</button>
+  </div>
+</div>

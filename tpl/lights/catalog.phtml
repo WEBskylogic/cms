@@ -1,0 +1,47 @@
+<div id="curr_cat" url="<?=$vars['curr_cat']['url'];?>" title="<? if(isset($vars['brend']))echo'librend_'.$vars['brend']['id'];elseif(isset($vars['curr_cat']['id']))echo 'licat_'.$vars['curr_cat']['id'];?>"></div>
+<?
+	
+	//echo '<h2 class="title">'.$vars['curr_cat']['name'].'</h2>';
+	//if(isset($vars['curr_cat']['body']))echo htmlspecialchars_decode($vars['curr_cat']['body']);
+
+    // подкаталоги...
+    if(isset($vars['cat']['search']))
+    echo '<h2 class="title">'.$vars['cat']['search'].'</h2>';
+
+    if(isset($vars['subcats'])&&count($vars['subcats'])!=0)
+    {
+        echo '<div class="sub-cats">';
+        foreach($vars['subcats'] as $row)
+        {
+			$class='';
+            if($row['catalog_id']==$vars['curr_cat']['id'])$class=' class="hov_sub_cat"';
+			
+			echo'<div'.$class.'><a href="/catalog/'.$row['url'].'">'.$row['name'].'   '.$row['count'].'</a></div>';
+        }
+        echo '</div>';
+    }
+?>
+
+<div class="catalog">
+    <div class="left-col">
+        <div id="slider">
+            <img width="650" src="<?=IMAGES?>slider_cap.png" alt="" >
+        </div>
+        <div class="catalog-content" id="load_product">
+            <?
+                $i=0;
+                foreach($vars['list']['list'] as $row)
+                {
+                    if($i%2!=0) echo '<div class="razd"></div>';
+                    include "product.phtml";
+                    $i++;
+                }
+                echo $vars['list']['paging'];
+            ?>
+        </div>
+    </div>
+
+    <div class="right-col">
+        <? echo $vars['filters_menu']; ?>
+    </div>
+</div>

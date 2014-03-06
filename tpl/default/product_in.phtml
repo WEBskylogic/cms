@@ -1,0 +1,119 @@
+<script type="text/javascript">
+	$(document).ready(function () {
+		$(".jqzoom").jqzoom();
+	});
+</script>
+<input type="hidden" id="product_id" value="<?=$vars['product']['id']?>" />
+<div class="product_in" id="MessForPrint">
+	<?
+		$price=Numeric::viewPrice($vars['product']['price'], $vars['product']['discount']);
+	?>
+    <div class="photoblock">
+        <img src="<?=IMAGES?>product_image.png" alt="" />
+        <div id="img_load">
+            <a href="/<?=str_replace('_s','',$vars['product']['photo'])?>" rel="lightbox" class="jqzoom" title="<?=$vars['product']['name']?>">
+            <img src="/<?=str_replace('_s','_m',$vars['product']['photo'])?>" title="<?=$vars['product']['name']?>" alt="<?=$vars['product']['name']?>" />
+            </a>
+        </div>
+        <p>Кликните на фото для увеличения</p>
+        <div class="clear"></div>
+        <div class="more-photo">
+            <ul>
+                <?							
+					$i=1;
+                    foreach($vars['photo'] as $row)
+                    {
+						if($row['name']=='')$row['name']="Фото{$i} {$vars['product']['name']}";
+                        echo'<li>
+                                <a href="/'.str_replace('_s','',$row['photo']).'" title="'.$row['name'].'" rel="lightbox"><img src="/'.$row['photo'].'" alt="'.$row['name'].'" title="'.$row['name'].'" /></a>
+                             </li>';
+						$i++;	 
+                    }
+                ?>
+            </ul>
+        </div>
+    </div>
+    <div id="product_right">
+		<h1 id="product_name"><?=$vars['product']['name'];?></h1>
+		<div class="price">Цена: <?=$price['price'];?></div>
+			<?
+				if(isset($vars['brend'])&&$vars['brend'])
+				{
+					echo'<div class="product-specs" style="background: url() 100% 0 no-repeat;">
+							 <p>Артикул: <span>'.$vars['product']['code'].'</span></p>
+							 <p>Производитель: </p>
+							 <a href="/brend/'.$vars['brend']['url'].'">'.$vars['brend']['name'].'</a>
+						 </div>
+						 <div class="brend_logo"><a href="/brend/'.$vars['brend']['url'].'"><img src="/files/brend/'.$vars['brend']['id'].'_s.jpg" alt="" /></a></div>';
+				}
+				else{
+					echo'<div class="product-specs">
+							 <p>Артикул: <span>'.$vars['product']['code'].'</span></p>
+						 </div>';
+				}
+				echo'<div class="clear"></div>';
+				
+				if($vars['product']['price']!='')
+				{
+					echo'<div class="order-block">';
+					
+	
+					if(isset($vars['colors'])&&count($vars['colors'])!=0)
+					{
+						echo'<label>Выберите цвет:</label><br />
+							 <div class="paramchoose">';
+						foreach($vars['colors'] as $row)
+						{
+							echo '<div class="param-sel color_select" id="param-'.$row['id'].'" style="background: #'.$row['rgb'].';"></div>';
+						}
+						echo'</div>';
+					}
+					
+					if(isset($vars['sizes'])&&count($vars['sizes'])!=0)
+					{
+						echo'<label>Выберите размер:</label><br />
+							 <div class="paramchoose">';
+						foreach($vars['sizes'] as $row)
+						{
+							echo '<div class="param-sel size_select" id="param-'.$row['id'].'">'.$row['name'].'</div>';
+						}
+						echo'</div>';
+					}
+				?>
+					<label>Количество:</label>
+					<br />
+					<div class="productin-count">
+						<a href="javascript:void(0);" class="countchange cnt-down">&nbsp;</a>
+						<input type="text" id="cnt" value="1" max="10" disabled="disabled" />
+						<a href="javascript:void(0);" class="countchange cnt-up">&nbsp;</a>
+					</div>
+					<div class="clear"></div>
+					
+					<div class="total">
+						<input type="hidden" id="fixprice" value="<?=$price['cur_price']?>">
+						<p>Всего: <span id="total"><?=$price['cur_price']?></span> грн</p>
+						
+						<noindex><button class="buy" name="<?=$vars['product']['price_id']?>" type="button"></button></noindex>
+					</div>
+				</div>
+        <? }?>
+        <div class="product-description">
+            <?=htmlspecialchars_decode($vars['product']['body']);?>
+        </div>
+        <? if(isset($vars['comments']))echo $vars['comments'];?>
+	</div>
+    <div class="clear"></div>
+	<?	
+		if(count($vars['other'])!=0)
+		{
+			echo'<div id="other">'.$vars['translate']['other_product'].'</div>';
+			$i=0;
+			foreach($vars['other'] as $row)
+			{
+				include "product.phtml";
+				$i++;
+			}
+			echo'<div class="clear"></div>';
+		}
+    ?>
+</div>

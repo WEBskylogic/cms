@@ -1,0 +1,66 @@
+<div class="cm-notification-container"></div>
+<div id="message"><?=$vars['message']?></div>
+<div>
+	<div class="clear mainbox-title-container">
+		<div class="tools-container"><span class="action-add"> <a href="/admin/<?=$vars['action'].$vars['path']?>/addredirect">Добавить</a> </span> </div>
+		<h1 class="mainbox-title float-left"><?=$vars['name']?></h1>
+	</div>
+	<div class="mainbox-body">
+		<div id="ds_15014" class="clear">
+			
+		</div>
+		<div id="content_manage_users">
+			<form name="userlist_form" method="post" action="/admin/<?=$vars['action'].$vars['path']?>">
+				<div id="pagination_contents">
+					
+					<div class="items-container multi-level">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+                            <tr>
+                                <th width="20" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+                                <th width="550">Ссылки</th>
+                                <th>Страница</th>
+                                <th width="150">&nbsp;</th>
+                            </tr>
+                            <?php
+                                foreach($vars['list'] as $row)
+                                {
+									if($row['url2']!='')$row['url2'].='/';
+									//$str=preg_replace('#<a href=(?:.*)(?=</a>)#Usi', '', htmlspecialchars_decode($row['body']));
+									$str=htmlspecialchars_decode($row['body']);
+                                    echo'<tr>
+											<td class="center"><input type="checkbox" class="check-item" value="'.$row['controller'].'-'.$row['id'].'" name="id[]" /></td>
+                                            <td><span>'.String::search_links($str).'</span></td>
+                                            <td><a href="/'.$row['url2'].$row['url'].'" target="_blank">'.$row['url2'].$row['url'].'</a></td>
+                                            <td>
+                                                <ul class="cm-tools-list tools-list">
+                                                    <li><a href="/admin/'.$row['controller'].'/edit/'.$row['id'].'" target="_blank">Изменить</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+													<li><a href="/admin/'.$vars['action'].$vars['path'].'/clear/'.$row['controller'].'-'.$row['id'].'" class="cm-confirm">Очистить</a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>';
+                                }
+                            ?>
+                        </table>
+                    </div>
+                    <div class="table-tools">
+                        <a class="check_all" href="javascript:void(0);">Выбрать все</a>| 
+                        <a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+                    </div>
+				</div>
+				<div class="buttons-container buttons-bg">
+					<div class="cm-buttons-placeholder">
+						<div class="float-left">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Очистить выбранные" name="clear" class="">
+							</span>
+						</div>
+					</div>
+					<div class="cm-buttons-floating hidden"></div>
+				</div>
+				<input type="hidden" value="meta" id="action" />
+                <input type="hidden" value="redirects" id="action2" />
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

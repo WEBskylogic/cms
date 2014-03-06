@@ -1,0 +1,18 @@
+<script type="text/javascript">jQuery(document).ready(function(){jQuery('#mycarousel').jcarousel();});</script>
+
+<div class="block_title2"><span><?=$vars['translate']['top_product']?></span></div>
+<div id="wrap">
+	<ul id="mycarousel" class="jcarousel jcarousel-skin-tango">
+	<?
+		$i=0;
+        foreach($vars['product'] as $row)
+        {
+            echo'<li>';
+			include "product.phtml";
+			echo'</li>';
+			$i++;
+        }
+	?>
+	</ul>
+	<div class="clear"></div>
+</div>

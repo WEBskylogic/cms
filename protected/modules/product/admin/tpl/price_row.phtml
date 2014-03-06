@@ -1,0 +1,42 @@
+<?php
+	$i=0;
+	foreach($vars['price'] as $row)
+	{
+		$option='<select name="price_type[]">';
+		foreach($vars['price_type'] as $row2)
+		{
+			$option.='<option value="'.$row2['id'].'"';if(isset($row['price_type_id'])&&$row2['id']==$row['price_type_id'])$option.=' selected="selected"';$option.='>'.$row2['name'].'</option>';
+		}
+		$option.='</select>';
+
+		$id='';
+		if(isset($row['code']))$id=$row['id'];
+		
+		$photo_id='';
+		if(isset($row['product_photo_id']))$photo_id=$row['product_photo_id'];
+		
+		$rel='<li><a href="'.$id.'" class="config_price">Настройки</a></li> | <li><a href="'.$id.'" class="delprice">Удалить</a></li>';
+		if(isset($vars['rel']))$rel='<li><a href="'.$id.'" class="delprice" rel="'.$vars['rel'].'">Удалить</a></li>';
+		
+		$style='';
+		if(($i+2) % 2)$style=' class="hhh"';
+		echo'<tr id="sort'.$id.'"'.$style.'>
+				<td class="move"></td>
+				<td><input type="text" value="';if(isset($row['code']))echo $row['code'];echo'" name="price_code[]" class="input-text" style="width:100px;"></td>
+				<td><input type="text" value="';if(isset($row['name']))echo $row['name'];echo'" name="price_name[]" class="input-text" style="width:150px;"></td>
+				<td><input type="text" value="';if(isset($row['price']))echo $row['price'];echo'" name="price_price[]" class="input-text" style="width:100px;"></td>
+				<td><input type="text" value="';if(isset($row['discount']))echo $row['discount'];echo'" name="price_discount[]" class="input-text" style="width:100px;"></td>
+				<td><input type="text" value="';if(isset($row['unit']))echo $row['unit'];echo'" name="price_unit[]" class="input-text" style="width:100px;"></td>
+				<td><input type="text" value="';if(isset($row['stock']))echo $row['stock'];echo'" name="price_stock[]" class="input-text" style="width:50px;"></td>
+				<td>'.$option.'</td>
+				<td>
+					<input type="hidden" value="'.$photo_id.'" id="photo_price'.$id.'" name="price_photo_id[]" />
+					<input type="hidden" value="'.$id.'" name="save_price_id[]" />
+					<ul class="cm-tools-list tools-list">
+						'.$rel.'
+					</ul>
+				</td>
+			</tr>';
+		$i++;	
+	}
+?>

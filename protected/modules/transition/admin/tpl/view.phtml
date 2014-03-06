@@ -1,0 +1,27 @@
+<div class="items-container multi-level">
+    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+        <tr>
+            <th width="50">ID</th>
+            <th>Название</th>
+			<th width="150">Каталог</th>
+			<th width="100">Цена (<?=$vars['currency']['icon']?>)</th>
+            <th width="180" style="text-align:center;">Действие</th>
+        </tr>
+        <?php
+        foreach($vars['list'] as $row){
+            echo'<tr>
+					<td>'.$row['id'].'</td>
+					<td><a href="/admin/product/edit/'.$row['id'].'" class="strong">'.$row['name'].'</a>
+						<div>
+							<span class="product-code-label">Арт. товара: '.$row['code'].'</span>
+						</div>
+					</td>
+					<td>'.$row['catalog'].'('.$row['cid'].')</td>
+
+					<td><input type="text" value="'.$row['price'].'" name="price[]" class="input-text" style="width:90px;" /></td>
+				</tr>';
+        }
+        ?>
+    </table>
+</div>
+<? echo $vars['paging']?>

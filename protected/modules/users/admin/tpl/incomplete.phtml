@@ -1,0 +1,68 @@
+<fieldset>
+<h2 class="subheader"> Личные данные  </h2>
+        <h4 style="margin-bottom:5px;">Выберите период</h4>
+
+                        <label class="cm-required" for="page">От:</label>
+                        <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$_SESSION['date_start']?>" name="start" id="start" />
+                        <label class="cm-required" for="page">До:</label>
+                        <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$_SESSION['date_end']?>" size="55" name="end" id="end" />
+                        <span class="submit-button cm-button-main">
+                            <input class="cm-process-items" type="submit"  value="OK" />
+                        </span>
+
+
+					<div class="items-container multi-level">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+	<tr>
+		<th width="20" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+		<th width="30">ID</th>
+        <th width="120">Дата</th>
+		<th>Товар</th>
+        <th width="120">Артикул</th>
+        <th width="70">Цена</th>
+        <th width="50">Кол-во</th>
+        <th width="180">ID SESSION</th>
+		<th width="75">Действие</th>
+	</tr>
+	<?php
+		$amount=0;
+		$sum=0;
+		foreach($vars['product'] as $row)
+		{
+			$amount+=$row['amount'];
+			$sum+=$row['price']*$row['amount'];
+			echo'<tr>
+					<td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="bascket_id[]" /></td>
+					<td><span>'.$row['product_id'].'</span></td>
+					<td><span>'.Date::date_view($row['date'], "dd/mm/YY, hh:ii").'</span></td>
+					<td><a href="/admin/product/edit/'.$row['product_id'].'" target="_blank">'.$row['name'].'</a></td>
+					<td>'.$row['code'].'</td>
+					<td>'.$row['price'].'</td>
+					<td align="center">'.$row['amount'].'</td>
+					<td>'.$row['session_id'].'</td>
+					<td>
+						<ul class="cm-tools-list tools-list">
+							<li><a href="/admin/'.$vars['action'].'/edit/'.$row['user_id'].'/del/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+						</ul>
+					</td>
+				</tr>';
+		}
+	?>
+</table>
+
+</div>
+<div class="table-tools">
+	<a class="check_all" href="javascript:void(0);">Выбрать все</a>| 
+	<a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+</div>
+<?
+	echo'<div style="text-align:right; font-size:14px;">
+			<div style="font-weight:bold; font-size:14px;">Итого:</div>
+			 Кол-во: '.$amount.' шт.<br /> 
+			 Сумма: '.$sum.'
+			 
+		 </div>';
+?>
+<span class="submit-button cm-button-main cm-confirm cm-process-items">
+<input type="submit" value="Удалить выбранные" name="del" class="cm-process-items">
+</span>

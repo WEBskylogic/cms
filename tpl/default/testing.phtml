@@ -1,0 +1,93 @@
+<script language="text/javascript">
+
+	$('#test-url').val(window.location.href);
+
+	$('#testing-main').on('click', function() {
+		$('#send-report').slideToggle();
+	});
+
+	
+	$('#testing-send').on('click', function() {
+	
+		var error = 0;
+		
+		$('#test-subject').removeClass('error');
+		$('#test-text').removeClass('error');
+		
+		if($('#test-subject').val()=='') {
+			$('#test-subject').addClass('error');
+			error +=1;
+		}
+		if($('#test-text').val()=='') {
+			$('#test-text').addClass('error');
+			error +=1;
+		}
+		
+		if(error==0) {
+	
+			$('#testing-block').hide();
+		
+			html2canvas($('body'), {
+				onrendered: function(canvas) {
+					var img = canvas.toDataURL('image/jpeg'); 
+					img = img.replace(/^data:image\/(png|jpeg);base64,/, "");
+					$("#test-img").val(img);
+					
+					var url = $('#test-url').val();
+					var subject = $('#test-subject').val();
+					var text = $('#test-text').val();
+					var image = $('#test-img').val();
+					
+					$.ajax({
+						type: "POST",
+						url: "/ajax/testingsend",
+						cache: false,
+						data: { URL: url,
+								SUBJECT: subject,
+								TEXT: text,
+								IMAGE: image} ,
+						success: function (text) {
+							$('#testing-block').show();
+							$('#send-report').html('<p class="done">Сообщение отправлено!</p>');
+						}
+					});
+
+				}
+			}); 
+		}
+		
+	});
+
+</script>
+<div id="testing-block">
+	<div id="testing-line"></div>
+	<div id="testing-end">
+		<div id="testing-main">
+			<p>Тестирование закончится через <br/>
+			<span id="time-end"><?php echo $vars['days'];?>д. <?php echo $vars['hours'];?>ч. <?php echo $vars['minutes'];?>м.</span></p>
+		</div>
+		<div id="testing-mail-block">
+			<a href="#" id="send-mail">
+				<img src="/images/testing_mail_icon.png" alt="" />
+			</a>
+		</div>
+		<div id="send-report">
+			<h3>Отправить сообщение</h3>
+
+			<label>Текущий адрес сайта:</label><br/>
+			<input type="text" id="test-url" value="" disabled /><br/>
+			
+			<label>Тема сообщения:</label><br/>
+			<input type="text" id="test-subject" placeholder="укажите тему" value="" /><br/>
+
+			<label>Суть сообщения:</label><br/>
+			<textarea id="test-text" placeholder="укажите суть" ></textarea>
+			<div class="clear"></div>
+			
+			<input type="hidden" id="test-img" />
+			
+			<button id="testing-send">Отправить</button>
+		</div>
+	</div>
+</div>
+

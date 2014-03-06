@@ -1,0 +1,93 @@
+<div class="cm-notification-container"></div>
+
+<div>
+	<div class="clear mainbox-title-container">
+		<div class="tools-container"><span class="action-add"> <a href="/admin/<?=$vars['action']?>/add">Добавить</a> </span> </div>
+		<h1 class="mainbox-title float-left"><?=$vars['name']?></h1>
+	</div>
+	</div>
+	<div class="mainbox-body">
+		<div id="ds_15014" class="clear">
+		<div class="section-border">
+        <form class="cm-disable-empty " method="POST" name="search_form" action="/admin/<?=$vars['action']?>">
+        <table cellspacing="0" border="0" class="search-header">
+            <tr>
+                <td class="nowrap search-field">
+                    <label>Найти:<?=$_SESSION['search_user']['word']?></label>
+                    <div class="break">
+                        <input type="text" class="search-input-text" value="<?=$_SESSION['search_user']['word']?>" size="20" name="word" />
+                        <input type="image" title="Поиск" alt="Поиск" class="search-go" src="/tpl/admin/images/search_go.gif">&nbsp;
+                    </div>
+                </td>
+                <td class="nowrap search-field">
+                    <label>Поиск по статусу:</label>
+                    <div class="break clear correct-picker-but">
+                        <select name="status" style="width:120px">
+                            <option value="">- Все -</option>
+                            <?php
+                                foreach($vars['status'] as $row)
+                                {
+                                    if($row['type']==0)
+									{
+										echo"<option value='{$row['id']}'";if($row['id']==$_SESSION['search_user']['status'])echo" selected";echo">{$row['name']}</option>";
+									}
+                                }
+                            ?>
+                        </select>
+                    </div>
+                </td>
+                <td class="nowrap search-field">
+                    <label>Сортировать:<?=$_SESSION['search_user']['word']?></label>
+                     <div class="break clear correct-picker-but">
+                        <select name="sort" style="width:200px">
+						
+                            <option value=""> - по дате регистрации (по убыванию)</option>
+                            <option value="date asc" <?=$_SESSION['search_user']['sort']=='date asc'?'selected="selected"':'';?>> - по дате регистрации (по возростанию)</option>
+							<option value="name asc" <?=$_SESSION['search_user']['sort']=='name asc'?'selected="selected"':'';?> > - по имени А-Я</option>
+                            <option value="name desc" <?=$_SESSION['search_user']['sort']=='name desc'?'selected="selected"':'';?> > - по имени Я-А</option>
+							<option value="email asc" <?=$_SESSION['search_user']['sort']=='email asc'?'selected="selected"':'';?> > - по E-mail A-Z</option>
+							<option value="email desc" <?=$_SESSION['search_user']['sort']=='email desc'?'selected="selected"':'';?> > - по E-mail Z-A</option>
+                            <option value="price desc" <?=$_SESSION['search_user']['sort']=='price desc'?'selected="selected"':'';?> > - по цене (по убыванию)</option>
+                            <option value="price asc" <?=$_SESSION['search_user']['sort']=='price asc'?'selected="selected"':'';?> > - по цене (по возростанию)</option>
+                        </select>
+                    </div>
+                </td>
+                <td class="buttons-container">
+					 <span class="submit-button "><input type="submit" value="Поиск" name="dispatch[products.manage]"></span>
+                    <span class="submit-button "><input type="submit" value="Очистить" name="clear"></span>
+					
+                </td>
+            </tr>
+			 
+            </table>
+        </form>
+		
+        </div>
+		</div>
+		<div id="content_manage_users">
+			<form name="userlist_form" method="post" action="/admin/<?=$vars['action']?>/update">
+				<div id="pagination_contents">
+					<?php echo $vars['list'];?>
+				</div>
+				<div class="buttons-container buttons-bg">
+					<div class="cm-buttons-placeholder">
+						<div class="float-left">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" class="">
+							</span>или
+							<!--<span class="submit-button cm-button-main cm-process-items">
+								<input type="submit" value="Отправить письмо" name="send" class="send_users">
+							</span>или-->
+							<span class="submit-button cm-button-main cm-confirm cm-process-items">
+								<input type="submit" value="Удалить выбранные" name="delete" class="cm-process-items">
+							</span>
+						</div>
+					</div>
+					<div class="cm-buttons-floating hidden"></div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

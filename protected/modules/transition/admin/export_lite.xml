@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+         <yml_catalog date="2013-09-19 18:26:06">
+            <shop>
+                <name>TestingInterface</name>
+                <company>TestingInterface</company>
+                <url>koza</url>
+                <platform>SkylogicCMS</platform>
+                <version>3.x</version>
+                <agency></agency>
+                <email></email>
+                <currencies><currency id="UAH" rate="1" /><currency id="USD" rate="NBU" /><currency id="EUR" rate="NBU" /></currencies>
+                <categories><category id="1">Лампы</category><category id="2">Светильники садово-парковые</category><category id="3">Электроника и комплектующие</category><category id="4">Светодиодные ленты и дюралайт</category><category id="5">Светильники</category><category id="6" parentId="4">светодиодные ленты</category><category id="7" parentId="4">дюралайт</category><category id="8" parentId="1">трансформаторы</category><category id="9" parentId="1">датчики</category><category id="10" parentId="1">таймеры</category><category id="11" parentId="1">блок защиты галогенных ламп</category><category id="12" parentId="5">декоративное стекло</category><category id="13" parentId="5">декоративное литье</category><category id="14" parentId="5">под лампу MR-11, MR-16</category><category id="15" parentId="5">под рефлекторную лампу</category><category id="16" parentId="1">балласты</category><category id="17">Звонки</category><category id="18" parentId="48">галогенные</category><category id="19" parentId="48">светодиодные</category><category id="20" parentId="48">энергосберегающие (люминесцентные)</category><category id="21" parentId="48">накаливания</category><category id="22" parentId="4">фурнитура для ленты</category><category id="23" parentId="4">фурнитура для дюралайта</category><category id="24">Светильники специального назначения</category><category id="25" parentId="24">аккумуляторные светильники</category><category id="26" parentId="24">светодиодные прожекторы</category><category id="27" parentId="24">аварийные светильники</category><category id="28" parentId="24">светильник-вспышка</category><category id="29" parentId="1">патроны</category><category id="30" parentId="5">светодиодные светильники</category><category id="31" parentId="5">светильники для подсветки (накладные)</category><category id="32">Ночники</category><category id="33">Новинки</category><category id="34" parentId="5">под лампу JC, JCD</category></categories>
+                <offers>
+                    <offer id="1" type="vendor.model" available="false">
+                        <url>http://koza/product/zvonok-qn-915111</url>
+                        <price>89.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>8</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>3229</vendorCode>
+                        <model>звонок QН-915  </model>
+                        <description>description</description>                       
+                    </offer>
+                    <offer id="2" type="vendor.model" available="false">
+                        <url>http://koza/product/zvonok-qn-915111mfkkjf</url>
+                        <price>89.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>3229</vendorCode>
+                        <model>звонок QН-915  </model>
+                        <description>description</description>                       
+                    </offer>
+                </offers>
+            </shop>
+        </yml_catalog>

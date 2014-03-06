@@ -1,0 +1,85 @@
+<div style="min-height:816px;">
+<div class="error" style="color:red;"></div>
+<?
+	if(!isset($_SESSION['type_upload']))$_SESSION['type_upload']=1;
+?>
+<table style="margin-bottom:10px;">
+    <tr>
+        <td style="padding-right:35px;" valign="top">
+        	<div id="thumb1_extra" style="margin-top:10px;">
+                <img class='bord_img_extra' src='' />
+                <?
+                    echo'<br /><a href="" dir="thumb1_extra" class="del_image" id="bord_img_del_extra" style="display:none;">Удалить</a>';
+                ?>
+            </div>
+
+        	
+        </td>
+        <td style="padding-right:35px;" valign="top">
+        	<h3>Выберите вариант загрузки изображений</h3>
+            <div style="margin-bottom:25px;" id="display_image_type_extra">
+                
+                <input type="radio" id="image_crop1_extra" name="image_upload_type_extra" value="1" <? if($_SESSION['type_upload']==1)echo'checked="checked"';?> />
+                <label for="image_crop1_extra" style="margin:0; padding:3px; width:auto; float:none;">Вырезать рабочую область</label><br />
+                
+                
+                <input type="radio" id="image_crop2_extra" name="image_upload_type_extra" value="2" <? if($_SESSION['type_upload']==2)echo'checked="checked"';?> />
+                <label for="image_crop2_extra" style="margin:0; padding:3px; width:auto; float:none;">Подогнать под размер</label><br />
+                
+                
+                <input type="radio" id="image_crop3_extra" name="image_upload_type_extra" value="3" <? if($_SESSION['type_upload']==3)echo'checked="checked"';?> />
+                <label for="image_crop3_extra" style="margin:0; padding:3px; width:auto; float:none;">Загрузить оригинал</label><br />
+            </div>
+            
+            <table id="tb_size_extra"<? if($_SESSION['type_upload']==3)echo'style="display:none;"';?>>
+                <tr><td colspan="2"><h3>Размеры миниатюры</h3></td></tr>
+                <tr><td>Ширина:</td><td> <input type="text" id="width_image_extra" value="<?=$vars['width_extra']?>" style="width:30px;" /> px</td></tr>
+                <tr><td>Высота:</td><td> <input type="text" id="height_image_extra" value="<?=$vars['height_extra']?>" style="width:30px;" /> px</td></tr>
+            </table>
+            
+            <h3>Источник</h3>
+            <table id="tb_size">
+                <tr>
+                <td>Файл с локального компьютера: </td>
+                <td>
+                	<input type="text" style="width:202px; border:1px solid #ccc; padding: 2px 5px;" id="" name="" disabled="disabled" value="jpg, jpeg, gif, bmp, png" />
+                    <input type="file" style="width:220px;" id="image_file_extra" name="image_file" /></td></tr>
+                <tr>
+                	<td align="right">Ссылка на изображение (url): </td>
+                	<td><input type="text" id="load_url_image_extra" value="" style="width:210px;" /> <input type="button" value="Загрузить" id="load_url_image_extra_submit" ></td>
+                </tr>
+            </table>
+
+        </td>
+    </tr>
+</table>
+
+<div>
+    <div id="image_div" style="display:none;">
+        <img src="" id="load_img" /><br />
+    </div>
+    
+    <div style="display:table-cell;">
+        <div id="cut_avatar_extra" style="display: none;">
+            <br />               
+            <input type="hidden" name="x" id="x" />
+            <input type="hidden" name="y" id="y_" />
+            <input type="hidden" name="w" id="w" />
+            <input type="hidden" name="h" id="h" />
+            <input type="hidden" name="src" id="src_extra" />
+            
+            <input type="hidden" name="current_photo_extra" value="" />
+            <input type="hidden" name="resize_photo_id" id="resize_photo_id_extra" value="" />
+            <input type="hidden" value="<?=$vars['path']?>" id="path_image_extra" />
+            <span id="thumb" style="display: none;"></span>
+        </div>
+        
+        <div class="red" id="create_t_extra" style="display:none; margin:10px 0 40px 0; float:right;">
+            <input type="button" value=" Вырезать " onclick="javascript:createAvatar('_extra');" id="create_extra" class="button" />
+        </div>
+	</div>
+</div>
+<?
+	//if(file_exists("{$vars['path']}/{$vars['image_id']}_s.jpg"))echo'<br /><a href="'.$_SERVER['REQUEST_URI'].'/delphoto"><img src="/tpl/images/admin/delete_16.gif"></a>';
+?>
+</div>

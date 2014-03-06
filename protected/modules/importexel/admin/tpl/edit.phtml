@@ -1,0 +1,48 @@
+<link href="/tpl/admin/css/fileuploader.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="/tpl/admin/js/fileuploader.js"></script>
+<script type="text/javascript" src="/tpl/admin/js/upload.js"></script>
+<script type="text/javascript" charset="utf-8">  
+	$(document).ready(function(){
+		createUploader();    
+	});
+	$("#loading_ac").ajaxStart(function(){$(this).show();});
+	$("#loading_ac").ajaxStop(function(){$(this).hide();});
+</script>
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Выгрузка</h1>
+	</div>
+
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="" enctype="multipart/form-data">
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+                    	<h2 class="subheader"> Импорт </h2>
+						<div class="form-field">
+                        	<label class="cm-required" for="page">Файл для импорта<br />Формат .xlsx</label>
+                            <div id="file-uploader" style="height:25px;"></div>
+                            <div id="load_cols" style="margin-top:50px;"></div>
+						</div>
+                    </fieldset>  
+                    <? include"export_form.phtml";?>  
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Импорт" name="update" />
+							</span>&nbsp;
+                            <span class="submit-button cm-button-main">
+								<input type="submit" value="Экспорт" name="update2" />
+							</span>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

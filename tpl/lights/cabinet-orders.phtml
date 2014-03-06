@@ -1,0 +1,39 @@
+<div class="orders" style="position: absolute; display: none;">
+	<div id="title_basket">
+		</a><h4>Мои заказы</h4>
+	</div>
+	<? if(isset($_SESSION['user_id'])) { ?>
+		<div id="scrollbarY">
+			<div class="scrollbar"><div class="track"><div class="thumb"><div class="end"></div></div></div></div>
+			<div class="viewport">
+				<div class="overview">
+					<table width="720px" class="orders" cellpadding="0" cellspacing="0">
+						<tr>
+							<th style="padding:5px 15px;"width="90"><?=$vars['translate']['order_id']?></th>
+							<th style="padding:5px 15px;"><?=$vars['translate']['order_state']?></th>
+							<th style="padding:5px 15px;"><?=$vars['translate']['order_date']?></th>
+							<th style="padding:5px 15px;"><?=$vars['translate']['sum']?></th>
+						</tr>
+						<?
+						$i=0;
+						foreach($vars['orders'] as $row)
+						{
+							if(($i+3) % 2) $e = "style='background: #bababa;'";
+							else $e = '';
+							echo"<tr ".$e.">
+										<td style='padding:5px 15px; text-align: center;'><a href='#' onclick='showorder({$row['id']});'>#{$row['id']}</a></td>
+										<td style='padding:5px 15px; text-align: center;'>{$row['name']}</td>
+										<td style='padding:5px 15px; text-align: center;'>".Date::date_view($row['date_add'], "dd/mm/YY, hh:ii")."</td>
+										<td style='padding:5px 15px; text-align: center;'>{$row['sum']}</td>
+									</tr>";
+							$i++;
+						}
+						?>
+					</table>
+				</div>
+			</div>
+		</div>
+	<? } else
+		echo "Вы не авторизованы на сайте."
+	?>
+</div>

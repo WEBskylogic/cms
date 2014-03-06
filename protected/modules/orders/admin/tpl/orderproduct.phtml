@@ -1,0 +1,30 @@
+<?
+echo'
+	<tr>
+		<th width="50">ID</th>
+		<th>Товар</th>
+		<th width="10%">Кол-во</th>
+		<th width="10%">Скидка</th>
+		<th width="10%">Цена ('.$vars['currency']['icon'].')</th>
+		<th width="10%">Сумма</th>
+		<th width="5%">&nbsp;</th>
+	</tr>';
+	foreach($vars['product'] as $row)
+	{
+		echo'<tr>
+				<td><span>'.$row['product_id'].'</span></td>
+				<td><input type="text" name="name[]" value="'.$row['name'].'" size="40" /></td>
+				<td><input type="text" name="amount[]" value="'.$row['amount'].'" size="3" style="text-align:center;" /></td>
+				<td><input type="text" name="discount[]" value="'.$row['discount'].'" size="3" style="text-align:center;" /> %</td>
+				<td><input type="text" name="price[]" value="'.$row['price'].'" size="10" /></td>
+				<td>'.$row['sum'].'</td>
+				<td width="10%">
+					<input type="hidden" name="product_id[]" value="'.$row['id'].'" />
+					<ul class="cm-tools-list tools-list">
+						<li><a href="/admin/orders/edit/'.$_POST['order_id'].'/del/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+					</ul>
+				</td>
+			</tr>';
+	}
+	echo'Итого: '.$vars['total'];
+?>

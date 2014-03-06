@@ -1,0 +1,39 @@
+<?
+	$price = Numeric::viewPrice($row['price'], $row['discount']);
+	$summa = Numeric::formatPrice($price['cur_price'] * $row['amount']);
+	$summa2 += $price['cur_price'] * $row['amount'];
+	
+	if(file_exists($row['photo']))$src = '<img src="/'.$row['photo'].'" title="'.$row['name'].'" />';
+	else $src = '<img src="/files/default.jpg" alt="" />';
+
+	echo'<div class="item_basket" id="item_'.$row['cart_id'].'">
+			<div class="item_name"><a href="'.LINK.'/product/'.$row['url'].'">'.$row['name'].'</a></div>
+			<div class="tb_item">
+				<div class="item_img"><a href="'.LINK.'/product/'.$row['url'].'">'.$src.'</a></div>
+				
+				<div class="item_desc">';
+		
+					if($row['code']!='')echo"<div>Артикул: ".$row['code']."</div>";
+					if($row['color']!='')echo"<div>Цвет: ".$row['color']."</div>";
+					if($row['size']!='')echo"<div>Размер: ".$row['size']."</div>";
+	
+		echo '  </div>
+				<div class="item_price"><span class="price_label">Цена</span>: '.$price['price'].'</div>
+				<div class="item_sum"><span class="price_label">Сумма</span>: <span id="sum_'.$row['cart_id'].'">'.$summa.'</span></div>
+				<div class="item_count_label">Кол-во:</div> 
+				<div class="item_count">
+					<input type="text" id="cnt'.$i.'" value="'.$row['amount'].'" name="amount[]" class="amount" style="float: left;" />
+					<input type="hidden" value="'.$row['cart_id'].'" name="id[]" />
+					<div style="float:left; width:10px; text-align:center; margin-left:5px;padding-top:4px;">
+						<a href="javascript:void(0);" class="cnt1" title="+" id="'.$i.'"><img src="'.IMAGES.'cnt_up.png" alt="" style="border:none;"></a>
+						<a href="javascript:void(0);" class="cnt1" title="-" id="'.$i.'"><img src="'.IMAGES.'cnt_down.png" alt="" style="border:none;"></a>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<a class="item_del" dir="'.$row['cart_id'].'" title="'.$vars['translate']['delete'].'"><img src="/images/del.png" /></a>
+				<div class="clear"></div>
+			</div>	
+		</div>';
+	
+	//if($class!='')echo'<div class="clear"></div>';	
+?>

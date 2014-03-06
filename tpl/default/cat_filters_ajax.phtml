@@ -1,0 +1,115 @@
+<?
+
+	//CHEKED  FILTERS BEGIN
+
+	$checkedParams = '';
+
+	foreach($vars['params'] as $row2)
+	{
+
+			foreach ($_SESSION['params'] as $id => $group) 
+			{
+
+				if($row2['id'] == $id)
+				{
+
+					$checkedParams.='<div class="filter">
+										<a href="javascript:void(0);" class="clear_param" data-id="'.$row2['id'].'"><img src="/images/del.png" />&nbsp;&nbsp;'.$row2['name'].'</a>
+									</div>';
+				}
+
+			}
+
+	}
+
+	if($checkedParams!='')
+	{
+
+		echo '<label style="margin:0 0 5px 0;">Выбранные фильтры</label>';
+		echo $checkedParams;
+
+	}
+
+	//END CHECKED FILTERS
+
+
+
+	echo'<div id="params">';	
+
+	foreach($vars['params'] as $row)
+
+	{
+
+		if($row['sub']==0)
+
+		{echo'ad';
+
+			$sub='';
+
+			$y=0;
+
+
+
+			foreach($vars['params'] as $row2)
+			{
+
+				$checked = '';
+
+				if($row2['sub']==$row['id'])
+				{
+
+					foreach ($_SESSION['params'] as $id => $group) 
+					{
+						if($row2['id'] == $id)
+						{
+
+							$checked='checked';
+							break;
+
+						}
+
+					}
+
+					if($row2['count']=='0') $checked='uncheck';
+
+
+
+					$sub.='<div class="params filter"><div class="set_params checkbox ' . $checked . '" data-id="'.$row2['id'].'" data-group="'.$row['id'].'" url="'.$row2['url'].'">' . $row2['name'] .' ('.$row2['count'].')</div></div>';
+
+					$y++;
+
+				}
+
+			}
+
+
+
+			if($sub!='')
+
+			{
+
+				echo'<li>
+
+						 <label for="group'.$row['id'].'"><b>'.$row['name'].'</b></label>
+
+						 <div id="group'.$row['id'].'" class="group_params">
+
+							'.$sub.'
+
+						 </div>
+
+					 </li>'; 
+
+					 	
+
+				echo'<li class="razd"></li>';
+
+			}
+
+		}
+
+	}
+
+	echo'<div class="clear"></div></div>';
+
+?>

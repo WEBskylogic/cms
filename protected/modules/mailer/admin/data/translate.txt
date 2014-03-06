@@ -1,0 +1,9 @@
+email_added#@@#E-mail добавлен в  базу!#@@#E-mail добавлен в  базу!
+email_deleted#@@#E-mail удален#@@#E-mail удален
+email_exists#@@#Данный email зарегистрирован!#@@#Данный email зарегистрирован!
+email_exists2#@@#Данный email не зарегистрирован!#@@#Данный email не зарегистрирован!
+email_no_exists#@@#E-mail не зарегистрирован#@@#E-mail не зарегистрирован
+mailer#@@#Подписаться#@@#Подписаться
+mailer2#@@#Подписка#@@#Подписка
+your_email#@@#Ваш E-mail#@@#Ваш E-mail
+your_name#@@#Ваше имя#@@#Ваше имя

@@ -1,0 +1,9 @@
+1
+﻿Комментарии и отзывы
+comments
+comments
+comments,comments_type
+0
+Комментарии и отзывы пользователей.
+
+7

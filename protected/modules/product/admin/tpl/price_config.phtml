@@ -1,0 +1,53 @@
+<tr id="config<?=$vars['id']?>" class="price_config">
+	<td colspan="9">
+    	<input type="hidden" name="config_price_id[]" value="<?=$vars['id']?>">
+        <div style="width:400px; display:table-cell;">
+			<?php
+                foreach($vars['params'] as $row)
+                {
+                    if($row['sub']==0)
+                    {
+                        echo'<div class="form-field">
+                                <label for="param_'.$vars['id'].'-'.$row['id'].'">'.$row['name'].':</label>
+                                <select name="price_param[]" id="param_'.$vars['id'].'-'.$row['id'].'">
+                                    <option value=""></option>';
+                        
+                        foreach($vars['params'] as $row2)
+                        {
+                            if($row2['sub']==$row['id'])
+                            {
+								$cheked="";
+                                if(isset($vars['params_set']))
+                                {
+									$cheked="";
+                                    foreach($vars['params_set'] as $row3)
+                                    {
+                                        if($row3['params_id']==$row2['id'])
+										{
+											$cheked='selected="selected"';
+											break;
+										}
+                                    }
+                                }
+                                echo'<option value="'.$vars['id'].'-'.$row2['id'].'" '.$cheked.'>'.$row2['name'].'</option>';
+                            }
+                        }
+                        echo'</select></div>';
+                    }
+                }
+            ?>
+        </div>
+        <div style="width:800px; display:table-cell;" dir="<?=$vars['id']?>">
+        	<?
+				if(isset($vars['photo'][0]['photo']))
+				{
+					echo'<h4 style="margin-bottom:10px;">Выберите фото для данного артикула</h4>';
+					foreach($vars['photo'] as $row)
+					{
+						echo'<img src="/'.$row['photo'].'?'.time().'" alt="'.$row['id'].'" class="price_photo';if($vars['photo_id']==$row['id'])echo' selected';echo'" />';	
+					}
+				}
+			?>
+        </div>
+	</td>
+</tr>    

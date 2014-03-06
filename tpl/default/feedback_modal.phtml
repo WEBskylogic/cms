@@ -1,0 +1,32 @@
+<div id="feedback_block" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:353px; left:56%;">
+<form action="<? if($_SERVER['REQUEST_URI']!='/')echo $_SERVER['REQUEST_URI']?>/fastsend" method="post" id="feedback_form" onsubmit="return send_feedback2();">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><?=$vars['translate']['feelback']?></h3>
+  </div>
+  <div class="modal-body">
+  	<div class="form_feedback" style="background-color:transparent; padding:0 25px;">
+        	<div id="feedback_message"></div>
+            <label for="f2_name"><?=$vars['translate']['fio']?>*: </label>
+            <input type="text" name="f2_name" id="f2_name" class="validate[required]" /><br />
+            
+            <label for="f2_email"><?=$vars['translate']['email']?>*: </label>
+            <input type="text" name="f2_email" id="f2_email" class="validate[required,custom[email]]" /><br />
+            
+            <label for="f2_phone"><?=$vars['translate']['phone']?>: </label>
+            <input type="text" name="f2_phone" id="f2_phone" /><br />
+            
+            <label for="f2_text"><?=$vars['translate']['message']?>*: </label>
+            <textarea rows="3" name="f2_text" id="f2_text" class="validate[required]" style="width:251px; resize: none;"></textarea><br />
+            
+            <table><tr>
+            <td style="padding-right:10px;"><img src="/captcha" alt="#Enable images to see captcha." /></td>
+            <td><input type="text" name="f2_captcha" id="f2_captcha" class="validate[required]" style="width:115px;" /></td>
+            <tr></table>
+	 </div>
+  </div>
+  <div class="modal-footer">
+    <input type="submit" name="send_feedback" value="<?=$vars['translate']['send_message']?>" class="submit" />
+  </div>
+</form>
+</div>

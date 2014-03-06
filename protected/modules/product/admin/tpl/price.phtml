@@ -1,0 +1,18 @@
+<span class="action-add" style="margin:8px;"> <a href="#" id="addprice"<? if(isset($vars['type'])&&$vars['type']=='add')echo' rel="add"';?>>Добавить цену</a> </span>
+
+    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort" id="price_tb" style="margin-top: 10px;">
+        <tr class="noDrop">
+        	<th width="25"></th>
+            <th>Артикул</th>
+            <th width="200">Наименование артикула</th>
+            <th>Цена</th>
+            <th>Скидка</th>
+            <th>Ед. из.</th>
+            <th>На складе</th>
+            <th>Тип цены</th>
+            <th width="150">&nbsp;</th>
+        </tr>
+        <tbody id="load_price">
+        <?php echo $vars['price']?>
+        </tbody>
+    </table>

@@ -1,0 +1,94 @@
+<?
+	if(isset($vars['filter']))
+	{
+?>
+
+ <div id="left_menu2">
+     <p>Выберите то, что вам нужно:</p>
+
+    <form id="filters" method="post" onsubmit="return false;">
+    <ul id="load_filter">
+        <?
+        	//CHEKED  FILTERS BEGIN
+                $checkedParams = '';
+                foreach($vars['params'] as $row2)
+                {
+                    if(count($_SESSION['params'])>1)
+                    {
+                        for($i=0;$i<count($_SESSION['params']);$i++)
+                        {
+                            if($_SESSION['params'][$i] == $row2['id'])
+                            {
+                                $checkedParams.='<div class="filter"><a href="javascript:void(0);" onclick="clear_ses('.$row2['id'].');"><img src="/images/close.png" />&nbsp;&nbsp;'.$row2['name'].'</a></div>';
+                            }
+                        }
+                    }
+                }
+                if( $checkedParams!='')
+                {
+                    echo '<label>Выбранные фильтры</label>';
+                    echo $checkedParams;
+                }
+			//END CHECKED FILTERS
+
+			echo'<div id="params">';
+			foreach($vars['params'] as $row)
+            {
+				if($row['sub']==0)
+				{
+					$sub='';
+					$y=0;
+
+					foreach($vars['params'] as $row2)
+					{
+						$checked = '';
+						if($row2['sub']==$row['id'])
+						{
+							for($i=0;($i+1)<count($_SESSION['params']);$i++)
+							{
+								if($_SESSION['params'][$i] == $row2['id'])
+								{
+									$checked='checked';
+									break;
+								}
+							}
+							if($row2['count']==0) $checked='uncheck';
+							$sub.='<div class="params filter"><div class="set_params checkbox ' . $checked . '" pid="' . $row2['id'] . '">' . $row2['name'] . ' ('.$row2['count'].')</div></div>';
+							$y++;
+						}
+					}
+
+					if($sub!='')
+					{
+						if($y==1)
+						echo'<li>
+								 <label for="f_'.$row['id'].'"><b>'.$row['name'].'</b></label>
+								 <div id="f_'.$row['id'].'" name="params[]">'.$sub.'
+								 </div>
+							 </li>'; 
+
+						else echo'<li>
+								 <label for="f_'.$row['id'].'"><b>'.$row['name'].'</b></label>
+								 <div id="f_'.$row['id'].'" name="params[]">
+									'.$sub.'
+								 </div>
+							 </li>';
+
+                        echo '<li class="razd"></li>';
+					}
+				}
+            }
+
+			echo'</div>';
+        ?>
+
+         <div class="clear"></div>
+
+    </ul>
+    </form>
+
+</div>
+
+<?
+	}
+?>

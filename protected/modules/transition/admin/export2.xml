@@ -1,0 +1,1462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+         <yml_catalog date="2013-09-19 18:10:14">
+            <shop>
+                <name>TestingInterface</name>
+                <company>TestingInterface</company>
+                <url>koza</url>
+                <platform>SkylogicCMS</platform>
+                <version>3.x</version>
+                <agency></agency>
+                <email></email>
+                <currencies><currency id="UAH" rate="1" /><currency id="USD" rate="NBU" /><currency id="EUR" rate="NBU" /></currencies>
+                <categories><category id="1">Лампы</category><category id="2">Светильники садово-парковые</category><category id="3">Электроника и комплектующие</category><category id="4">Светодиодные ленты и дюралайт</category><category id="5">Светильники</category><category id="6" parentId="4">светодиодные ленты</category><category id="7" parentId="4">дюралайт</category><category id="8" parentId="1">трансформаторы</category><category id="9" parentId="1">датчики</category><category id="10" parentId="1">таймеры</category><category id="11" parentId="1">блок защиты галогенных ламп</category><category id="12" parentId="5">декоративное стекло</category><category id="13" parentId="5">декоративное литье</category><category id="14" parentId="5">под лампу MR-11, MR-16</category><category id="15" parentId="5">под рефлекторную лампу</category><category id="16" parentId="1">балласты</category><category id="17">Звонки</category><category id="18" parentId="48">галогенные</category><category id="19" parentId="48">светодиодные</category><category id="20" parentId="48">энергосберегающие (люминесцентные)</category><category id="21" parentId="48">накаливания</category><category id="22" parentId="4">фурнитура для ленты</category><category id="23" parentId="4">фурнитура для дюралайта</category><category id="24">Светильники специального назначения</category><category id="25" parentId="24">аккумуляторные светильники</category><category id="26" parentId="24">светодиодные прожекторы</category><category id="27" parentId="24">аварийные светильники</category><category id="28" parentId="24">светильник-вспышка</category><category id="29" parentId="1">патроны</category><category id="30" parentId="5">светодиодные светильники</category><category id="31" parentId="5">светильники для подсветки (накладные)</category><category id="32">Ночники</category><category id="33">Новинки</category><category id="34" parentId="5">под лампу JC, JCD</category></categories>
+                <offers>
+                    <offer id="1" type="vendor.model" available="false">
+                        <url>http://koza/product/zvonok-qn-91511</url>
+                        <price>89.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>17</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>3229</vendorCode>
+                        <model>звонок QН-915  "яблочко"  (DB 336)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="2" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-2422</url>
+                        <price>33.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00001</vendorCode>
+                        <model>LB-24 MR16 G5.3 230V 3W 44LEDS</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="3" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-10833</url>
+                        <price>47.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00007</vendorCode>
+                        <model>LB-108 MR16 5LED (5W) 230V G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="4" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-1444</url>
+                        <price>37.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId><picture>http://koza/files/product/4/4/4_s.jpg</picture>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00006</vendorCode>
+                        <model>LB-14, 4LED*1W MR-16 230V G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="5" type="vendor.model" available="false">
+                        <url>http://koza/product/125t-mr-1655</url>
+                        <price>23.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00527</vendorCode>
+                        <model>125Т под MR-16  пл. поворотный</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="6" type="vendor.model" available="false">
+                        <url>http://koza/product/2005dl-mr-1666</url>
+                        <price>29.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00538</vendorCode>
+                        <model>2005DL MR-16 G 5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="7" type="vendor.model" available="false">
+                        <url>http://koza/product/cd4141-mr1677</url>
+                        <price>50.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01003</vendorCode>
+                        <model>CD4141 MR16</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="8" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-11288</url>
+                        <price>29.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00005</vendorCode>
+                        <model>LB-112, 3LED*1W 230V MR-16 G5,3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="9" type="vendor.model" available="false">
+                        <url>http://koza/product/jcdr-220v-led1899</url>
+                        <price>23.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00008</vendorCode>
+                        <model>JCDR 220V LED18</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="10" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-70-e141010</url>
+                        <price>38.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00004</vendorCode>
+                        <model>LB-70 230V/3.5W Chrome/Gold E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="11" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-261111</url>
+                        <price>45.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00002</vendorCode>
+                        <model>LB-26 MR16  230V/50 7W 80LED G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="12" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-711212</url>
+                        <price>38.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00003</vendorCode>
+                        <model>LB-71 230V/3.5W Chrome/Gold  E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="13" type="vendor.model" available="false">
+                        <url>http://koza/product/fn1002-tigrenok-3led1313</url>
+                        <price>24.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>32</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>1947</vendorCode>
+                        <model>Светильник ночной FN1002 "тигренок" 3LED 0.3W</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="14" type="vendor.model" available="false">
+                        <url>http://koza/product/fn1001-pingvin-3led1414</url>
+                        <price>24.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>32</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>1945</vendorCode>
+                        <model>Светильник ночной FN1001 "пингвин" 3LED 0.3W</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="15" type="vendor.model" available="false">
+                        <url>http://koza/product/svetilnik-nochnoy-c-sensorom1515</url>
+                        <price>28.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>32</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>1950</vendorCode>
+                        <model>Светильник ночной c сенсором</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="16" type="vendor.model" available="false">
+                        <url>http://koza/product/cd45251616</url>
+                        <price>75.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01001</vendorCode>
+                        <model>CD-4525</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="17" type="vendor.model" available="false">
+                        <url>http://koza/product/cd-45271717</url>
+                        <price>113.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01002</vendorCode>
+                        <model>CD-4527</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="18" type="vendor.model" available="false">
+                        <url>http://koza/product/dl1311818</url>
+                        <price>42.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>76</vendorCode>
+                        <model>DL131 свет. на гибком основании</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="19" type="vendor.model" available="false">
+                        <url>http://koza/product/1525-20w-g91919</url>
+                        <price>73.13</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01004</vendorCode>
+                        <model>1525 20W G9</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="20" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-491-g92020</url>
+                        <price>32.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00009</vendorCode>
+                        <model>LB-491 230V/1W G9</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="21" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-492-g42121</url>
+                        <price>52.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00010</vendorCode>
+                        <model>LB-492 230V/2W G4</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="22" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-492-g5.32222</url>
+                        <price>53.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00011</vendorCode>
+                        <model>LB-492 230V/2W G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="23" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-492-g92323</url>
+                        <price>53.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00012</vendorCode>
+                        <model>LB-492 230V/2W G9</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="24" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-402-12v-9leds-2w-g42424</url>
+                        <price>21.80</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00013</vendorCode>
+                        <model>LB-402 12V 9LEDs 5050SMD 2W G4</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="25" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-403-12v-18leds-3w-g42525</url>
+                        <price>39.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00014</vendorCode>
+                        <model>LB-403 12V 18LEDs 5050SMD 3W G4</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="26" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-404-12v-27leds-4w-g42626</url>
+                        <price>51.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00015</vendorCode>
+                        <model>LB-404 12V 27LEDs 5050SMD 4W G4</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="27" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-232727</url>
+                        <price>33.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00016</vendorCode>
+                        <model>LB-23 MR16 2W 30LEDS G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="28" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-27-mr112828</url>
+                        <price>27.80</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00017</vendorCode>
+                        <model>LB-27, MR11 14LED (1W) 230V G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="29" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-3092929</url>
+                        <price>45.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00018</vendorCode>
+                        <model>LB-309, 3*1W 230V E14 160LM CE</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="30" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-5003030</url>
+                        <price>52.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00019</vendorCode>
+                        <model>LB-500 4*1W 230V E14 210LM</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="31" type="vendor.model" available="false">
+                        <url>http://koza/product/dyuralayt--led-2way--svetodiodnyy3131</url>
+                        <price>1750.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>4</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>10000</vendorCode>
+                        <model>Дюралайт  LED 2WAY (36 led/m) светодиодный</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="32" type="vendor.model" available="false">
+                        <url>http://koza/product/020-r-39-e143232</url>
+                        <price>32.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00512</vendorCode>
+                        <model>020 R-39 E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="33" type="vendor.model" available="false">
+                        <url>http://koza/product/020-r-50-e143333</url>
+                        <price>37.45</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00513</vendorCode>
+                        <model>020 R-50 E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="34" type="vendor.model" available="false">
+                        <url>http://koza/product/020t-mr-113434</url>
+                        <price>19.26</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00514</vendorCode>
+                        <model>020Т MR-11 GU5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="35" type="vendor.model" available="false">
+                        <url>http://koza/product/020t-mr-163535</url>
+                        <price>23.54</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00515</vendorCode>
+                        <model>020Т MR-16 GU5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="36" type="vendor.model" available="false">
+                        <url>http://koza/product/j-1183636</url>
+                        <price>4.62</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00250</vendorCode>
+                        <model>J-118</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="37" type="vendor.model" available="false">
+                        <url>http://koza/product/j-254-1500w3737</url>
+                        <price>8.25</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00251</vendorCode>
+                        <model>J-254 1500W</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="38" type="vendor.model" available="false">
+                        <url>http://koza/product/j-783838</url>
+                        <price>4.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00252</vendorCode>
+                        <model>J-78</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="39" type="vendor.model" available="false">
+                        <url>http://koza/product/jcsuper3939</url>
+                        <price>4.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00253</vendorCode>
+                        <model>JC 12V 20W G-4.0 супер (super)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="40" type="vendor.model" available="false">
+                        <url>http://koza/product/jc-12v4040</url>
+                        <price>2.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00254</vendorCode>
+                        <model>JC 12V G-4</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="41" type="vendor.model" available="false">
+                        <url>http://koza/product/jcd-220v-cokol-g-94141</url>
+                        <price>4.95</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00255</vendorCode>
+                        <model>JCD 220V цоколь G-9</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="42" type="vendor.model" available="false">
+                        <url>http://koza/product/jcd-g-534242</url>
+                        <price>3.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00256</vendorCode>
+                        <model>JCD 220V G-5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="43" type="vendor.model" available="false">
+                        <url>http://koza/product/jcdsuper4343</url>
+                        <price>6.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00257</vendorCode>
+                        <model>JCD 250V G-5.3 супер (super)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="44" type="vendor.model" available="false">
+                        <url>http://koza/product/jcd4444</url>
+                        <price>3.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00258</vendorCode>
+                        <model>JCD HB6  220V G4.0</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="45" type="vendor.model" available="false">
+                        <url>http://koza/product/jcdr-114545</url>
+                        <price>5.70</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00259</vendorCode>
+                        <model>JCDR 11 (MR-11) 220V</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="46" type="vendor.model" available="false">
+                        <url>http://koza/product/jcdr-220v4646</url>
+                        <price>6.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00260</vendorCode>
+                        <model>JCDR 220V</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="47" type="vendor.model" available="false">
+                        <url>http://koza/product/jcdr-super-white-blue4747</url>
+                        <price>8.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00261</vendorCode>
+                        <model>JCDR 250V C/C супер белая (super white blue)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="48" type="vendor.model" available="false">
+                        <url>http://koza/product/mr-114848</url>
+                        <price>3.85</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00262</vendorCode>
+                        <model>MR-11 12V C/C</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="49" type="vendor.model" available="false">
+                        <url>http://koza/product/mr-16-super-belaya4949</url>
+                        <price>7.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00263</vendorCode>
+                        <model>MR-16  12V С/C супер белая (super white blue)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="50" type="vendor.model" available="false">
+                        <url>http://koza/product/mr-165050</url>
+                        <price>4.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00264</vendorCode>
+                        <model>MR-16 12V C/C</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="51" type="vendor.model" available="false">
+                        <url>http://koza/product/mrg-gu-105151</url>
+                        <price>8.80</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00265</vendorCode>
+                        <model>MRG GU-10</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="52" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-24-mrg-gu10-230v-3w-44leds5252</url>
+                        <price>35.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00020</vendorCode>
+                        <model>LB-24 MRG GU10 230V 3W 44LEDS</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="53" type="vendor.model" available="false">
+                        <url>http://koza/product/098-r-39-s-kvadrat5353</url>
+                        <price>34.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00516</vendorCode>
+                        <model>098 R-39-S "квадрат"</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="54" type="vendor.model" available="false">
+                        <url>http://koza/product/098-r-50-s-kvadrat5454</url>
+                        <price>40.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00517</vendorCode>
+                        <model>098 R-50-S "квадрат"</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="55" type="vendor.model" available="false">
+                        <url>http://koza/product/098t-mr-16-s-kvadrat5555</url>
+                        <price>25.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00518</vendorCode>
+                        <model>098T MR-16-S "квадрат"</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="56" type="vendor.model" available="false">
+                        <url>http://koza/product/098-r-395656</url>
+                        <price>32.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00519</vendorCode>
+                        <model>098 R-39 круглый</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="57" type="vendor.model" available="false">
+                        <url>http://koza/product/098-r-50-kruglyy5757</url>
+                        <price>37.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00520</vendorCode>
+                        <model>098 R-50 круглый</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="58" type="vendor.model" available="false">
+                        <url>http://koza/product/098t-pod-mr-11-kruglyy-plosko-povorotnyy5858</url>
+                        <price>19.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00521</vendorCode>
+                        <model>098Т под MR-11 круглый плоско-поворотный</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="59" type="vendor.model" available="false">
+                        <url>http://koza/product/098t-pod-mr-16-kruglyy-plosko-povorotnyy5959</url>
+                        <price>23.54</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00522</vendorCode>
+                        <model>098Т под MR-16 круглый плоско-поворотный</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="60" type="vendor.model" available="false">
+                        <url>http://koza/product/125-r-39-e146060</url>
+                        <price>32.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00524</vendorCode>
+                        <model>125 R-39 E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="61" type="vendor.model" available="false">
+                        <url>http://koza/product/125-r-50-e146161</url>
+                        <price>37.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00525</vendorCode>
+                        <model>125 R-50 E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="62" type="vendor.model" available="false">
+                        <url>http://koza/product/125t-pod-mr-11-plosko-povorotnyy6262</url>
+                        <price>19.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00526</vendorCode>
+                        <model>125Т под MR-11 плоско поворотный</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="63" type="vendor.model" available="false">
+                        <url>http://koza/product/108t-pod-mr-16-oval-plosko-povorotnyy6363</url>
+                        <price>25.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00523</vendorCode>
+                        <model>108Т под MR-16 овал плоско-поворотный</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="64" type="vendor.model" available="false">
+                        <url>http://koza/product/156-r-39-e146464</url>
+                        <price>32.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00528</vendorCode>
+                        <model>156 R-39 E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="65" type="vendor.model" available="false">
+                        <url>http://koza/product/156-r-50-e146565</url>
+                        <price>37.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00529</vendorCode>
+                        <model>156 R-50 E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="66" type="vendor.model" available="false">
+                        <url>http://koza/product/156t-pod-mr-16-plosko-povorotnyy6666</url>
+                        <price>23.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00530</vendorCode>
+                        <model>156Т под MR-16 плоско поворотный</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="67" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-16-12v-2w-9leds-jc-g46767</url>
+                        <price>28.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00021</vendorCode>
+                        <model>LB-16 12V/2W  9LEDS JC G4</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="68" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-87-66led-5mm-4w-7000k-230v-e27-230lm6868</url>
+                        <price>71.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00022</vendorCode>
+                        <model>LB-87, 66LED/5mm (4W) 7000К, 230V E27 230Lm</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="69" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-89-108led-5mm-5w-7000k-230v-e276969</url>
+                        <price>80.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00023</vendorCode>
+                        <model>LB-89, 108LED/5mm (5W) 7000К, 230V E27</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="70" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-89-166led-5mm-8w-7000k-230v-e277070</url>
+                        <price>119.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00024</vendorCode>
+                        <model>LB-89, 166LED/5mm (8W) 7000К, 230V E27</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="71" type="vendor.model" available="false">
+                        <url>http://koza/product/r-397171</url>
+                        <price>5.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00400</vendorCode>
+                        <model>R-39</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="72" type="vendor.model" available="false">
+                        <url>http://koza/product/s35t-e-14-i-e-27-svecha-na-vetru7272</url>
+                        <price>4.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00401</vendorCode>
+                        <model>С35Т E-14 и E-27 свеча на ветру</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="73" type="vendor.model" available="false">
+                        <url>http://koza/product/l-e-elr60-zerkalnaya-r50-t2-11w-e147373</url>
+                        <price>28.65</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00151</vendorCode>
+                        <model>Л/Э ELR60 зеркальная R50 (T2) 11W E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="74" type="vendor.model" available="false">
+                        <url>http://koza/product/l-e-elr61-zerkalnaya-r63-t3-15w-e277474</url>
+                        <price>32.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00152</vendorCode>
+                        <model>Л/Э ELR61 зеркальная R63 (T3) 15W E27</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="75" type="vendor.model" available="false">
+                        <url>http://koza/product/l-e-els39-zerkalnaya-r39-t2-7w--e147575</url>
+                        <price>40.80</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00153</vendorCode>
+                        <model>Л/Э ELS39 зеркальная R39 (T2) 7W  E14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="76" type="vendor.model" available="false">
+                        <url>http://koza/product/l-e-esb920-mr16-so-steklom-11w-g5-37676</url>
+                        <price>20.95</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00154</vendorCode>
+                        <model>Л/Э ESB920 MR16 (со стеклом) 11W G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="77" type="vendor.model" available="false">
+                        <url>http://koza/product/l-e-esb925-mr11-spiral-t2-7w-g5-37777</url>
+                        <price>26.45</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00155</vendorCode>
+                        <model>Л/Э ESB925 MR11 (спираль T2) 7W G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="78" type="vendor.model" available="false">
+                        <url>http://koza/product/l-e-esb926-mr16-spiral-t2-11w-g5-37878</url>
+                        <price>26.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00156</vendorCode>
+                        <model>Л/Э ESB926 MR16 (спираль T2) 11W G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="79" type="vendor.model" available="false">
+                        <url>http://koza/product/lb-25-mrg-2w-30leds-6500k-gu107979</url>
+                        <price>35.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>1</categoryId>
+                        <categoryId>8</categoryId>
+                        <categoryId>9</categoryId>
+                        <categoryId>10</categoryId>
+                        <categoryId>11</categoryId>
+                        <categoryId>16</categoryId>
+                        <categoryId>29</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00025</vendorCode>
+                        <model>LB-25 MRG 2W 30LEDS 6500K GU10</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="80" type="vendor.model" available="false">
+                        <url>http://koza/product/svetilnik-vihid-el50-4-led06w-230v-zel8080</url>
+                        <price>74.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>24</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01501</vendorCode>
+                        <model>Светильник "ВИХIД"  (EL50 4 LED/0.6W)  230V,  зелёный/серебристый</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="81" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-50w-tra-25-tashibra8181</url>
+                        <price>16.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02401</vendorCode>
+                        <model>трансформатор  50W / TRA 25 (TASHIBRA)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="82" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator--60w-tra-25-tashibra8282</url>
+                        <price>16.80</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02402</vendorCode>
+                        <model>трансформатор  60W / TRA 25 (TASHIBRA)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="83" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-105w-tra-25-tashibra8383</url>
+                        <price>28.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02403</vendorCode>
+                        <model>трансформатор 105W / TRA 25 (TASHIBRA)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="84" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-150w-tra-25-tashibra8484</url>
+                        <price>40.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02404</vendorCode>
+                        <model>трансформатор 150W / TRA 25 (TASHIBRA)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="85" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-200w-tra-25-tashibra8585</url>
+                        <price>63.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02405</vendorCode>
+                        <model>трансформатор 200W / TRA 25 (TASHIBRA)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="86" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-250w-tra-25-tashibra8686</url>
+                        <price>71.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02406</vendorCode>
+                        <model>трансформатор 250W / TRA 25 (TASHIBRA)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="87" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-elektr-plastik-tra110-feron--50w-new8787</url>
+                        <price>20.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02407</vendorCode>
+                        <model>трансформатор ферон  50W-new электр.пластик TRA110</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="88" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-elektr-plastik-tra110-feron-60w-new8888</url>
+                        <price>20.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02408</vendorCode>
+                        <model>трансформатор ферон  60W-new электр.пластик TRA110</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="89" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-elektr-plastik-tra110-feron-105w-new8989</url>
+                        <price>34.80</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02409</vendorCode>
+                        <model>трансформатор ферон 105W-new электр.пластик TRA110</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="90" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-elektr-plastik-tra110-feron-150w-new9090</url>
+                        <price>48.80</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02410</vendorCode>
+                        <model>трансформатор ферон 150W-new электр.пластик TRA110</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="91" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-elektr-plastik-tra110-feron-200w-new9191</url>
+                        <price>72.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02411</vendorCode>
+                        <model>трансформатор ферон 200W-new электр.пластик TRA110</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="92" type="vendor.model" available="false">
+                        <url>http://koza/product/transformator-elektrplastik-tra110-feron-250w-new9292</url>
+                        <price>80.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02412</vendorCode>
+                        <model>трансформатор ферон 250W-new электр.пластик TRA110</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="93" type="vendor.model" available="false">
+                        <url>http://koza/product/zaschita-dlya-galogennyh-lamp-150w9393</url>
+                        <price>28.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02701</vendorCode>
+                        <model>защита для галогенных ламп 150W</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="94" type="vendor.model" available="false">
+                        <url>http://koza/product/zaschita-dlya-galogennyh-lamp-300w9494</url>
+                        <price>30.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02702</vendorCode>
+                        <model>защита для галогенных ламп 300W</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="95" type="vendor.model" available="false">
+                        <url>http://koza/product/zaschita-dlya-galogennyh-lamp-500w9595</url>
+                        <price>33.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02703</vendorCode>
+                        <model>защита для галогенных ламп 500W</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="96" type="vendor.model" available="false">
+                        <url>http://koza/product/zaschita-dlya-galogennyh-lamp-1000w9696</url>
+                        <price>44.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>3</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>02704</vendorCode>
+                        <model>защита для галогенных ламп 1000W</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="97" type="vendor.model" available="false">
+                        <url>http://koza/product/1009dl-mr-119797</url>
+                        <price>20.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00545</vendorCode>
+                        <model>1009DL MR-11</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="98" type="vendor.model" available="false">
+                        <url>http://koza/product/005349898</url>
+                        <price>25.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00546</vendorCode>
+                        <model>2009DL MR-16</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="99" type="vendor.model" available="false">
+                        <url>http://koza/product/250dl-mr16-g5-39999</url>
+                        <price>25.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00509</vendorCode>
+                        <model>250DL MR16 G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="100" type="vendor.model" available="false">
+                        <url>http://koza/product/1008al-r39-e14100100</url>
+                        <price>38.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00539</vendorCode>
+                        <model>1008AL R39 Е14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="101" type="vendor.model" available="false">
+                        <url>http://koza/product/1008dl-mr-11101101</url>
+                        <price>22.20</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00540</vendorCode>
+                        <model>1008DL MR-11</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="102" type="vendor.model" available="false">
+                        <url>http://koza/product/2008al-r50-e14102102</url>
+                        <price>44.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00541</vendorCode>
+                        <model>2008AL R50 Е14</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="103" type="vendor.model" available="false">
+                        <url>http://koza/product/2008dl-mr-16-g5-3103103</url>
+                        <price>27.30</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00542</vendorCode>
+                        <model>2008DL MR-16 G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="104" type="vendor.model" available="false">
+                        <url>http://koza/product/1008dl-mr-11-s104104</url>
+                        <price>22.10</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00543</vendorCode>
+                        <model>1008DL MR-11-S</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="105" type="vendor.model" available="false">
+                        <url>http://koza/product/2008dl-mr-16-s-g5-3105105</url>
+                        <price>29.40</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>00544</vendorCode>
+                        <model>2008DL MR-16-S G5.3</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="106" type="vendor.model" available="false">
+                        <url>http://koza/product/al150-7-1w-230v-7000k-80lmw-alu-body-wdriver106106</url>
+                        <price>96.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01500</vendorCode>
+                        <model>AL150 (7*1W)  230V 7000K 80LM/W  ALU BODY W/Driver</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="107" type="vendor.model" available="false">
+                        <url>http://koza/product/al151-12-1w-230v-7000k-80lmw--alu-body-wdriver107107</url>
+                        <price>197.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01501</vendorCode>
+                        <model>AL151(12*1W) 230V 7000K 80LM/W  ALU BODY W/Driver</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="108" type="vendor.model" available="false">
+                        <url>http://koza/product/al152-18-1w-230v-7000k-80lmw-alu-body-wdriver108108</url>
+                        <price>246.70</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01502</vendorCode>
+                        <model>AL152 (18*1W) 230V 7000K 80LM/W  ALU BODY W/Driver</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="109" type="vendor.model" available="false">
+                        <url>http://koza/product/al153-24-1w-230v-7000k-80lmw-alu-body-wdriver109109</url>
+                        <price>352.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01503</vendorCode>
+                        <model>AL153 (24*1W) 230V 7000K 80LM/W  ALU BODY W/Driver</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="110" type="vendor.model" available="false">
+                        <url>http://koza/product/al160-5-1w-230v-7000k-80lmw-alu-body-wdriver110110</url>
+                        <price>102.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01504</vendorCode>
+                        <model>AL160 (5*1W)  230V  7000K 80LM/W ALU BODY  W/Driver</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="111" type="vendor.model" available="false">
+                        <url>http://koza/product/al161-7-1w-230v-7000k-80lmw-alu-body-wdriver111111</url>
+                        <price>116.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01505</vendorCode>
+                        <model>AL161 (7*1W) 230V   7000K 80LM/W ALU BODY  W/Driver</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="112" type="vendor.model" available="false">
+                        <url>http://koza/product/al162-12-1w-230v-7000k-80lmw-alu-body-wdriver112112</url>
+                        <price>183.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01506</vendorCode>
+                        <model>AL162 (12*1W) 230V  7000K 80LM/W ALU BODY W/Driver</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="113" type="vendor.model" available="false">
+                        <url>http://koza/product/al163-18-1w-230v-7000k-80lmw-alu-body-wdriver113113</url>
+                        <price>312.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01507</vendorCode>
+                        <model>AL163 (18*1W) 230V  7000K 80LM/W ALU BODY W/Driver</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="114" type="vendor.model" available="false">
+                        <url>http://koza/product/al177-3-5w32led-230v-svetovoy-datchik-i-audiodatchik-alyuminiy114114</url>
+                        <price>61.90</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01508</vendorCode>
+                        <model>AL177, 3.5W(32/LED) 230V+ световой датчик и аудиодатчик, алюминий</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="115" type="vendor.model" available="false">
+                        <url>http://koza/product/al184-led9w100led0-06w-230v-6400k-kvadrat-belyy266-265-33mm115115</url>
+                        <price>196.80</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01509</vendorCode>
+                        <model>AL184, LED9W(100/LED*0.06W) 230V 6400K-квадрат,белый(266*265*33mm)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="116" type="vendor.model" available="false">
+                        <url>http://koza/product/al185-led7w72led0-06w-230v-6400k-kruglyy-belyy243-33mm116116</url>
+                        <price>146.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01510</vendorCode>
+                        <model>AL185, LED7W(72/LED*0.06W) 230V 6400K-круглый, белый(243*33mm)</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="117" type="vendor.model" available="false">
+                        <url>http://koza/product/al194-led4w48led-230vdatchik-dvizh-ya-alyuminiy117117</url>
+                        <price>115.50</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01511</vendorCode>
+                        <model>AL194, LED4W(48/LED) 230V+датчик движ-я, алюминий</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="118" type="vendor.model" available="false">
+                        <url>http://koza/product/g770-led-1w230v-alyuminiy-kruglyy-6500k118118</url>
+                        <price>31.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01512</vendorCode>
+                        <model>G770 Led 1W/230V алюминий, круглый 6500K</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="119" type="vendor.model" available="false">
+                        <url>http://koza/product/g774-led-1w230v-alyuminiy-kvadrat-6500k119119</url>
+                        <price>31.60</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>01513</vendorCode>
+                        <model>G774 Led 1W/230V алюминий, квадрат 6500K</model>
+                        <description>description</description>
+                        
+                    </offer>
+                    <offer id="120" type="vendor.model" available="false">
+                        <url>http://koza/product/testirovanie120120</url>
+                        <price>400.00</price>
+                        <currencyId>UAH</currencyId>
+                        <categoryId>5</categoryId>
+                        <delivery>true</delivery>
+                        <vendor>vendor</vendor>
+                        <vendorCode>12345678910</vendorCode>
+                        <model>тестирование</model>
+                        <description>description</description>
+                        
+                    </offer>
+                </offers>
+            </shop>
+        </yml_catalog>

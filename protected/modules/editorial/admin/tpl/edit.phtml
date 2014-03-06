@@ -1,0 +1,63 @@
+
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Редактирование:&nbsp;<?=$vars['edit']['url']?></h1>
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<input type="hidden" value="<?=$vars['edit']['url']?>" name="id" />
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Информация </h2>
+						<div class="form-field">
+							<label class="cm-required" for="page">Дата изменения:</label>
+							: <?=$vars['edit']['date']?>
+						</div>
+						<div class="form-field">
+							<label for="body">Css code:</label>
+							<textarea class="input-textarea-long" rows="10" cols="55" id="body" name="body"><?=htmlspecialchars($vars['edit']['body'])?></textarea>
+						</div>
+
+					</fieldset>
+					
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Сохранить и закрыть" name="update_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp; 
+							<a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>
+<?
+	$ext=explode('.', $vars['edit']['url']);
+	if($ext[1]=='css')$type="'text/css'";
+	else $type="'application/x-httpd-php'";
+?>
+<script>
+  var editor = CodeMirror.fromTextArea(document.getElementById("body"), {
+        mode: <?=$type?>,
+        autoCloseTags: true,
+		lineNumbers:true,
+        matchBrackets : true,
+		styleActiveLine: true,
+		autoCloseTags: true,
+        indentUnit: 4,
+        indentWithTabs: true,
+        enterMode: "keep",
+        tabMode: "shift"
+      });
+</script>

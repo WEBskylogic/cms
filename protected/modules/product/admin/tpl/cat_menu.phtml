@@ -1,0 +1,18 @@
+<script type="text/javascript">
+	$(function() {
+		$("#tree").treeview({
+			collapsed: true,
+			animated: "medium",
+			control:"#sidetreecontrol",
+			persist: "location"
+		});
+	})
+</script>
+<div id="navigation" class="cm-j-tabs">
+	<ul>
+		<li class="cm-active"><span><a href="#">Категории</a></span></li>
+    </ul>
+</div>
+<?
+	echo $vars['cat_menu'];
+?>

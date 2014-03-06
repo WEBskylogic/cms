@@ -1,0 +1,120 @@
+<table width="90%"><tr>
+	<td><a href="/users/info" class="user_hov pf">МОИ ДАННЫЕ</a></td>
+	<td class="user_hov pf" align="">МОИ ЗАКАЗЫ</td>
+    
+    <td><a href="/orders/all" class="user_hov pf">текущий заказ (корзина)</a></td>
+</tr></table>  
+<?
+	//<h2 align="center"><?=$vars['translate']['my_orders']</h2>
+	if(!isset($vars['order']))
+	{
+?>
+	<table id="tb_product" style="height:50px; margin-top:22px;" cellpadding="0" cellspacing="0">
+     <tr style="background-color:transparent;">
+            <th style="width:102px;">ID заказа</th>
+            <th style="width:103px;">Статус</th>
+            <th>Дата</th>
+            <th style="width:220px;">Сумма</th>
+            <th style="width:130px;"></th>
+        </tr>
+    </table>
+    <table id="tb_product" style="width:740px; margin:0 auto;">
+        <?
+			$i=0;
+			foreach($vars['orders'] as $row)
+			{
+
+				echo"<tr>
+						<td style='padding:5px 15px; font-size:16px; width:65px;' align='center'><a href='".LINK."/users/orders/id/{$row['id']}'>#{$row['id']}</a></td>
+						<td style='width:82px;' align='center'>{$row['name']}</td>
+						<td align='center'>".Date::date_view($row['date_add'], "dd/mm/YY, hh:ii")."</td>
+						<td style='width:200px;' align='center'>{$row['sum']} {$row['currency']}</td>
+						<td style='width:100px;' align='center'><a href='".LINK."/users/orders/id/{$row['id']}'>Подробнее</a></td>
+					</tr>";
+				$i++;	
+			}
+		?>
+    </table>
+<?
+	}
+	else{
+		if($vars['order']['id'])
+		{
+		?>
+         <table id="tb_product" style="height:50px; margin-top:22px;" cellpadding="0" cellspacing="0">
+         <tr style="background-color:transparent;">
+                <th><?=$vars['translate']['name']?></th>
+                <th style="width:103px;"><?=$vars['translate']['amount']?></th>
+                <th style="width:200px;"><?=$vars['translate']['price']?></th>
+                <th style="width:200px;"><?=$vars['translate']['total']?></th>
+            </tr>
+        </table>
+        <table id="tb_product" style="width:740px; margin:0 auto;">
+        <?
+			$i=0;
+			$summa2=0;
+			foreach($vars['product'] as $row)
+			{
+				$price = formatPrice($row['price'], $vars['order']['currency']);
+				$summa = formatPrice($row['price']*$row['amount'], $vars['order']['currency']);
+				$summa2+=$row['price']*$row['amount'];
+
+				echo"<tr>
+						<td>{$row['name']}</td>
+						<td style='width:103px; text-align:center;'>{$row['amount']}</td>
+						<td style='width:170px; text-align:center;' class='price'>{$price}</td>
+						<td style='width:170px; text-align:center;'>{$summa}</td>
+					</tr>";
+				$i++;	
+			}
+			$summa = formatPrice($vars['order']['sum'], $vars['order']['currency']);
+		?>
+        </table>
+
+        <table align="right" style="margin-top:5px;">
+		<tr><td style="border-right:1px dotted #ccc; height:20px; padding-right:5px;"><?=$vars['translate']['total']?>: </td>
+        <td style="padding-left:5px;"><?=$summa?></td></tr></table>
+        
+        <br /><br />
+        <div style="margin:0 auto; width:606px;">
+        <div style="color:#bb4b6b; font-family:Tahoma, Geneva, sans-serif; font-size:17px; margin-bottom:10px;">Покупатель</div>
+        <div class="parag"><span>ID Заказа: </span> #<?=$vars['order']['id']?></div>
+        <div class="parag"><span>Дата заказа: </span> <?=Date::date_view($vars['order']['date_add'], "dd/mm/YY, hh:ii")?></div>
+        <div class="parag"><span>Статус: </span> <?=$vars['order']['name']?></div>
+		   <?
+		   		/*if($vars['order']['discount']!="")
+				echo'<div class="parag"><span>Скидка: </span> '.$vars['order']['discount'].'%</div>';*/
+				   
+				
+				
+				if($vars['order']['username']!="")
+				echo'<div class="parag"><span>Имя: </span>'.$vars['order']['username'].'</div>';   
+				
+				if($vars['order']['email']!="")
+				echo'<div class="parag"><span>E-mail: </span>'.$vars['order']['email'].'</div>';   
+				
+				if($vars['order']['phone']!="")
+				echo'<div class="parag"><span>Телефон: </span>'.$vars['order']['phone'].'</div>';   
+				
+				if($vars['order']['address']!="")
+				echo'<div class="parag"><span>Адрес: </span>'.$vars['order']['address'].'</div>';   
+				
+				if($vars['order']['country']!="")
+				echo'<div class="parag"><span>Страна: </span> '.$vars['order']['country'].'</div>';
+				   
+				if($vars['order']['city']!="")
+				echo'<div class="parag"><span>Город: </span>'.$vars['order']['city'].'</div>';   
+				
+				if($vars['order']['post_index']!="")
+				echo'<div class="parag"><span>Почтовый индекс: </span>'.$vars['order']['post_index'].'</div>';   
+				
+				if($vars['order']['delivery']!="")
+				echo'<div class="parag"><span>Способ доставки: </span> '.$vars['order']['delivery'].'</div>';         
+		   ?>
+           <?=htmlspecialchars_decode($vars['order']['comment'])?>
+       	</div>
+        <?
+	}
+	else echo"<div class='err'>Заказа не существует!</div>";
+}
+?>

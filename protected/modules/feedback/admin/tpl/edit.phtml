@@ -1,0 +1,31 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Просмотр</h1>
+	</div>
+	<div class="extra-tools">
+	<a class="tool-link cm-confirm" href="/admin/<?=$vars['action']?>/delete/<?=$vars['edit']['id']?>">Удалить запись</a>
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Информация </h2>
+						<div class="form-field">
+							<label class="cm-required" for="page">Дата:</label>
+							<?=$vars['edit']['date']?>
+						</div>
+						<div class="form-field">
+							<label for="page_descr">Текст сообщения:</label>
+							<?=$vars['edit']['text']?>
+						</div>
+					</fieldset>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

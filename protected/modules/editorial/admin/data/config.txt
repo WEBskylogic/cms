@@ -1,0 +1,2 @@
+theme#@@#default#@@#text#@@#Текущая тема#@@#0
+watermark#@@#{"image":"images\/watermark.png","type":"1","opacity_font":"40","opacity_back":"80","font_color":"ff00ff","font_size":"60","back_color":"","active":"0","position":"watermark_type1","text":"ahdskhsdkhakjsda","width":"550","height":"80","top":"8","left":"5","type_image":"2","modules":["params","photos","catalog","product"]}#@@#text#@@##@@#0

@@ -1,0 +1,69 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Динамический sitemap </h2>
+						
+                        <div class="form-field">
+                            <label for="on_sitemap">Включить:</label>
+							<input type="checkbox" id="on_sitemap" name="on_sitemap" value="1"<? if($vars['edit']['sitemap_generation']==1)echo' checked="checked"';?> />
+						</div>
+                        <div class="form-field">
+							<label for="page">URL:</label>
+							<input type="text" class="input-text-large main-input" value="http://<?=$_SERVER['HTTP_HOST']?>/ajax/meta/sitemap" disabled="disabled" style="width:300px;" />
+						</div>
+					</fieldset>
+                    <fieldset>
+						<h2 class="subheader"> Статический sitemap </h2>
+                        <div class="form-field">
+							<label for="page">URL:</label>
+							<input type="text" class="input-text-large main-input" value="http://<?=$_SERVER['HTTP_HOST']?>/sitemap.xml" disabled="disabled" style="width:300px;" />
+                            
+                            <input type="submit" value="Генерировать" name="generate" />
+                            &nbsp;&nbsp;&nbsp;
+                            <a href="/sitemap.xml" target="_blank">Скачать sitemap.xml</a>
+						</div>
+					</fieldset>
+                    <fieldset>
+						<h2 class="subheader"> Яндекс.Маркет </h2>
+						
+                        <div class="form-field">
+                            <label for="on_yandex_market">Включить:</label>
+							<input type="checkbox" id="on_yandex_market" name="on_yandex_market" value="1"<? if($vars['edit']['yandex_market']==1)echo' checked="checked"';?> />
+						</div>
+                        <div class="form-field">
+							<label for="page">URL:</label>
+							<input type="text" class="input-text-large main-input" value="http://<?=$_SERVER['HTTP_HOST']?>/ajax/meta/yandex" disabled="disabled" style="width:300px;" />
+						</div>
+					</fieldset>
+                    <fieldset>
+						<h2 class="subheader"> Основной домен </h2>
+						
+                        <div class="form-field">
+                            <label for="with_www">Без www.:</label>
+							<input type="radio" id="with_www" name="main_domain" value="0"<? if($vars['edit']['main_domain']==0)echo' checked="checked"';?> />
+                            <br />
+                            <label for="without_www">C www.:</label>
+							<input type="radio" id="without_www" name="main_domain" value="1"<? if($vars['edit']['main_domain']==1)echo' checked="checked"';?> />
+						</div>
+					</fieldset>
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

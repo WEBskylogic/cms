@@ -1,0 +1,34 @@
+<div id="cabinet">
+	<div class="title_basket">Мои данные</div>
+    <div class="overview">
+    	<div class="message_basket"></div>
+        <div class="profile_form">
+            <div class="profile_left">
+                <label for="n_name">Имя *:</label>
+                <input type="text" id="n_name" value="<?=$vars['user']['name'];?>" />
+                
+                <label>E-mail (логин):</label>
+                <b><?=$vars['user']['email'];?></b>
+                
+                <label for="n_pass">Старый пароль:</label>
+                <input type="password" id="n_pass" value="" />
+                
+                <label for="o_pass">Новый пароль:</label>
+                <input type="password" id="o_pass" value="" />
+            </div>
+            <div class="profile_right">
+                <label for="n_city">Город:</label>
+                <input type="text"  id="n_city" value="<?=$vars['user']['city'];?>"/>
+                
+                <label for="n_address">Адрес:</label>
+                <input type="text"  id="n_address" value="<?=$vars['user']['address'];?>"/>
+                
+                <label for="n_post_index">Почтовый индекс:</label>
+                <input type="text"  id="n_post_index" value="<?=$vars['user']['post_index'];?>"/>
+                
+                <label for="n_phone">Телефон:</label>
+                <input type="text" id="n_phone" value="<?=$vars['user']['phone'];?>"/>
+            </div>
+        </div>
+    </div>
+</div>

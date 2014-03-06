@@ -1,0 +1,9 @@
+2
+Фильтры товаров
+params
+params
+product_property_sets,params_product,params_catalog,params,params_type
+1
+Фильтры товаров показываются на витрине магазина и позволяют покупателям легко находить нужный товар.
+
+15

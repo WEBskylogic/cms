@@ -1,0 +1,16 @@
+<ul class="sf-menu">
+<?
+	$i=0;
+	$cnt=count($vars['menu'])-1;
+	foreach($vars['menu'] as $row)
+	{
+		$pos = strpos($row['url'], "http://");
+		if($pos !== false)$link=$row['url'].'" target="_blank" rel="nofollow';
+		elseif($row['url']=="/")$link=LINK."/";
+		else $link=LINK."/".$row['url'];
+		echo '<li ';
+        if($_SERVER['REQUEST_URI']==$link)
+            echo ' class="cur_menu"'; echo '><a href="'.$link.'">'.$row['name'].'</a></li>';
+    }
+?>
+</ul>

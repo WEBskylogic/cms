@@ -1,0 +1,77 @@
+<div class="items-container multi-level">
+
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+
+	<tr>
+
+		<th width="20" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+
+		<th width="30">ID</th>
+
+        <th width="120">Дата</th>
+
+		<th width="120">Адрес</th>
+
+        <th width="120">Тема</th>
+
+		<th>Текст</th>
+
+		<th width="100">Изображение</th>
+
+		<th width="100" style="text-align:center;">Действие</th>
+
+	</tr>
+
+	<?php
+
+		foreach($vars['list']['list'] as $row)
+
+		{
+
+			$url = str_replace('http://'.$_SERVER['HTTP_HOST'], '', $row['url']);
+
+			echo'<tr>
+
+					<td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="id[]" /></td>
+
+					<td><span>'.$row['id'].'</span></td>
+
+					<td><span>'.Date::date_view($row['date_add'], "dd/mm/YY, hh:ii").'</span></td>
+
+					<td><a href="'.$row['url'].'" class="tool-link">'.$url.'</a></td>
+
+					<td>'.$row['subject'].'</td>
+
+					<td>'.$row['text'].'</td>
+
+					<td><a target="_blank" href="/files/testing/'.$row['id'].'.jpg" class="tool-link">/files/testing/'.$row['id'].'.jpg</a></td>
+
+					<td>		
+
+						<ul class="cm-tools-list tools-list">
+
+							<li><a href="/admin/'.$vars['action'].'/delete/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+
+						</ul>
+
+					</td>
+
+				</tr>';
+
+		}
+
+	?>
+
+</table>
+
+</div>
+
+<div class="table-tools">
+
+	<a class="check_all" href="javascript:void(0);">Выбрать все</a>| 
+
+	<a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+
+</div>
+
+<? echo $vars['list']['paging']?>

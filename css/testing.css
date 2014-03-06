@@ -1,0 +1,128 @@
+#testing-block {
+	position: fixed;
+	z-index: 999;
+	display: none;
+	width: 100%;
+	top: 0;
+}
+#testing-line {
+	background: url('../images/testing_line.png') repeat-x;
+	height: 5px;
+}
+#testing-end {
+	margin: 0 auto;
+	position: relative;
+	width: 499px;
+	height: 67px;
+	text-align: center;
+}
+#testing-main {
+	background: url('../images/testing_bg.png') no-repeat;
+	position: absolute;
+	width: 499px;
+	height: 67px;
+	cursor: pointer;
+	z-index: 2;
+}
+#testing-end p {
+	color: #e90f0f;
+	font-family: "Arial";
+	font-size: 18px;
+}
+#testing-end p span {
+	color: #635046;
+	font-family: "Arial";
+	font-size: 22px;
+	font-weight: bold;
+}
+#testing-mail-block {
+	position: absolute;
+	width: 121px;
+	height: 50px;
+	bottom: 15px;
+	right: 10px;
+	z-index: 1;
+	background: url('../images/testing_mail_block.png') no-repeat;
+}
+#testing-mail-block a {
+	position: absolute;
+	bottom: 3px;
+	right: 5px;
+}
+#send-report {
+	width: 415px;
+	display:none;
+	padding: 0 25px;
+	padding-top: 80px;
+	margin-left: 15px;
+	border: 1px solid #7f7f7f;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-moz-background-clip: padding;
+	-webkit-background-clip: padding-box;
+	background-clip: padding-box;
+	background-color: #fff;
+}
+.show {
+	display: block !important;
+}
+#send-report h3 {
+	color: #383636;
+	font-family: "Arial";
+	font-size: 22px;
+	margin-bottom: 20px;
+	font-weight: bold;
+}
+#send-report label {
+	float: left;
+	margin: 7px 0;
+	padding: 0;
+	width: auto;
+}
+#send-report input {
+	float: left;
+	background: #f9f9f9;
+	border: 1px solid #a5a5a5;
+	outline: none;
+	padding: 0 8px;
+	width: 394px;
+	height: 30px;
+}
+#send-report textarea {
+	float: left;
+	background: #f9f9f9;
+	border: 1px solid #a5a5a5;
+	padding: 8px;
+	outline: none;
+	width: 394px;
+	height: 85px;
+	resize: none;
+	overflow-y: auto;
+}
+#send-report button {
+	width: 174px;
+	height: 37px;
+	margin: 10px 0;
+	cursor: pointer;
+	border: 1px solid #000;
+	background-color: #ebebeb;
+	color: #383636;
+	font-family: "Arial";
+	font-size: 16px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+#send-report .done {
+	margin-bottom: 20px;
+	color: #11960e;
+	font-family: "Arial";
+	font-size: 22px;
+	font-weight: bold;
+}
+#send-report .error {
+	border: 1px solid #f00;: 
+}
+.clear {
+	clear: both;
+}

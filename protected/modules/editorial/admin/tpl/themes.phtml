@@ -1,0 +1,38 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Темы</h1>
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Выберите тему: </h2>
+                        <?
+							foreach($vars['edit'] as $row)
+							{
+								echo'<div class="form-field">
+										<label for="theme_'.$row.'">'.$row.':</label>
+										<input type="radio" name="themes" value="'.$row.'" id="theme_'.$row.'"';if($row==$vars['theme']['value'])echo' checked="checked"';echo' /><br />
+										<img src="/tpl/'.$row.'/images/screen.jpg" alt="" style="margin-top:10px;" />
+									 </div>';
+							}
+						?>
+					</fieldset>
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

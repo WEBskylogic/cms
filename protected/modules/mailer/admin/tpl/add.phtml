@@ -1,0 +1,72 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Новый шаблон:&nbsp;</h1>
+	</div>
+	<div class="extra-tools">
+		
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Информация </h2>
+
+					</fieldset>
+					<fieldset>
+						<div class="form-field">
+							<label for="reset">Сбросить пароль пользователям</label>
+							<input type="checkbox" id="reset" name="reset" />
+						</div>
+					</fieldset>
+					
+					<div></br>
+									<p> Разрешены следующие подстановки в шаблон:</br></br>
+										<b>{{SERVER_NAME}}</b> - название сайта,  </br>
+										<b>{{USERNAME}}</b> - имя пользователя,  </br>
+										<b>{{PASSWD}}</b> - новый пароль пользователя,  </br>
+										<b>{{EMAIL}}</b> - E-Mail пользователя,  </br>
+										<b>{{PHONE}}</b> - телефон пользователя.
+									</p></br>
+						</div>
+								
+						<div class="form-field">
+							<label class="cm-required" for="page">Название (ТЕМА письма):</label>
+							<input type="text" class="input-text-large main-input" value="" size="55" name="name" />
+						</div>
+						<div class="form-field">
+							<label for="page_descr">Шаблон:</label>
+						
+							<?=showEditor('body', '');?>
+							
+						</div>
+						<div class="form-field">
+							<label class="cm-required">Статус:</label>
+							<div class="select-field">
+								<input type="radio" class="radio" value="1" id="page_data_0_a" name="active" checked="checked" />
+								<label for="page_data_0_a">Вкл.</label>
+								<input type="radio" class="radio" value="0" id="page_data_0_d" name="active" />
+								<label for="page_data_0_d">Выкл.</label>
+							</div>
+						</div>
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Создать" name="add" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Создать и закрыть" name="add_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp; 
+							<a class="underlined tool-link" href="/admin/menu">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

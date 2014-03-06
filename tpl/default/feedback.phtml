@@ -1,0 +1,25 @@
+
+<script type="text/javascript">$(document).ready(function(){$("#formID").validationEngine();});</script>
+<div class="title"><?=$vars['translate']['feelback']?></div>
+<div class="form_feedback">
+	<?php if(isset($vars['message']))echo $vars['message'];?>
+    <form action="<?=$_SERVER['REQUEST_URI']?>/send" method="post" id="formID">
+        <label for="f_name"><?=$vars['translate']['fio']?>*: </label>
+        <input type="text" name="f_name" id="f_name" class="validate[required]" <? if(isset($_POST['f_name']))echo'value="'.$_POST['f_name'].'"';?> /><br />
+        
+        <label for="f_email"><?=$vars['translate']['email']?>*: </label>
+        <input type="text" name="f_email" id="f_email" class="validate[required,custom[email]]" <? if(isset($_POST['f_email']))echo'value="'.$_POST['f_email'].'"';?> /><br />
+        
+        <label for="f_phone"><?=$vars['translate']['phone']?>: </label>
+        <input type="text" name="f_phone" id="f_phone" <? if(isset($_POST['f_phone']))echo'value="'.$_POST['f_phone'].'"';?> /><br />
+        
+        <label for="f_text"><?=$vars['translate']['message']?>*: </label>
+        <textarea rows="3" name="f_text" id="f_text" class="validate[required]"><? if(isset($_POST['f_text']))echo $_POST['f_text'];?></textarea><br />
+        
+        <table style="margin-left:102px;"><tr>
+        <td style="padding-right:10px;"><img src="/captcha" alt="#Enable images to see captcha." /></td>
+        <td><input type="text" name="f_captcha" id="f_captcha" class="validate[required,ajax[ajaxName]]" style="width:120px;" <? if(isset($_POST['f_captcha']))echo'value="'.$_POST['f_captcha'].'"';?> /></td>
+        <td><input type="submit" name="send_feedback" value="<?=$vars['translate']['send_message']?>" class="submit" /></td>
+        <tr></table>
+    </form>
+</div>

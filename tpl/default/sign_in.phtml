@@ -1,0 +1,24 @@
+<div id="login_form" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="width:350px; left:57%;">
+<form action="/send" method="post" id="auth_form"  onsubmit="return check_auth();">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel"><?=$vars['translate']['auth']?></h3>
+  </div>
+  <div class="modal-body">
+  	<div style="width:242px; margin:0 auto;">
+        	<div id="auth_message"></div>
+            <label for="email_auth"><?=$vars['translate']['email']?>: </label>
+            <input type="text" name="email_auth"  id="email_auth" /><br />
+            
+            <label for="pass_auth"><?=$vars['translate']['password']?>: </label>
+            <input type="password" name="pass_auth" id="pass_auth" />
+            
+            <div style="text-align:right; margin:10px 17px 0 0;"><a href="/users/forgotpass"><?=$vars['translate']['forgotpass']?></a></div>
+	 </div>
+  </div>
+  <div class="modal-footer">
+  	
+    <input type="submit" name="auth" value="<?=$vars['translate']['enter']?>" class="submit" />
+  </div>
+</form>
+</div>

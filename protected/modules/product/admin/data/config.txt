@@ -1,0 +1,9 @@
+height2_product_extra#@@#455#@@#text#@@#Высота доп. фото#@@#1
+height_product#@@#217#@@#text#@@#Высота фото#@@#1
+height_product_extra#@@#130#@@#text#@@#Высота доп. фото#@@#1
+paging_product#@@#20#@@#text#@@#Кол-во товаров в каталоге#@@#1
+paging_product_admin#@@#50#@@#text#@@#Кол-во товаров в каталоге в админке#@@#1
+rounding#@@#0#@@#text#@@#Глубина округления цен товаров#@@#1
+width2_product_extra#@@#302#@@#text#@@#Ширина доп. фото#@@#1
+width_product#@@#144#@@#text#@@#Ширина фото#@@#1
+width_product_extra#@@#86#@@#text#@@#Ширина доп. фото#@@#1

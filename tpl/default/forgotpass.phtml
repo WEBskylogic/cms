@@ -1,0 +1,20 @@
+<link href="/tpl/styles/validationEngine.jquery.css" rel="stylesheet" type="text/css" />
+<script src="/tpl/scripts/jquery.validationEngine-en.js" type="text/javascript"></script>
+<script src="/tpl/scripts/jquery.validationEngine.js" type="text/javascript"></script>
+<script type="text/javascript">	
+$(document).ready(function() {
+  $("#formID").validationEngine()
+});
+</script>
+
+<div class="auth">
+	<?=$vars['message']?>
+
+   <form method="post" id="formID">
+        <label for="email" style="width:200px;"><?=$vars['translate']['enter_email']?></label>
+        <table><tr>
+        <td><input type="text" style="width:250px;" name="email" id="email" class="validate[required,custom[email]]" /></td>
+        <td><input type="submit" value="<?=$vars['translate']['send_message']?>" class="submit" /></td>
+        </tr></table>
+   </form>
+</div>    

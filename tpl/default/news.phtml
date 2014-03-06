@@ -1,0 +1,35 @@
+<?php
+    if(isset($vars['news']))
+    {
+    ?>
+        <?php echo "<h1 class='title'>{$vars['news']['name']}</h1>".htmlspecialchars_decode($vars['news']['body']);?><br />
+        <a href="<?=LINK?>/news/all"><?=$vars['translate']['all_news']?></a><br /><br />
+        <?php
+            if(isset($vars['comments']))echo $vars['comments'];
+            if(count($vars['other'])!=0)
+            {
+                echo'<br /><div class="title">'.$vars['translate']['last_news'].'</div><div class="news">';
+                foreach($vars['other'] as $row)
+                {
+                    //echo'<div class="news_left"><span>'.Numeric::printDate($row['data']).'</span></div>';
+                    echo'<div><a href="'.LINK.'/news/'.$row['url'].'" style="font-size:18px; display:block; margin-bottom:5px;">'.$row['name'].'</a></div><div class="clear"></div>';
+                    echo''.$row['body_m'].'<br /><br />';
+                }
+                echo"</div><br />";
+            }
+    }
+    else{
+        echo'<h1 class="title">'.$vars['translate']['news'].'</h1>';
+        echo'<div class="news">';
+        foreach($vars['list']['list'] as $row)
+        {
+            if(file_exists("files/news/".$row['id']."_s.jpg"))$img="<a href='".LINK."/news/".$row['url']."'><img src='/files/news/".$row['id']."_s.jpg' alt='' style='padding:5px 5px 0 0;' /></a>";
+            else $img="";
+            //echo'<div class="news_left"><span>'.Numeric::printDate($row['data']).'</span></div>';
+            echo'<div class="news_right"><a href="'.LINK.'/news/'.$row['url'].'">'.$row['name'].'</a></div>';
+            echo'<table cellpadding="0" cellspacing="0"><tr><td>'.$img.'</td><td valign="top">'.$row['body_m'].'</td></tr></table><br />';
+        }
+        echo"</div>";
+        echo $vars['list']['paging'];
+    }
+?>

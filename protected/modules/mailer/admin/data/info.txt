@@ -1,0 +1,9 @@
+1
+﻿Модуль рассылки
+mailer
+mailer
+mail_queue,mailer,subscribers
+0
+Массовая рассылка писем пользователям сайта
+
+10

@@ -1,0 +1,16 @@
+AddDefaultCharset utf-8
+AddType text/x-component .htc
+Options +Includes +FollowSymLinks -Indexes
+DirectoryIndex index.php
+
+RewriteEngine on 
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+#RewriteRule ^(.*)$ index.php [L,QSA]
+RewriteRule .*.(txt|csv)$ index.php [R,NC] 
+RewriteRule !((.(js|jpeg|ico|gif|jpg|png|css|swf|cur|flv|pdf|htm|xml|JS|ICO|GIF|JPG|JPEG|PNG|CSS|SWF|CUR|FLV|PDF|HTM|XML))|connector.php)$ index.php
+<Files ~ "config.ini$">
+deny from all
+</Files>

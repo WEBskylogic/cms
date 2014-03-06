@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Language" content="ru" />
+<meta name="keywords" content="Админ панель Skylogic—CMS" />
+<meta name="description" content="Админ панель Skylogic—CMS" />
+<title>Админ панель Skylogic—CMS</title>
+<?=$this->LoadResource('image', 'favicon.ico', 'admin');?>
+<?=$vars['styles'];?>
+<?=$vars['scripts'];?>
+</head>
+<body>
+<div class="ajax-loading-box" id="ajax_loading_box">
+	<div class="ajax-inner-loading-box" id="ajax-inner-loading-box">Загрузка...</div>
+</div>
+<?=$vars['menu_inc'];?>
+<?
+if(!isset($vars['login']))
+{
+    ?>
+<table cellspacing="0" cellpadding="0" border="0" class="content-table">
+	<tr valign="top">
+		<td width="1px" class="side-menu"><div id="right_column"><?php if(isset($vars['left_menu']))echo $vars['left_menu'];?></div></td>
+		<td class="content">
+        	<div class="mainbox-breadcrumbs">
+				<?php if(isset($vars['breadcrumb']))echo $vars['breadcrumb'];?>
+			</div>
+			<div class="clear" id="main_column"> <?php echo $vars['content'];?> </div>
+        </td>
+	</tr>
+</table>
+<?
+}
+else echo $vars['content'];
+if(isset($vars['languages']))
+{
+	$lang='';
+	$cur_lang='Russian';
+	foreach($vars['languages'] as $row)
+	{
+		if($_SESSION['key_lang_admin']==$row['language'])$cur_lang=$row['comment'];
+		$lang.='<li><a style="background-image: url(/tpl/admin/images/flags/'.$row['language'].'.png);" href="/'.$row['language'].''.String::getUrl2($row['language']).'">'.$row['comment'].'</a></li>';
+	}
+	?>
+	<div id="bottom_menu">
+		<div class="float-left" style="width:95px;">
+			<div class="tools-container inline languages">
+				<a id="sw_select_RU_wrap_" class="select-link cm-combo-on cm-combination"><?=$cur_lang?></a>
+				<div class="popup-tools cm-popup-box cm-smart-position hidden" id="select_RU_wrap_">
+					<ul class="cm-select-list popup-icons">
+						<?=$lang?>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?
+}
+?>
+</body>
+</html>

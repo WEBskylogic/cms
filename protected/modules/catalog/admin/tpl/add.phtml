@@ -1,0 +1,162 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div class="cm-tabs-content">
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Новый каталог:&nbsp;</h1>
+	</div>
+	<div class="extra-tools">
+		
+	</div>
+	<div class="mainbox-body"> 
+        <div class="tabs cm-j-tabs cm-track">
+            <ul>
+                <li id="basic" class="cm-js cm-active"><a >Общее</a></li>
+                <li id="photo" class="cm-js"><a >Обложка</a></li>
+                <li id="params" class="cm-js"><a >Фильтры</a></li>
+                <li id="metadata" class="cm-js"><a >Мета данные</a></li>
+            </ul>
+        </div>
+        <form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="">
+            <div id="content_basic" class="cm-tabs">
+                <fieldset>
+                    <h2 class="subheader"> Информация </h2>
+                    <div class="form-field">
+                        <label class="cm-required" for="page">Название:</label>
+                        <input type="text" class="input-text-large main-input" value="" size="55" name="name" />
+                    </div>
+                    <div class="form-field">
+                        <label for="page">URL:</label>
+                        <input type="text" class="input-text-large main-input" value="" size="55" name="url" />
+                    </div>
+                    <div class="form-field">
+                        <label class="cm-required" for="page">Раздел:</label>
+                        <select name="sub">
+                            <option value="0">Корень...</option>
+                            <?php
+                            foreach($vars['catalog'] as $row)
+                            {
+                                if($row['sub']==0)
+                                {
+                                    echo"<option value='{$row['id']}'";if($row['id']==$_SESSION['sort_cat'])echo" selected";echo">{$row['name']}</option>";
+                                    foreach($vars['catalog'] as $row2)
+                                    {
+                                        if($row['id']==$row2['sub'])
+                                        {
+                                            echo"<option value='{$row2['id']}'";if($row2['id']==$_SESSION['sort_cat'])echo" selected";echo">&nbsp;&nbsp;&nbsp;{$row2['name']}</option>";
+                                            foreach($vars['catalog'] as $row3)
+                                            {
+                                                if($row2['id']==$row3['sub'])
+                                                {
+                                                    echo"<option value='{$row3['id']}'";if($row3['id']==$_SESSION['sort_cat'])echo" selected";echo">&nbsp;&nbsp;&nbsp; - {$row3['name']}</option>";
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            ?>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="page_descr">Описание:</label>
+                        
+                        <?=showEditor('body', '');?>
+                    </div>
+                    <div class="form-field">
+                        <label class="cm-required">Статус:</label>
+                        <div class="select-field">
+                            <input type="radio" class="radio" value="1" id="page_data_0_a" name="active" checked="checked" />
+                            <label for="page_data_0_a">Вкл.</label>
+                            <input type="radio" class="radio" value="0" id="page_data_0_d" name="active" />
+                            <label for="page_data_0_d">Выкл.</label>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            
+            <!--images start-->
+            <div id="content_photo" class="cm-tabs">    
+                <fieldset>
+                    <h2 class="subheader">Обложка фотоальбома</h2>
+                        <?php
+                            $path="files/tmp/";
+							$vars['path']=$path;
+							$vars['image_id']=mktime();
+							$_SESSION['tmp_image'] = $vars['image_id'];
+							include $_SERVER['DOCUMENT_ROOT']."/tpl/admin/upload_img.phtml";
+                        ?>
+                    <input type="hidden" name="tmp_image" value="<?=$vars['image_id']?>" />
+                </fieldset>
+            </div>   
+            
+            <!--metdata start-->
+            <div id="content_params" class="cm-tabs hidden">   
+                <fieldset>
+                    <h2 class="subheader">Фильтры, которые присуствуют в данной группе каталога</h2>
+                    <div style="margin-left:15px; max-height:500px; overflow:auto;">
+                        <?php
+                        foreach($vars['params'] as $row)
+                        {
+                            if($row['sub']==0)
+                            {
+                                echo' <input name="cat_id[]" type="checkbox" id="cat'.$row['id'].'" value="'.$row['id'].'"
+                                ><label for="cat'.$row['id'].'">'.$row['name'].'</label><br />';
+                                
+                                foreach($vars['params'] as $row2)
+                                {
+                                    if($row['id']==$row2['sub'])
+                                    {
+                                        echo'&nbsp;&nbsp;&nbsp;&nbsp;<input name="cat_id[]" type="checkbox" id="cat'.$row2['id'].'" value="'.$row2['id'].'">
+                                        <label for="cat'.$row2['id'].'">'.$row2['name'].'</label><br />';
+                                        
+                                        foreach($vars['params'] as $row3)
+                                        {
+                                            if($row2['id']==$row3['sub'])
+                                            {
+                                                echo'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input name="cat_id[]" type="checkbox" id="cat'.$row3['id'].'" value="'.$row3['id'].'">
+                                                <label for="cat'.$row3['id'].'">'.$row3['name'].'</label><br />';
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        ?>
+                    </div>
+                </fieldset>
+             </div>
+             <!--metdata start-->
+             <div id="content_metadata" class="cm-tabs hidden">   
+                <fieldset>
+                    <h2 class="subheader"> Meta данные </h2>
+                    <div class="form-field">
+                        <label for="page_page_title">Заголовок раздела:</label>
+                        <input type="text" class="input-text-large" value="" size="55" id="page_page_title" name="title" />
+                    </div>
+                    <div class="form-field">
+                        <label for="page_meta_keywords">META ключевые слова:</label>
+                        <textarea class="input-textarea-long" rows="2" cols="55" id="page_meta_keywords" name="keywords"></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="page_meta_descr">META описание:</label>
+                        <textarea class="input-textarea-long" rows="2" cols="55" id="page_meta_descr" name="description"></textarea>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="buttons-container cm-toggle-button buttons-bg">
+                <div class="cm-buttons-floating hidden" style="display: block;">
+                    <div class="cm-buttons-placeholder">
+                        <span class="submit-button cm-button-main">
+                            <input type="submit" value="Создать" name="add" />
+                        </span>&nbsp;
+                        <span class="submit-button cm-button-main cm-save-and-close">
+                            <input type="submit" value="Создать и открыть" name="add_open" class="cm-save-and-close" />
+                        </span> &nbsp;или&nbsp;&nbsp; 
+                        <a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" value="<?=$vars['action']?>" id="action" />
+        </form>
+	</div>
+</div>

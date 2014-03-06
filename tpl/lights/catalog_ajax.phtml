@@ -1,0 +1,28 @@
+<?
+		echo'<div style="height:30px; width:145px; position:absolute; right: 0;top:-50px;"><div style="width:160px; margin-top:1px; color:#fff; font-size:14px; position:absolute;"><form method="post">Выводить: <select name="onpage" onchange="submit();">';
+
+		echo'<option value="15"';if(15==$_SESSION['onpage'])echo' selected';echo'>по 15</option>';	
+		for($i=50;$i<=250;$i=$i+50)
+		{
+			echo'<option value="'.$i.'"';if($i==$_SESSION['onpage'])echo' selected';echo'>по '.$i.'</option>';	
+		}
+
+		echo'<option value="500"';if(500==$_SESSION['onpage'])echo' selected';echo'>по 500</option>';	
+		echo'</select></form></div></div>';
+
+	
+	echo '<div>'.$vars['list']['paging'].'</div>';
+
+	$i=0;
+
+	echo'<div class="clear"></div>';
+
+	foreach($vars['list']['list'] as $row)
+	{
+		include "product.phtml";
+		$i++;
+	}
+
+	echo $vars['list']['paging'];
+
+?>

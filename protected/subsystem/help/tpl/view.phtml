@@ -1,0 +1,17 @@
+<div class="items-container multi-level">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+	<tr>
+		<th width="2%">ID</th>
+		<th width="23%">Название</th>
+	</tr>
+	<?php
+		foreach($vars['list'] as $row)
+		{
+            echo'<tr>
+                    <td><span>'.$row['id'].'</span></td>
+                    <td><a href="/admin/'.$vars['action'].'/edit/'.$row['controller'].'">'.$row['name'].'</a></td>
+                 </tr>';
+		}
+	?>
+</table>
+</div>

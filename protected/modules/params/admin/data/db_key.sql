@@ -1,0 +1,5 @@
+ALTER TABLE params_product 
+	ADD FOREIGN KEY (params_id) REFERENCES params(id) ON UPDATE CASCADE ON DELETE CASCADE;
+#@@#
+ALTER TABLE params_product 
+	ADD FOREIGN KEY (product_id) REFERENCES product(id) ON UPDATE CASCADE ON DELETE CASCADE;

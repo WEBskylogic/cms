@@ -1,0 +1,69 @@
+<div>
+<a href="javascript:back_orders();" class="back_orders"><< <?=$vars['translate']['return_orders']?></a>
+
+<div style="color:#bb4b6b; font-family:Tahoma, Geneva, sans-serif; font-size:17px; margin-bottom:10px;">Покупатель</div>
+<div class="parag"><span>ID Заказа: </span> #<?=$vars['order']['id']?></div>
+<div class="parag"><span>Дата заказа: </span> <?=Date::date_view($vars['order']['date_add'], "dd/mm/YY, hh:ii")?></div>
+<div class="parag"><span>Статус: </span> <?=$vars['order']['name']?></div>
+<?
+    /*if($vars['order']['discount']!="")
+    echo'<div class="parag"><span>Скидка: </span> '.$vars['order']['discount'].'%</div>';*/
+
+    if($vars['order']['username']!="")
+    echo'<div class="parag"><span>Имя: </span>'.$vars['order']['username'].'</div>';   
+    
+    if($vars['order']['email']!="")
+    echo'<div class="parag"><span>E-mail: </span>'.$vars['order']['email'].'</div>';   
+    
+    if($vars['order']['phone']!="")
+    echo'<div class="parag"><span>Телефон: </span>'.$vars['order']['phone'].'</div>';   
+    
+    if($vars['order']['address']!="")
+    echo'<div class="parag"><span>Адрес: </span>'.$vars['order']['address'].'</div>';   
+    
+    if($vars['order']['country']!="")
+    echo'<div class="parag"><span>Страна: </span> '.$vars['order']['country'].'</div>';
+       
+    if($vars['order']['city']!="")
+    echo'<div class="parag"><span>Город: </span>'.$vars['order']['city'].'</div>';   
+    
+    if($vars['order']['post_index']!="")
+    echo'<div class="parag"><span>Почтовый индекс: </span>'.$vars['order']['post_index'].'</div>';   
+    
+    if($vars['order']['delivery']!="")
+    echo'<div class="parag"><span>Способ доставки: </span> '.$vars['order']['delivery'].'</div>';  
+	
+	echo htmlspecialchars_decode($vars['order']['comment']);       
+?>
+</div>
+<table class="orders">
+	<tr style="background-color:transparent;">
+        <th><?=$vars['translate']['title']?></th>
+        <th width="50"><?=$vars['translate']['amount']?></th>
+        <th width="100"><?=$vars['translate']['price']?></th>
+        <th width="100"><?=$vars['translate']['sum']?></th>
+    </tr>
+<?
+	$i=0;
+	foreach($vars['product'] as $row)
+	{
+		if(($i+3) % 2) $e = 'class="hhh"';
+        else $e = '';
+		$price = Numeric::formatPrice($row['price'], $vars['order']['currency']);
+		$summa = Numeric::formatPrice($row['price'] * $row['amount'], $vars['order']['currency']);
+	
+		echo"<tr {$e}>
+				<td>{$row['name']}</td>
+				<td align='center'>{$row['amount']}</td>
+				<td>{$price}</td>
+				<td>{$summa}</td>
+			</tr>";
+		$i++;	
+	}
+	$summa = Numeric::formatPrice($vars['order']['sum'], $vars['order']['currency']);
+?>
+</table>
+
+<table align="right" style="margin:5px 25px 0 0; font-size:16px; color:#000;">
+<tr><td style="border-right:1px dotted #ccc; height:20px; padding-right:5px;"><?=$vars['translate']['total']?>: </td>
+<td style="padding-left:5px;"><?=$summa?></td></tr></table>

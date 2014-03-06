@@ -1,0 +1,61 @@
+<?
+	if(count($vars['product_action'])!=0)
+	{		
+		echo'<div class="start_title"><span><a href="/catalog/discount">Акционные товары <span class="all_product">Все товары</span></a></span></div>';
+		$i=0;
+		echo'<div id="mycarousel_action2">
+				<div class="rotator" style="margin-left:60px;">
+    				<div class="rotator-scroll">
+             			 <div class="rotator_cont">';
+		foreach($vars['product_action'] as $row)
+		{
+			$dir=createDir($row['id']);
+			if(file_exists($dir[0]."{$row['id']}_s.jpg"))$src="/".$dir[0]."{$row['id']}_s.jpg";
+			else $src="/files/default.jpg";
+			
+			$price=viewPrice($row['price'], $row['price2']);
+		
+			if($row['discount']!=0)
+			{
+				$discount="<div class='discount'>{$row['discount']}%</div>";
+				$price=viewPrice($row['price'], $row['discount']);
+			}
+			else $discount='';
+			
+			/*if($row['status_id']==1)$status='<span class="status" style="margin:-179px 0 0 35px;"><img src="/tpl/column1/images/action.png" alt="" /></span>';
+			else */$status='';
+		
+			if($i==2)
+			{
+				$i=-1;
+				$style=' style="margin-right:0;"';
+			}
+			else $style=''; //mb_substr($row['name'], 0, 80, 'UTF-8')
+			
+			if($price['old_price']!='')$price='<div class="price discount"><span>'.$price['old_price'].'</span>'.$price['price'].'</div>';
+			else $price='<div class="price"><span>'.$price['old_price'].'</span>'.$price['price'].'</div>';
+			echo'<div class="rotator-product">
+					<div class="product" style="margin:20px 0 0 0; width:210px; padding:0; float:none;">
+						<div class="photo_product">
+							<a title="'.$row['name'].'" href="/product/'.$row['url'].'">
+								<img alt="'.$row['name'].'" title="'.$row['name'].'" src="'.$src.'" width="100" height="100" /><br />
+							</a>
+						</div>		
+						<div class="info_product">
+							<div class="name_product"><a title="'.$row['name'].'" href="/product/'.$row['url'].'">'.$row['name'].'</a></div>
+							'.$status.'
+							'.$price.'
+							<button class="buy" name="'.$row['id'].'" type="button">Купить!</button>
+						</div>	
+					</div>
+				</div>';
+		}
+		echo'</div>
+      
+            </div>
+    <div class="rotator-footer">
+              <div class="rotator-all"> <a class="rotator-up">&nbsp;</a> <a class="rotator-down">&nbsp;</a></div>
+            </div>
+        </div></div><br /><br /><br />';
+	}		
+?>

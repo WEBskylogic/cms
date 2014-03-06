@@ -1,0 +1,230 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div class="cm-tabs-content">
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Редактирование заказа:&nbsp;№<?=$vars['edit']['id']?></h1>
+	</div>
+	<div class="extra-tools">
+	
+	<a class="tool-link" href="/admin/<?=$vars['action']?>/add">Добавить новый заказ</a>
+    <a class="tool-link cm-confirm" href="/admin/<?=$vars['action']?>/delete/<?=$vars['edit']['id']?>">Удалить этот заказ</a>
+	</div>
+	<div class="mainbox-body"> 
+    	<div class="tabs cm-j-tabs cm-track">
+            <ul>
+                <li id="basic" class="cm-js cm-active"><a >Общее</a></li>
+                <li id="userdata" class="cm-js"><a >Покупатель</a></li>
+                <li id="products" class="cm-js"><a >Состав заказа</a></li>
+            </ul>
+        </div>
+		
+        <form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="" enctype="multipart/form-data">
+            <input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+            <div id="content_basic" class="cm-tabs">
+                <fieldset>
+                    <h2 class="subheader"> Информация об заказе</h2>
+                    <div class="form-field">
+                       
+                    </div>
+                    <div class="form-field">
+                        <label for="date_add">Дата заказа:</label>
+                        <div><?=Date::date_view($vars['edit']['date_add'], "dd/mm/YY, hh:ii")?></div>
+                    </div>
+                    <div class="form-field">
+                        <label for="date_add">Дата изменения:</label>
+                        <div><?=Date::date_view($vars['edit']['date_edit'], "dd/mm/YY, hh:ii")?></div>
+                    </div>
+                    <div class="form-field">
+                        <label for="date_add">Кол-во товаров:</label>
+                        <div><?=$vars['edit']['amount']?> шт.</div>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="date_add">Сумма заказа:</label>
+                        <div><?=$vars['edit']['sum']?> (<?=$vars['currency']['icon']?>)</div>
+                    </div>
+                    
+                    <div class="form-field">
+                        <label>Статус:</label>
+                        <div class="select-field">
+                            <select name="status">
+                                <?php
+                                    foreach($vars['status'] as $row)
+                                    {
+                                        echo'<option value="'.$row['id'].'"';if($row['id']==$vars['edit']['status_id'])echo' selected';echo'>'.$row['name'].'</option>';
+                                    }
+                                ?>
+                            </select>
+                        </div>
+                    </div>
+                    <?php
+                        if(isset($vars['delivery'])&&count($vars['delivery'])!=0)
+                        {
+                            echo'<div class="form-field">
+                                    <label for="page">Способ доставки:</label>
+                                    <select name="delivery">';
+                                
+                            echo'<option value="0">Выберите вариант доставки</option>';
+                            foreach($vars['delivery'] as $row)
+                            {
+                                $price='';
+                                if($row['price']!=0.00)
+                                {
+                                    $price=" +".$row['price'].' ('.$vars['currency']['icon'].')';
+                                }
+                                echo'<option value="'.$row['id'].'"';if($row['id']==$vars['edit']['delivery_id'])echo' selected';echo'>'.$row['name'].' '.$price.'</option>';
+                            }
+                            echo'</select>
+                            </div>';
+                        }
+                        
+                        if(isset($vars['payment'])&&count($vars['payment'])!=0)
+                        {
+                            echo'<div class="form-field">
+                                    <label for="page">Способ оплаты:</label>
+                                    <select name="payment">';
+                                
+                            echo'<option value="0">Выберите вариант оплаты</option>';
+                            foreach($vars['payment'] as $row)
+                            {
+                                echo'<option value="'.$row['id'].'"';if($row['id']==$vars['edit']['payment_id'])echo' selected';echo'>'.$row['name'].'</option>';
+                            }
+                            echo'</select>
+                            </div>';
+                        }
+                    ?>		
+                    <div class="form-field">
+                        <label for="page_page_title">Комментарии к заказу:</label>
+                        <textarea class="input-textarea" rows="3" cols="70" name="comment"><?=$vars['edit']['comment']?></textarea>
+                    </div>
+                </fieldset>
+            </div>
+             <!--metdata start-->
+            <div id="content_userdata" class="cm-tabs hidden">
+                <fieldset>
+                    <h2 class="subheader">Информация о заказчике</h2>
+                    <div class="form-field">
+                        <label for="page">ФИО:</label>
+                        <input type="text" class="input-text" value="<?=$vars['edit']['username']?>" size="32" name="username" />
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="page">Телефон:</label>
+                        <input type="text" class="input-text" value="<?=$vars['edit']['phone']?>" size="32" name="phone" />
+                    </div>
+                    <div class="form-field">
+                        <label for="page">E-mail:</label>
+                        <input type="text" class="input-text" value="<?=$vars['edit']['email']?>" size="32" name="email" />
+                    </div>
+                    
+                    <div class="form-field">
+                        <label for="page">Страна:</label>
+                        <input type="text" class="input-text" value="<?=$vars['edit']['country']?>" size="32" name="country" />
+                    </div>
+                    <div class="form-field">
+                        <label for="page">Город:</label>
+                        <input type="text" class="input-text" value="<?=$vars['edit']['city']?>" size="32" name="city" />
+                    </div>	
+                    <div class="form-field">
+                        <label for="page">Адрес:</label>
+                        <input type="text" class="input-text" value="<?=$vars['edit']['address']?>" size="32" name="address" />
+                    </div>
+                    <div class="form-field">
+                        <label for="page">Почтовый индекс:</label>
+                        <input type="text" class="input-text" value="<?=$vars['edit']['post_index']?>" size="32" name="post_index" />
+                    </div>				
+                    
+                            
+                </fieldset>
+            </div>
+             <!--metdata start-->
+            <div id="content_products" class="cm-tabs hidden">
+                <fieldset>
+                    <h2 class="subheader"> Добавить товар </h2>
+                    <select name="" id="catalog_add">
+                    <option value="0">Корень...</option>
+                    <?php
+                        foreach($vars['catalog'] as $row)
+                        {
+                            if($row['sub']==0)
+                            {
+                                echo"<option value='{$row['id']}'>{$row['name']}</option>";
+                                foreach($vars['catalog'] as $row2)
+                                {
+                                    if($row['id']==$row2['sub'])
+                                    {
+                                        echo"<option value='{$row2['id']}'>&nbsp;&nbsp;&nbsp;{$row2['name']}</option>";
+                                        foreach($vars['catalog'] as $row3)
+                                        {
+                                            if($row2['id']==$row3['sub'])
+                                            {
+                                                echo"<option value='{$row3['id']}'>&nbsp;&nbsp;&nbsp; - {$row3['name']}</option>";
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ?>
+                    </select>
+                    
+                    <select name="<?=$vars['edit']['id']?>" id="product_add">
+                        <option value="0">Товаров нет...</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <h2 class="subheader"> Товары  </h2>
+                    <div class="items-container multi-level">
+                    <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs" id="order_product">
+                        <tr>
+                            <th width="50">ID</th>
+                            <th>Товар</th>
+                            <th width="10%">Кол-во</th>
+                            <th width="10%">Скидка</th>
+                            <th width="10%">Цена (<?=$vars['currency']['icon']?>)</th>
+                            <th width="10%">Сумма</th>
+                            <th width="10%">&nbsp;</th>
+                        </tr>
+                        <?php
+                            
+                            foreach($vars['product'] as $row)
+                            {
+                                echo'<tr>
+                                        <td><span>'.$row['product_id'].'</span></td>
+                                        <td><input type="text" name="name[]" value="'.$row['name'].'" size="40" /></td>
+                                        <td><input type="text" name="amount[]" value="'.$row['amount'].'" size="3" style="text-align:center;" /></td>
+                                        <td><input type="text" name="discount[]" value="'.$row['discount'].'" size="3" style="text-align:center;" /> %</td>
+                                        <td><input type="text" name="price[]" value="'.$row['price'].'" size="10" /></td>
+                                        <td>'.$row['sum'].'</td>
+                                        <td width="10%">
+                                            <input type="hidden" name="product_id[]" value="'.$row['id'].'" />
+                                            <ul class="cm-tools-list tools-list">
+                                                <li><a href="/admin/'.$vars['action'].'/edit/'.$vars['edit']['id'].'/del/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+                                            </ul>
+                                        </td>
+                                    </tr>';
+                            }
+                        ?>
+                    </table>
+                    
+                    </div>
+                    <h3 align="right" style="padding-right:15px;" id="total">Итого: <?=$vars['edit']['sum']?></h3>
+                </fieldset>	
+            </div>
+            <div class="buttons-container cm-toggle-button buttons-bg">
+                <div class="cm-buttons-floating hidden" style="display: block;">
+                    <div class="cm-buttons-placeholder">
+                        <span class="submit-button cm-button-main">
+                            <input type="submit" value="Сохранить" name="update" />
+                        </span>&nbsp;
+                        <span class="submit-button cm-button-main cm-save-and-close">
+                            <input type="submit" value="Сохранить и закрыть" name="update_close" class="cm-save-and-close" />
+                        </span> &nbsp;или&nbsp;&nbsp; 
+                        <a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+                    </div>
+                </div>
+            </div>
+            <input type="hidden" value="<?=$vars['action']?>" id="action" />
+        </form>
+	</div>
+</div>

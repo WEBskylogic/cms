@@ -1,0 +1,53 @@
+<div class="clear"></div>
+<div class="paging">
+<?
+	$page_size = $vars['page_size'];
+	$link_padding = $vars['link_padding'];
+	$cur_page = $vars['page'];
+	$page_var = $vars['page_var'];
+	$total_pages = $vars['count'];
+	$page_link_list = array();
+	$start = $cur_page - $link_padding;
+	if ($start < 1)$start = 1;
+	$end = $cur_page + $link_padding - 1;
+	if ($end > $total_pages)
+		$end = $total_pages;
+
+	if ($cur_page > 1)
+		$prev_page = $cur_page - 1;
+	else
+		$prev_page = 1;
+	if ($cur_page < $total_pages)
+		$next_page = $cur_page + 1;
+	else
+		$next_page = $total_pages;
+
+	if ($start > 1) {
+		$page_link_list[] = String::get_page_link($start - 1, $cur_page, $page_var, $start - 2 > 0 ? '...' : '');
+	}
+	if ($cur_page != $prev_page)
+	{
+		if($prev_page==1)
+			echo '<a href="' . str_replace('//', '', String::getUrl2('page')) . '" data-role="button" data-inline="true" style="margin: 0; width: 100%; font-size: 18px; ">'.$vars['page_var_prev'].'</a>';
+		else
+			echo '<a href="' . str_replace('//', '/', String::getUrl2('page') . '/page/' . $prev_page) . '" data-role="button" data-inline="true" style="margin: 0; width: 100%; font-size: 18px; ">'.$vars['page_var_prev'].'</a>';
+	}
+	
+	for($i = $start; $i <= $end; $i++)
+	{
+		if ((abs($i - $cur_page) > 1) && ($i > 2) && ($i < $total_pages - 2))
+			continue; 
+		$page_link_list[] = String::get_page_link($i, $cur_page, $page_var);
+	}
+	
+	if ($end + 1 < $total_pages)
+		$page_link_list[] = String::get_page_link($end + 1, $cur_page, $page_var, $end + 2 == $total_pages ? '' : '...');
+	if ($end + 1 <= $total_pages)
+		$page_link_list[] = String::get_page_link($total_pages, $cur_page, $page_var);
+
+	echo implode('', $page_link_list);
+	if ($cur_page != $next_page)
+		echo '<a href="' . str_replace('//', '/', String::getUrl2('page') . '/page/' . $next_page) . '" data-role="button" data-inline="true" style="margin: 0; width: 100%; font-size: 18px; ">'.$vars['page_var_next'].'</a>';
+?>
+<div class="clear"></div>
+</div>

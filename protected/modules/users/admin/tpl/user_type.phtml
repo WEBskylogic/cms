@@ -1,0 +1,75 @@
+<div class="cm-notification-container"></div>
+<div id="message"><?=$vars['message']?></div>
+<div>
+	<div class="clear mainbox-title-container">
+		<div class="tools-container"><span class="action-add"> <a href="/admin/<?=$vars['action'].$vars['path']?>/addusertype">Добавить</a> </span> </div>
+		<h1 class="mainbox-title float-left"><?=$vars['name']?></h1>
+	</div>
+	<div class="mainbox-body">
+		<div id="ds_15014" class="clear">
+			
+		</div>
+		<div id="content_manage_users">
+			<form name="userlist_form" method="post" action="/admin/<?=$vars['action'].$vars['path']?>">
+				<div id="pagination_contents">
+					
+					<div class="items-container multi-level">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort">
+                            <tr>
+                                <th width="30" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+                                <th width="30">ID</th>
+                                <th>Название</th>
+                                
+                                <th width="150" style="text-align:center;">По умолчанию</th>
+                                <th width="150" style="text-align:center;">Тип цены</th>
+                                <th width="100">&nbsp;</th>
+                            </tr>
+                            <?php
+                                foreach($vars['list'] as $row)
+                                {
+									$option='';
+									foreach($vars['price_type'] as $row2)
+                               		{
+										$option.='<option value="'.$row2['id'].'"';if($row['price_type_id']==$row2['id'])$option.=' selected="selected"';$option.='>'.$row2['name'].'</option>';	
+									}
+                                    echo'<tr>
+                                            <td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="id[]" /></td>
+                                            <td><span>'.$row['id'].'</span><input type="hidden" value="'.$row['id'].'" name="id[]" /></td>
+                                            <td><input type="text" value="'.$row['name'].'" name="name[]" class="input-text" style="width:200px;"></td>
+                                            <td align="center"><input type="radio" value="'.$row['id'].'" name="default"';if($row['default']==1)echo' checked="checked"';echo' /></td>
+											 <td align="center"><select name="price_type[]">'.$option.'</select></td>
+                                            <td style="text-align:center;">
+                                                <ul class="cm-tools-list tools-list">
+                                                    <li><a href="/admin/'.$vars['action'].'/delete/'.$row['id'].$vars['path'].'" class="cm-confirm">Удалить</a></li>
+                                                </ul>
+                                            </td>
+                                        </tr>';
+                                }
+                            ?>
+                        </table>
+                    </div>
+                    <div class="table-tools">
+                        <a class="check_all" href="javascript:void(0);">Выбрать все</a>| 
+                        <a class="uncheck_all" href="javascript:void(0);">Снять выделение со всех</a>
+                    </div>
+				</div>
+				<div class="buttons-container buttons-bg">
+					<div class="cm-buttons-placeholder">
+						<div class="float-left">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" class="">
+							</span>или
+							<span class="submit-button cm-button-main cm-confirm cm-process-items">
+								<input type="submit" value="Удалить выбранные" name="delete" class="cm-process-items">
+							</span>
+						</div>
+					</div>
+					<div class="cm-buttons-floating hidden"></div>
+				</div>
+				<input type="hidden" value="meta" id="action" />
+                <input type="hidden" value="redirects" id="action2" />
+			</form>
+			</div>
+		</div>
+	</div>
+</div>

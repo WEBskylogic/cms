@@ -1,0 +1,81 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Редактирование комментариев:</h1>
+	</div>
+	<div class="extra-tools">
+		<?
+			if(isset($vars['content_url']['url'])&&$vars['content_url']['url']!='')
+            	echo'<a class="tool-link" target="_blank" href="/'.$vars['content_url']['url'].'/'.$vars['content_url']['url2'].'">Перейти на страницу комментария</a>';
+				
+			if($vars['edit']['author2']=='')$vars['edit']['author2']='Администратор';	
+        ?>
+        
+        <a class="tool-link cm-confirm" href="/admin/<?=$vars['action']?>/delete/<?=$vars['edit']['id']?>">Удалить комментарий</a>
+	</div>
+	<div class="mainbox-body"> 
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="" enctype="multipart/form-data">
+				<input type="hidden" value="<?=$vars['edit']['id']?>" name="id" />
+				<div id="content_basic" style="display: block;">
+					<fieldset>
+						<h2 class="subheader"> Информация </h2>
+
+						<div class="form-field">
+							<label class="cm-required" for="page">Автор:</label>
+							<input type="text" class="input-text-large main-input" value="<?=$vars['edit']['author']?>" size="55" name="name" />
+						</div>
+                        <div class="form-field">
+                            <label for="page_meta_descr">Комментарий:</label>
+                            <textarea class="input-textarea-long" rows="2" cols="55" name="text"><?=$vars['edit']['text']?></textarea>
+                        </div>
+					</fieldset>
+                    
+                    <fieldset>
+						<h2 class="subheader"> Ответ на комментарий </h2>
+                        
+                        <div class="form-field">
+							<label class="cm-required" for="page">Администратор:</label>
+							<input type="text" class="input-text-large main-input" value="<?=$vars['edit']['author2']?>" size="55" name="name2" />
+						</div>
+						<div class="form-field">
+                            <label for="page_meta_descr">Ответ:</label>
+                            <textarea class="input-textarea-long" rows="2" cols="55" name="text2"><?=$vars['edit']['text2']?></textarea>
+                        </div>
+
+					</fieldset>
+                    <fieldset>
+						<h2 class="subheader"> Настройки </h2>
+                        
+      
+						<div class="form-field">
+							<label class="cm-required">Статус:</label>
+							<div class="select-field">
+								<input type="radio" class="radio" value="1" id="page_data_0_a" name="active" <? if($vars['edit']['active']==1)echo' checked="checked"';?>>
+								<label for="page_data_0_a">Вкл.</label>
+								<input type="radio" class="radio" value="0" id="page_data_0_d" name="active" <? if($vars['edit']['active']==0)echo' checked="checked"';?>>
+								<label for="page_data_0_d">Выкл.</label>
+							</div>
+						</div>
+					</fieldset>
+
+				</div>
+				<div class="buttons-container cm-toggle-button buttons-bg">
+					<div class="cm-buttons-floating hidden" style="display: block;">
+						<div class="cm-buttons-placeholder">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" />
+							</span>&nbsp;
+							<span class="submit-button cm-button-main cm-save-and-close">
+								<input type="submit" value="Сохранить и закрыть" name="update_close" class="cm-save-and-close" />
+							</span> &nbsp;или&nbsp;&nbsp; 
+							<a class="underlined tool-link" href="/admin/<?=$vars['action']?>">Отменить</a>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

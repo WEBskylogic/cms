@@ -1,0 +1,23 @@
+<div id="basket" class="hide_block_basket">
+    <div class="title_basket">
+        Ваша корзина <span>(товаров: <font id="count_p"><? if ($vars['count'] == '') echo '0'; else echo $vars['count']; ?></font>  шт.)</span>
+    </div>
+
+    <div class="overview"<? if($_SESSION['view_basket']=='tableview')echo'id="tableview"';?>>
+		<? 
+            $summa2 = 0;
+            if(isset($vars['product'])&&count($vars['product'])!=0)
+            {
+                echo'<form method="post" id="update_order" action="'.LINK.'/orders/send">';
+                $i = 0;
+                foreach($vars['product'] as $row)
+                {
+                    include 'cabinet-product.phtml';
+                    $i++;
+                }
+                echo'</form>';	
+            }
+            else echo '<h2 style="text-align:center;">'.$vars['translate']['cart_empty'].'</h2>';
+        ?>
+    </div>
+</div>

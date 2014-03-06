@@ -1,0 +1,21 @@
+<div class="cm-j-tabs" id="navigation">
+		<?
+			echo'<ul><li';
+			if(!isset($vars['sub']))echo' class="cm-active"';
+			echo'><span><a href="/admin/'.$vars['action'].'">'.$vars['name'].'</a></span></li>';
+			
+			$i=0;
+            foreach($vars['menu'] as $row)
+            {
+            	$class='';
+            	if(isset($vars['sub'])&&$vars['sub']==$row['id'])$class='cm-active';
+            	if($row['cnt']==0)$class.=' hidden_li';
+				
+            	echo'<li class="'.$class.'"><span><a href="/admin/config/modules/'.$row['id'].'">'.$row['name'].' ('.$row['cnt'].')</a></span></li>';	
+				$i++;
+            }
+			echo'</ul>';
+			if($i>5)echo'<a href="#" class="see-all">Показать все ...</a>';
+        ?>
+	
+</div>

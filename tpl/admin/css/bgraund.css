@@ -1,0 +1,15 @@
+/* CSS Document */
+
+body._tupe1{
+background-image:url(/tpl/images/admin/bgraund/bg.jpg) !important;
+background-repeat:repeat-x;
+background-position:top center;
+background-attachment:fixed;
+}
+
+body._tupe2{
+background-image:url(/tpl/images/admin/bgraund/admin_fon.jpg) !important;
+background-repeat:repeat-x;
+background-position:top center;
+background-attachment:fixed;
+}

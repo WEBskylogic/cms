@@ -1,0 +1,88 @@
+<div class="cm-notification-container"></div>
+<?=$vars['message']?>
+
+<div>
+	<div class="clear mainbox-title-container">
+		<h1 class="mainbox-title">Права доступа "<?=$vars['modules_name']?>"</h1>
+	</div>
+	<div class="mainbox-body">
+		<div class="cm-tabs-content">
+			<form class="cm-form-highlight cm-check-changes" name="page_update_form" method="post" action="/admin/<?=$vars['action']?>/subsystem/chmod/update">
+				<input type="hidden" value="<?=$vars['modules_id']?>" name="id2" />
+				<div id="content_basic" style="display: block;">
+                    <fieldset>
+                        <table width="50%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort" id="photos" style="margin-top: 0;">
+                            <tr>
+                                <th>Название модуля</th>
+                                <th style="text-align:center;" width="80">Чтение</th>
+                                <th style="text-align:center;" width="80">Изменение</th>
+                                <th style="text-align:center;" width="80">Удаление</th>
+                                <th style="text-align:center;" width="80">Добавление</th>
+                            </tr>
+                            <?php
+                            $a=0;
+							$e=0;
+							$d=0;
+							$r=0;
+							$cnt=count($vars['modules']);
+                            foreach($vars['modules'] as $row)
+                            {
+                                $read='';
+                                $edit='';
+								$del='';
+                                $add='';
+                                if($row['permission']==700||$row['permission']==600||$row['permission']==400||$row['permission']==800)
+								{
+									$add=' checked="checked"';
+									$a++;
+								}
+                                if($row['permission']==200||$row['permission']==500||$row['permission']==600||$row['permission']==800)
+								{
+									$edit=' checked="checked"';
+									$e++;
+								}
+								if($row['permission']==300||$row['permission']==500||$row['permission']==700||$row['permission']==800)
+								{
+									$del=' checked="checked"';
+									$d++;
+								}
+                                if($row['permission']!=000)
+								{
+									$read=' checked="checked"';
+									$r++;
+								}
+
+                                echo'<tr>
+                                        <td>'.$row['name'].'<input type="hidden" value="'.$row['id'].'" name="module_id[]" /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="read'.$row['id'].'" '.$read.' id="read'.$row['id'].'" class="read_chmod" /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="edit'.$row['id'].'" '.$edit.' id="edit'.$row['id'].'" class="edit_chmod" /></td>
+										<td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="del'.$row['id'].'" '.$del.' id="del'.$row['id'].'" class="del_chmod" /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="'.$row['id'].'" name="add'.$row['id'].'" '.$add.' id="add'.$row['id'].'" class="add_chmod" /></td>
+                                    </tr>';
+                            }
+                                echo'<tr>
+                                        <td></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="" id="read_all"';if($cnt==$r)echo' checked="checked"';echo' /></td>
+										<td style="text-align:center;"><input type="checkbox" value="" id="edit_all"';if($cnt==$e)echo' checked="checked"';echo' /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="" id="del_all"';if($cnt==$d)echo' checked="checked"';echo' /></td>
+                                        <td style="text-align:center;"><input type="checkbox" value="" id="add_all"';if($cnt==$a)echo' checked="checked"';echo' /></td>
+                                    </tr>';
+                            ?>
+                        </table>
+                    </fieldset>
+				</div>
+				<div class="buttons-container buttons-bg">
+					<div class="cm-buttons-placeholder">
+						<div class="float-left">
+							<span class="submit-button cm-button-main">
+								<input type="submit" value="Сохранить" name="update" class="">
+							</span>
+						</div>
+					</div>
+					<div class="cm-buttons-floating hidden"></div>
+				</div>
+				<input type="hidden" value="<?=$vars['action']?>" id="action" />
+			</form>
+		</div>
+	</div>
+</div>

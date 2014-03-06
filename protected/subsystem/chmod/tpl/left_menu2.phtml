@@ -1,0 +1,8 @@
+<div class="cm-j-tabs" id="navigation">
+	<ul>
+    	<li<? if(!isset($vars['sub']))echo' class="cm-active"';?>><span><a href="/admin/<?=$vars['action']?>"><?=$vars['name']?></a></span></li>
+		<?
+			echo'<li';if(isset($vars['sub'])&&$vars['sub']=='1')echo' class="cm-active"';echo'><span><a href="/admin/chmod/chmod/users">Пользователи</a></span></li>';	
+        ?>
+	</ul>
+</div>

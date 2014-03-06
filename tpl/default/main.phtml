@@ -1,0 +1,100 @@
+<div id="left-col">
+    <div class="recommend-block">
+        <? echo htmlspecialchars_decode($vars['block_9']['body']);?>
+    </div>
+
+    <div id="brands-main">
+        <p>Популярные бренды</p>
+
+        <?
+			foreach($vars['brends']['list'] as $row)
+			{
+            	echo '<a href="/brend/'.LINK.$row['url'].'">'.$row['name'].'</a>';
+        	}
+        ?>
+
+        <a class="more-brands" href="<?=LINK;?>/brend/all"><span>все бренды</span>>></a>
+
+        <p>Новые коллекции</p>
+
+        <?
+        	foreach($vars['collections']['list'] as $row)
+			{
+            	echo '<a href="/brend/'.LINK.$row['url'].'">'.$row['name'].'</a>';
+        	}
+        ?>
+        <a class="more-brands" href="<?=LINK;?>/brend/all"><span>все бренды</span>>></a>
+
+        <p>Распродажи</p>
+
+        <? 
+			foreach($vars['brends']['list'] as $row)
+			{
+            	echo '<a href="/brend/'.LINK.$row['url'].'">'.$row['name'].'</a>';
+        	}
+        ?>
+        <a class="more-brands" href="<?=LINK;?>/brend/all"><span>все бренды</span>>></a>
+    </div>
+
+</div>
+<div id="right-col">
+   <!-- <div id="slider">
+        <img src="<?=IMAGES?>slider_cap.png" alt="" >
+    </div>-->
+
+    <?
+	echo $vars['slider'];
+    $i=0;
+    foreach($vars['catalog'] as $row)
+    {
+		if($row['sub']==0)
+		{
+			if($i%4==0)
+			{
+				$style=' style="margin-left:0;"';
+			}
+			else $style='';
+			echo'<div class="cat" '.$style.'>
+					<a href="'.LINK.'/catalog/'.$row['url'].'">
+						<img src="'.IMAGES.'cat_bg.png" class="cat_border">
+						<div style="height:178px;"><img class="cat-img" src="/files/catalog/'.$row['id'].'_s.jpg" /></div>
+					</a>
+						<div class="cat-block">
+							<div class="name"><a href="'.LINK.'/catalog/'.$row['url'].'">'.$row['name'].'</a>
+							</div>
+						';
+			
+			$y=0;
+			foreach($vars['catalog'] as $row2)
+			{
+				if($row2['sub']==$row['id'])
+				{
+					echo'<a href="'.LINK.'/catalog/'.$row2['url'].'">'.$row2['name'].' >></a>';
+					$y++;
+					if($y==5)break;
+				}
+			}
+			echo'</div></div>';
+			$i++;
+		}
+    }
+
+    if(count($vars['product_h'])!=0)
+    {
+        echo'<div class="title">'.$vars['translate']['hot_offers'].'</div>';
+        $i=0;
+        foreach($vars['product_h'] as $row)
+        {
+            include "product.phtml";
+            $i++;
+        }
+        echo'<div class="clear"></div>';
+    }
+    ?>
+    <div class="review-block">
+        <p>92% наших клиентов остались довольны!</p>
+        <div class="bubble">
+			<a href="/otzyvy">Читать <br />отзывы >></a>
+        </div>
+    </div>
+</div>

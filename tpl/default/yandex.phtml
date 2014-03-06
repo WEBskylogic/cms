@@ -1,0 +1,54 @@
+<?
+	$site_url="http://{$_SERVER['HTTP_HOST']}/";
+	echo'<?xml version="1.0" encoding="utf-8"?>';
+?>
+	<!DOCTYPE yml_catalog SYSTEM "shops.dtd">
+	<yml_catalog date="<?=date('Y-m-d H:i:s')?>">
+	<shop>
+	  <name><?=$vars['sitename']?></name>
+	  <company><?=$vars['sitename']?></company>
+	  <url><?=$site_url?></url>
+	 <currencies>
+	  <currency id="UAH" rate="1"/>
+	</currencies>
+	<categories>
+    <?
+		foreach($vars['catalog'] as $row)
+		{
+			$descr_cat = String::sanitize($row["name"], true);
+			echo'<category id="'.$row["id"].'">'.$descr_cat.'</category>';
+			//catalog_market($id_cat);
+		}
+	?>
+	</categories>
+    <offers>
+	<?	
+        foreach($vars['product'] as $row)
+        {
+            $url = $site_url."product/".$row['url'];
+           	$cat_id=getRootCat($row["catalog_id"], $vars['catalog']);
+            $img='';
+			$dir=Dir::createDir($row['id']);
+            if(file_exists($dir[0]."{$row['id']}_s.jpg"))$img=$site_url.$dir[0]."{$row['id']}.jpg";
+            $text = String::sanitize($row["body"], true);
+            $name = String::sanitize($row["name"], true);
+			$price=Numeric::viewPrice($row['price'], $row['discount']);
+			
+            if($cat_id!=''&&$row["price"]!=''&&$name!=''&&$text!='')
+            echo '
+            <offer id="'.$row["id"].'" type="vendor.model" available="true" bid="13">
+                <url>'.$url.'</url>
+                <price>'.$price['cur_price'].'</price>
+                <currencyId>UAH</currencyId>
+                <categoryId>'.$cat_id.'</categoryId >
+                <picture>'.$img.'</picture>
+                <vendor></vendor>
+                <model>'.$name.'</model>
+                <description>'.$text.'</description>
+            </offer>
+            ';
+        }
+    ?>
+    </offers>
+</shop>
+</yml_catalog>

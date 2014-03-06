@@ -1,0 +1,34 @@
+<div id="orders">
+	<div class="title_basket">Мои заказы</div>
+    <div class="overview">
+        <table class="orders" id="tb_orders" cellpadding="0" cellspacing="0">
+            <tr style="background-color:transparent;">
+                <th width="90"><?=$vars['translate']['order_id']?></th>
+                <th><?=$vars['translate']['order_status']?></th>
+                <th><?=$vars['translate']['order_date']?></th>
+                <th><?=$vars['translate']['sum']?></th>
+                <th></th>
+            </tr>
+            <?
+            $i=0;
+            foreach($vars['orders'] as $row)
+            {
+                if(($i+3) % 2) $e = 'class="hhh"';
+                else $e = '';
+                echo'<tr '.$e.'>
+						<td>#'.$row['id'].'</td>
+						<td>'.$row['status'].'</td>
+						<td>'.Date::date_view($row['date_add'], "dd/mm/YY, hh:ii").'</td>
+						<td>'.Numeric::formatPrice($row['sum']).'</td>
+						<td align="right"><a href="javascript:showorder('.$row['id'].');">'.$vars['translate']['read_more'].'</a></td>
+                     </tr>
+					 <tr>
+						<td colspan="5" id="order_'.$row['id'].'" class="load_order"></td>
+                     </tr>';
+                $i++;
+            }
+            ?>
+        </table>
+        <div id="cabinet_order"></div>
+    </div>
+</div>

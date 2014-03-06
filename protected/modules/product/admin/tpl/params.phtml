@@ -1,0 +1,44 @@
+<div id="content_params" class="cm-tabs hidden">
+	<fieldset>
+		<h2 class="subheader">Фильтры</h2>
+		<div class="form-field">
+			 <?  
+				foreach($vars['params'] as $row)
+				{
+					if($row['sub']==0)
+					{
+						$cheked="";
+						if(isset($vars['params_set']))
+						{
+							foreach($vars['params_set'] as $row3)
+							{
+								if($row3['params_id']==$row['id']){$cheked="checked='checked'";break;}
+								else $cheked="";
+							}
+						}
+						echo"&nbsp;&nbsp;&nbsp;<input type='checkbox' value='{$row['id']}' $cheked id='param{$row['id']}' name='params[]' />
+							 <label for='param{$row['id']}'><b>{$row['name']}</b></label><br />";
+						$cheked="";
+						foreach($vars['params'] as $row2)
+						{
+							if($row2['sub']==$row['id'])
+							{
+								if(isset($vars['params_set']))
+								{
+									foreach($vars['params_set'] as $row3)
+									{
+										if($row3['params_id']==$row2['id']){$cheked="checked='checked'";break;}
+										else $cheked="";
+									}
+								}
+								echo"&nbsp;&nbsp;&nbsp;<input type='checkbox' value='{$row2['id']}' $cheked class='param{$row['id']}' id='param{$row2['id']}' name='params[]' />
+									 <label for='param{$row2['id']}'>{$row2['name']}</label><br />";
+							}
+						}
+						echo'<br />';
+					}
+				}
+			?>
+		</div>
+	</fieldset>
+</div>

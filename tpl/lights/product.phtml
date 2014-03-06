@@ -1,0 +1,27 @@
+<?
+	if(file_exists($row['photo_s']))$src='<img alt="'.$row['name'].'" title="'.$row['name'].'" src="/'.$row['photo_s'].'" />';
+	else $src='<img alt="" src="/files/default.jpg" />';
+	
+	$price=Numeric::viewPrice($row['price'], $row['discount']);
+
+	/*if($row['discount']!=0)
+	{
+		$discount="<div class='discount'>{$row['discount']}%</div>";
+		$price=Numeric::viewPrice($row['price'], $_SESSION['currency'], $row['discount']);
+	}
+	else $discount='';*/
+	
+	if($row['cnt']==NULL||$row['cnt']==0)$status='<span class="status"><img src="'.IMAGES.'stock.png" alt="" /></span>';
+	else $status='';
+?>
+    <div class="product">
+		<? //=$status?>
+		<div class="photo_product">
+			<a href="<?=LINK?>/product/<?=$row['url']?>"><?=$src?></a>
+		</div>		
+		<div class="info_product">
+			<div class="name_product"><a href="<?=LINK?>/product/<?=$row['url']?>"><?=$row['name']?></a></div>
+            <div class="prod-price"><?=$price['price'];?></div>
+		</div>
+		<div class="clear"></div>
+	</div>

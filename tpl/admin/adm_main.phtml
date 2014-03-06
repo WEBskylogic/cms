@@ -1,0 +1,227 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["corechart"]});
+	google.setOnLoadCallback(drawChart);
+	function drawChart() {
+		var feedback = google.visualization.arrayToDataTable([<?=$vars['text3']?>]);
+
+		var options_feedback = { title: 'Количество отправок формы обратной связи:' };      
+
+		var chart_feedback = new google.visualization.ColumnChart(document.getElementById('chart_div3'));
+		chart_feedback.draw(feedback, options_feedback);
+	}
+</script>
+<div class="clear mainbox-title-container">
+  <div class="tools-container"> <a   href="/admin/logout">Покинуть админ панель,
+    <?=$_SESSION['admin']['login'];?>
+    ››</a> </div>
+  <h1 class="mainbox-title"> Панель инструментов </h1>
+</div>
+<div class="mainbox-body">
+  <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table-fixed">
+    <tbody>
+      <tr valign="top">
+        <td width="80%">
+        <?
+			if(isset($vars['total_sum']))
+			{
+		?>
+        	
+			<script type="text/javascript">
+                google.load("visualization", "1", {packages:["corechart"]});
+                google.setOnLoadCallback(drawChart);
+                function drawChart() {
+                    var orders_sum = google.visualization.arrayToDataTable([<?=$vars['text']?>]);
+                    var orders_count = google.visualization.arrayToDataTable([<?=$vars['text2']?>]);
+					var bascket_count = google.visualization.arrayToDataTable([<?=$vars['bascket']?>]);
+            
+                    var options_sum = { title: 'Суммы заказов:' };
+                    var options_count = { title: 'Количество заказов:' };
+  
+            
+                    var chart_sum = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                    var chart_count = new google.visualization.AreaChart(document.getElementById('chart_div2'));
+					var chart_bascket = new google.visualization.AreaChart(document.getElementById('chart_div4'));
+            
+                    chart_sum.draw(orders_sum, options_sum);
+                    chart_count.draw(orders_count, options_count);
+					chart_bascket.draw(bascket_count, options_count);
+                }
+            </script>
+            <div class="statistics-box inventory">      
+                <div id="title">
+                    <h2 class="strong">Сумма заказов</h2>
+                    <div class="statistics-body clear" style="padding:10px;">
+                    <form method="post">
+                        <label class="cm-required" for="page">От:</label>
+                        <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$vars['start']?>" name="start" id="start" />
+                        <label class="cm-required" for="page">До:</label>
+                        <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$vars['end']?>" size="55" name="end" id="end" />
+                        <span class="submit-button cm-button-main">
+                            <input class="cm-process-items" type="submit"  value="OK" />
+                        </span>
+                    </form>
+                    </div>
+                </div>
+                <div class="statistics-body">
+                    <div id="itogo">
+                        <p>
+                        	<b>Итого кол-во: &nbsp;</b><span id="total_sum"><?=sizeof($vars['list']);?></span><br />
+                            <b>Итого сумма: &nbsp;</b><span id="total_sum"><?=Numeric::formatPrice($vars['total_sum']);?></span>
+                        </p>
+                        <a href="/admin/orders">Показать все</a>
+                    </div>
+                    <div id="stats">
+                        <div id="chart_div" style="width: 100%; height: 250px;"></div>
+                    </div>
+                </div>
+           </div>
+           <div class="statistics-box inventory">
+            <div id="title">
+                <h2 class="strong">Количество заказов</h2>
+                <div class="statistics-body clear" style="padding:10px;">
+                <form method="post">
+                    <label class="cm-required" for="page">От:</label>
+                    <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$vars['start2']?>" name="start2" id="start2" />
+                    <label class="cm-required" for="page">До:</label>
+                    <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$vars['end2']?>" size="55" name="end2" id="end2" />
+                    <span class="submit-button cm-button-main">
+                        <input class="cm-process-items" type="submit"  value="OK" />
+                    </span>
+                </form>
+                </div>
+            </div>
+            <div class="statistics-body">
+                  <div id="itogo">
+                      <p><b>Итого: &nbsp;</b><span id="total_sum"><? echo sizeof($vars['list2']); ?></span></p>
+                      <a href="/admin/orders">Показать все</a>
+                  </div>
+                  <div id="stats">
+                      <div id="chart_div2" style="width: 100%; height: 250px;"></div>
+                  </div>
+             </div>
+           </div>
+           
+           
+           <div class="statistics-box inventory">
+            <div id="title">
+                <h2 class="strong">Количество незавершенных заказов</h2>
+                <div class="statistics-body clear" style="padding:10px;">
+                <form method="post">
+                    <label class="cm-required" for="page">От:</label>
+                    <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$vars['start4']?>" name="start4" id="start4" />
+                    <label class="cm-required" for="page">До:</label>
+                    <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$vars['end4']?>" size="55" name="end4" id="end4" />
+                    <span class="submit-button cm-button-main">
+                        <input class="cm-process-items" type="submit"  value="OK" />
+                    </span>
+                </form>
+                </div>
+            </div>
+            <div class="statistics-body">
+                  <div id="itogo">
+                      <p><b>Итого: &nbsp;</b><span id="total_sum"><? echo $vars['bascket_count']; ?></span></p>
+                      <a href="/admin/orders/act/incomplete">Показать все</a>
+                  </div>
+                  <div id="stats">
+                      <div id="chart_div4" style="width: 100%; height: 250px;"></div>
+                  </div>
+             </div>
+           </div>
+           
+           <?
+		   }
+		   ?>
+           <div class="statistics-box inventory">
+                <div id="title">
+                    <h2>Формы обратной связи</h2>
+                    <div class="statistics-body clear" style="padding:10px;">
+                        <form method="post">
+                            <label class="cm-required" for="page">От:</label>
+                            <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$vars['start3']?>" name="start3" id="start3" />
+                            <label class="cm-required" for="page">До:</label>
+                            <input type="text" class="input-text cm-calendar hasDatepicker" value="<?=$vars['end3']?>" size="55" name="end3" id="end3" />
+                            <span class="submit-button cm-button-main">
+                                <input class="cm-process-items" type="submit"  value="OK" />
+                            </span>
+                        </form>
+                     </div>   
+                </div>
+                <div class="statistics-body">
+                     <div id="itogo">
+                         <p><b>Итого: &nbsp;</b><span id="total_sum"><? echo sizeof($vars['feedback']);?></span></p>
+                         <a href="/admin/feedback">Показать все</a>
+                     </div>
+                     <div id="stats">
+                         <div id="chart_div3" style="width: 100%; height: 250px;"></div>
+                     </div>
+                 </div>       
+            </div>
+        </td>
+        <td width="30px">&nbsp;</td>
+        <td width="360px">
+        	
+		<?
+			if(isset($vars['rowscatalog']['all']))
+			{
+		?>
+        	<div class="statistics-box inventory">
+            <div class="statistics-body">
+              <p class="strong">Наличие категорий</p>
+              <div class="clear">
+                <ul>
+                  <li>Итого:&nbsp;<a href="/admin/catalog"><?=$vars['rowscatalog']['all']?> </a></li>
+                  <li>Вкл.:&nbsp;<a href="/admin/catalog"><?=$vars['rowscatalog']['active1']?></a></li>
+                  <li>Выкл.:&nbsp;<a href="/admin/catalog"><?=$vars['rowscatalog']['active0']?></a></li>
+                </ul>
+              </div>
+              
+              <p class="strong product-inventory">Наличие товара</p>
+              <div class="clear">
+                <ul>
+                  <li>Итого:&nbsp;<a href="/admin/product"><?=$vars['rowstovar']['all']?></a></li>
+                  <li>Вкл.:&nbsp;<a href="/admin/product"><?=$vars['rowstovar']['active1']?></a></li>
+                  <li>Выкл.:&nbsp;<a href="/admin/product"><?=$vars['rowstovar']['active0']?></a></li>
+                </ul>
+              </div>
+            
+          </div></div>
+          
+          <?
+		  }
+		  ?>
+          <div class="statistics-box users">
+            <h2> Пользователи </h2>
+            <div class="statistics-body clear">
+              <ul>
+                <? if(isset($vars['rowsuser']))echo'<li class="customer-users"> <span>Покупатели:</span> <em><a href="/admin/users">'.$vars['rowsuser'][0]['summa'].'</a></em> </li>';?>
+                <li class="staff-users"> <span>Модераторы:</span> <em><a href="/admin/moderatorstype"><?=$vars['rowsmadem'][0]['summa']?></a></em> </li>
+              </ul>
+            </div>
+          </div>
+          <div class="statistics-box shortcuts">
+            <h2> Быстрый вызов </h2>
+            <div class="statistics-body clear">
+              <ul class="arrow-list float-left">
+              <?
+					if(isset($vars['rowscatalog']['all']))
+					{
+						echo'<li><a href="/admin/product">Все товары</a></li>
+                			 <li><a href="/admin/catalog">Все категории</a></li>
+							 <li><a href="/admin/delivery">Способы доставки</a></li>
+                			 <li><a href="/admin/payment">Способы оплаты</a></li>';	
+					}
+			  ?>
+              </ul>
+              <ul class="arrow-list float-left">
+                <li><a href="/admin/config">Общие настройки</a></li>
+                <li><a href="/admin/info">Инфо. блоки</a></li>
+                 <? if(isset($vars['rowsuser']))echo'<li><a href="/admin/users">Пользователи</a></li>';?>
+                <li><a href="/admin/comments">Комментарии и отзывы</a></li>
+              </ul>
+            </div>
+          </div></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

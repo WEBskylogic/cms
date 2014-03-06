@@ -1,0 +1,98 @@
+#wowslider-container { 
+/*	overflow: hidden; */
+	zoom: 1; 
+	position: relative; 
+	width:774px;
+	height:253px;
+	margin:0 auto;
+	z-index:100;
+}
+#wowslider-images{
+	position: absolute;
+	left:0;
+	top:0;
+	width:774px;
+	height:231px;
+	overflow:hidden;
+}
+#wowslider-images a{
+	color:transparent;
+}
+
+#wowslider-images img{
+	top:0;
+	left:0;
+	border:none 0;
+}
+#wowslider-container a{ 
+	text-decoration: none; 
+	outline: none; 
+	border: none; 
+}
+
+#wowslider-container  .ws_bullets { 
+	font-size: 0px; 
+	padding: 10px; 
+	position:absolute;
+    right: 45%;
+    bottom: -9px;
+	z-index:1001;
+}
+#wowslider-container .ws_bullets a { 
+	margin-left:4px;
+	width:14px;
+	height:13px;
+	background: url(/images/slider/bullet.png) left top;
+	float: left; 
+	text-indent: -1000px; 
+}
+#wowslider-container .ws_bullets a.ws_selbull, #wowslider-container .ws_bullets a:hover{
+	background-position: right top;
+}
+#wowslider-container a.ws_next, #wowslider-container a.ws_prev {
+	position:absolute;
+	top:81%;
+	margin-top:-33px;
+	position:absolute;
+	z-index:1001;
+	height: 42px;
+	width: 35px;
+	background-image: url(/tpl/images/slider/arrows.png);
+}
+#wowslider-container a.ws_next{
+	background-position: 100% 0;
+	right:-27px;
+}
+#wowslider-container a.ws_prev {
+	left:7px;
+	background-position: 0 0; 
+}
+#wowslider-container a.ws_next:hover{
+	background-position: 100% 100%;
+}
+#wowslider-container a.ws_prev:hover {
+	background-position: 0 100%; 
+}
+* html #wowslider-container a.ws_next,* html #wowslider-container a.ws_prev{display:block}
+#wowslider-container:hover a.ws_next, #wowslider-container:hover a.ws_prev {display:block}
+#wowslider-container .ws-title{
+	position: absolute;
+	bottom:80px;
+	left: 0;
+	margin-right:15px;
+	z-index: 50;
+	padding:5px 12px;
+	color: #ece8e4;
+	background:#e94f25;
+	font-size: 16px;
+	-moz-border-radius:0 3px 3px 0; /* Firefox */
+    -webkit-border-radius:0 3px 3px 0; /* Safari, Chrome */
+    -khtml-border-radius:0 3px 3px 0; /* KHTML */
+    border-radius: 0 3px 3px 0; /* CSS3 */
+    behavior: url(/tpl/styles/PIE.htc); /* IE border-radius */
+}
+#wowslider-container .ws-title div{
+	padding-top:5px;
+	font-size: 13px;
+	text-transform:none;
+}

@@ -1,0 +1,218 @@
+#cabinet-new {
+    width: 100%;
+    clear: both;
+    position: fixed;
+    left: 0;
+    z-index: 90;
+    top: -700px;
+    height: 500px;
+    background: #fff;
+    z-index: 9999;
+}
+#cabinet-new h4 {
+    font-family: Arial, sans-serif;
+    font-size: 19px;
+    font-weight: normal;
+}
+.basket {
+    float: left;
+    position: relative;
+    width: 740px;
+}
+.basket h4 span {
+    font-size: 15px;
+}
+#cabinet-new p {
+    font-family: 'Arial', 'sans-serif';
+}
+#back {
+    float: right;
+    margin-top: 15px;
+}
+.cabinet-main-menu {
+    float: right;
+    width: 200px;
+}
+.cabinet-main-menu .active {
+    background: url(/images/basket-active.png) no-repeat;
+}
+#order_block #address2 {
+    width: 400px;
+}
+#cabinet-new  .st_size {
+    float: right;
+}
+#cabinet-new #sum {
+    float: left;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #fff;
+}
+#cabinet-new #sum  p {
+    color: #fff;
+}
+#cabinet-new .code {
+    color: #6c6d70;
+    float: left;
+    margin-left: 30px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+#cabinet-new .desc {
+    float: left;
+    width: 210px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+#go {
+    background: #c53333;
+    width: 185px;
+    float: left;
+    height: 35px;
+    padding-top: 10px;
+    padding-left: 25px;
+    margin-left: 350px;
+}
+#save {
+    background: #2d9f5b;
+    width: 210px;
+    float: left;
+    height: 30px;
+    padding-top: 15px;
+    text-align: center;
+    margin-left: 350px;
+}
+#cabinet-new .price {
+    float: left;
+}
+
+#cabinet-new #sum #price_ {
+    font-size: 20px;
+    margin-right: 4px;
+}
+.cabinet label {
+    font-size: 15px;
+    margin-bottom: 20px;
+    font-family: 'Myriad Pro', Verdana, sans-serif;
+}
+#close-cabinet {
+    color: #ffffff;
+    background: url('../images/back.png') 100% 1px no-repeat;
+    padding-right: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+#bottom_bar {
+    height: 45px;
+    width: 100%;
+    bottom: 0;
+    background: #434343;
+    position: absolute;
+}
+#order {
+    height: 38px;
+    width: 156px;
+    margin-top: -10px;
+}
+.cabinet-submit {
+    background: url(/images/basket-menu.png) no-repeat;
+    border: 0;
+    color: #fff;
+    font-size: 14px;
+    height: 30px;
+    width: 123px;
+    cursor: pointer;
+    margin-bottom: 7px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+#view {
+    position: absolute;
+    right: 10px;
+    top: 25px;
+}
+#view a {
+    float: left;
+    width: 18px;
+    height: 18px;
+    margin-left: 10px;
+}
+
+.basket .item {
+    float: left;
+    width: 210px;
+    height: 315px;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+.basket .item .name {
+    float: left;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #231f20;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+.basket .item .del {
+    float: right;
+    cursor: pointer;
+}
+#cabinet-new .code {
+    color: #6c6d70;
+    float: left;
+    margin-left: 30px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+#cabinet-new .desc {
+    float: left;
+    width: 210px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+#cabinet-new .price {
+    float: left;
+}
+.basket .item .count {
+    float: right;
+    margin-top: 5px;
+    margin-right: -4px;
+}
+.basket .item .img {
+    background: #ffffff;
+    width: 210px;
+    height: 190px;
+    float: left;
+    border: 1px solid #a6a6a6;
+    text-align: center;
+    padding: 10px 0;
+}
+
+#address1 {
+    float: left;
+}
+#address2 {
+    float: left;
+}
+
+/* Tiny Scrollbar */
+#scrollbarY { width: 760px; margin: 20px 0 10px; }
+#scrollbarY .viewport { width: 720px; height: 350px; overflow: hidden; position: relative; }
+#scrollbarY .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+#scrollbarY .scrollbar{ background: transparent url(../images/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; z-index: 99; }
+#scrollbarY .track { background: transparent url(../images/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 7px 1px; z-index: 99; }
+#scrollbarY .thumb { background: #59595a; margin-top: 14px; height: 5px; width: 11px; cursor: pointer; overflow: hidden; z-index: 99;position: absolute; top: 0; left: 2px; }
+#scrollbarY .thumb .end { background: #59595a no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; z-index: 99;}
+#scrollbarY .disable { display: none; }
+
+#scrollbarX { width: 251px; margin: 20px 0 10px; }
+#scrollbarX .viewport { width: 236px; height: 130px; overflow: hidden; position: relative; }
+#scrollbarX .overview { list-style: none; width: 1416px; padding: 0; margin: 0; position: absolute; left: 0; top: 0;  }
+#scrollbarX .overview img{ float: left; }
+#scrollbarX .scrollbar{ background: transparent url(../images/bg-scrollbar-track-x.png) no-repeat 0 0; position: relative; margin: 0 0 5px; clear: both; height: 15px; }
+#scrollbarX .track { background: transparent url(../images/bg-scrollbar-trackend-x.png) no-repeat 100% 0; width: 100%; height:15px; position: relative; }
+#scrollbarX .thumb { background: transparent url(../images/bg-scrollbar-thumb-x.png) no-repeat 100% 50%; height: 25px; cursor: pointer; overflow: hidden; position: absolute; left: 0; top: -5px; }
+#scrollbarX .thumb .end{ background: transparent url(../images/bg-scrollbar-thumb-x.png) no-repeat 0 50%; overflow: hidden; height: 25px; width: 5px;}
+#scrollbarX .disable { display: none; }

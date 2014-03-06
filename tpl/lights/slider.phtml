@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="/css/slider.css" media="screen" />
+<div id="slider">
+	
+    <div id="wowslider-container">
+		<img src="<?=IMAGES?>slider_bg.png" id="slider_bg" />
+        <div id="wowslider-images">
+            <?php
+            $i=0;
+            foreach($vars['slider'] as $row)
+            {
+				if($row['url']=='')$link='javascript:void(0);';
+				else $link=LINK.$row['url'];
+                echo'<a href="'.$link.'"><img src="/files/slider/'.$row['id'].'.jpg" alt="'.$row['name'].'" title="'.$row['name'].'" id="wows'.$i.'"/></a>';
+                $i++;
+            }
+            ?>
+        </div>
+		<div class="ws_bullets">
+            <?php
+				$i=0;
+				foreach($vars['slider'] as $row)
+				{
+					echo'<a href="#wows'.$i.'" title="'.$row['name'].'"></a>';
+					$i++;
+				}
+            ?>
+		</div>
+		<div id="wowslider-shadow"></div>
+    </div>
+</div>
+<script type="text/javascript" src="/js/slider.js"></script> 
+<div id="slider_right">
+	<?=htmlspecialchars_decode($vars['body']['body']);?>
+</div>
+<div class="clear"></div>

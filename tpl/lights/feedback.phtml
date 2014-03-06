@@ -1,0 +1,46 @@
+<?php echo $vars['message'];?>
+<script type="text/javascript">$(document).ready(function(){$("#formID").validationEngine();});</script>
+            <form action="" method="post" id="formID">  
+                  <table class="contact">
+                      <tr>
+                        <td colspan="2"><h3 align="center"><?=$vars['translate']['feelback']?></h3></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><?=$vars['translate']['fio']?> *:</td>
+                        <td><input type="text" name="name" size="30" id="name" class="validate[required]" /></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><?=$vars['translate']['email']?> *:</td>
+                        <td><input type="text" name="email" size="30" id="email" class="validate[required,custom[email]]" /></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><?=$vars['translate']['city']?>:</td>
+                        <td><input type="text" name="city" size="30" /></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><?=$vars['translate']['phone']?>:</td>
+                        <td><input type="text" name="phone" size="30" /></td>
+                      </tr>
+                      <tr>
+                        <td align="right"><?=$vars['translate']['message']?> *:</td>
+                        <td><textarea rows="4" name="text" id="txt" class="validate[required]"></textarea></td>
+                      </tr>
+                      
+                      <tr>
+                       <td align="right">
+                         <img src="/captcha" alt="#Enable images to see captcha." />
+                       </td>
+                       <td>
+                        <input type="text" name="captcha" id="captcha" value="" size="30" class="validate[required]" />
+                       </td>
+                      </tr>
+                      <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" name="send" value="<?=$vars['translate']['send_message']?>" class="submit" /></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2" style="padding: 0px 100px;" align="center"><h5>* - <?=$vars['translate']['fields']?></h5></td>
+                      </tr>                      
+                    </table>
+            </form>
+<br /><br />

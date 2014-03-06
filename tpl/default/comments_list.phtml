@@ -1,0 +1,28 @@
+<div id="comment_block">
+<div class="clear"></div>
+<?
+	echo'<div class="clear"></div><br /><div id="comment_list">';
+    foreach($vars['comments'] as $row)
+    {
+		if($row['photo']!='')$src=$row['photo'];
+		else $src='/files/default.gif';
+		
+        echo'
+		<div class="comment_record">
+			<div class="photo_comment"><img src="'.$src.'" width="50" /></div>
+			<div class="info_comment">
+				<div class="title_comment">'.$row['author'].'</div>
+				<div class="text_comment">
+					'.$row['text'].'
+					
+					<a href="'.LINK.'/product/'.$row['url'].'">'.$row['name'].'</a>
+				</div>
+				<div class="date_comment">'.Date::date_view($row['date'], "dd.mm.YY, hh:ii").'</div>
+			</div>
+			<div class="clear"></div>
+		</div>';
+    }
+	echo'</div>';
+    ?>
+</div>
+<div class="clear"></div>

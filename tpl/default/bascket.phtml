@@ -1,0 +1,8 @@
+<?
+	if($vars['settings']['type_basket']==1)$link='href="javascript:void(0);" onclick="showBasket();"';
+	else $link='href="/orders/all"';
+	
+	echo '<div id="check_total"><a '.$link.'>'.$vars['translate']['in_cart'].' <span id="count_bascket">'.$vars['count'].'</span><br />
+		 '.$vars['translate']['payable'].': <span id="sum_bascket">'.$vars['total'].'</span></a>
+		  </div>';
+?>

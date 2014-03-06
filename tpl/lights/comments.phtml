@@ -1,0 +1,79 @@
+<?php
+	if(isset($_POST['logout2']))unset($_SESSION['user_comments']);
+	if(isset($_POST['token']))
+	{
+		$s = file_get_contents('http://ulogin.ru/token.php?token=' . $_POST['token'] . '&host=' . $_SERVER['HTTP_HOST']);
+		$user_data = json_decode($s, true);
+		if(!isset($user_data['error']))
+		{
+			$_SESSION['user_comments'] = $user_data;
+		}
+	}
+	
+	if(isset($_SESSION['user_comments']['photo'])&&$_SESSION['user_comments']['photo']!='')$src=$_SESSION['user_comments']['photo'];
+	else $src='/files/default.gif';
+?>
+
+<div id="comment_block">
+<div class="clear"></div>
+<?
+	if(!isset($_SESSION['user_comments']))
+	{
+?>
+    <div class="cnt_comment"><?=$vars['translate']['comments']?> <span>(<?=count($vars['comments'])?>)</span></div>
+	<div id="soc_auth">
+		<script src="http://ulogin.ru/js/ulogin.js" type="text/javascript"></script>
+		<a href="#" id="uLogin" x-ulogin-params="display=window;fields=first_name,last_name,photo;redirect_uri=http%3A%2F%2F<?=$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']?>"><img src="http://ulogin.ru/img/button.png" width=187 height=30 alt="МультиВход"/></a>
+	</div>
+	<div id="input"></div>
+	<div id="photo_comment"><img src="<?=$src?>" /></div>
+    <div id="comment_form">
+        
+        <form method="post" action="" id="form_comment">
+            <input type="text" value="" id="name_comment_form" class="validate[required]" placeholder="<?=$vars['translate']['name']?>" /><br />
+			<input type="hidden" id="photo_comment" value="" />
+            <input type="hidden" id="id_comment" value="<?=$vars['id']?>" />
+            <input type="hidden" id="type_comment" value="<?=$vars['type']?>" />
+            <textarea name="" id="text_comment_form" cols="30" rows="10" class="validate[required]" placeholder="<?=$vars['translate']['message']?>..."></textarea><br />
+            <input type="submit" value="<?=$vars['translate']['send_message']?>" name="submit_comment" />
+        </form>
+    </div>
+    <?
+	}
+	else{?>
+	<div class="cnt_comment"><?=$vars['translate']['comments']?> <span>(<?=count($vars['comments'])?>)</span></div>
+	<div id="input"></div>
+	<div id="photo_comment"><img src="<?=$src?>" width="50" /><form method="post"><input type="hidden" name="logout2" value="1"><input type="image" src="/images/exit.jpg" title="Logout" /></form></div>
+    <div id="comment_form">
+        <form method="post" action="" id="form_comment">
+            <input type="hidden" value="<?=$_SESSION['user_comments']['first_name']?> <?=$_SESSION['user_comments']['last_name']?>" id="name_comment_form" class="validate[required]" />
+			<input type="hidden" id="avatar" value="<?=$_SESSION['user_comments']['photo']?>" />
+            <input type="hidden" id="id_comment" value="<?=$vars['id']?>" />
+            <input type="hidden" id="type_comment" value="<?=$vars['type']?>" />
+            <textarea name="" id="text_comment_form" cols="30" rows="10" class="validate[required]" placeholder="<?=$vars['translate']['message']?>..."></textarea><br />
+            <input type="submit" value="<?=$vars['translate']['send_message']?>" />
+        </form>
+    </div>
+	<?
+	}
+	echo'<div class="clear"></div><br /><div id="comment_list">';
+    foreach($vars['comments'] as $row)
+    {
+		if($row['photo']!='')$src=$row['photo'];
+		else $src='/files/default.gif';
+		
+        echo'
+		<div class="comment_record">
+			<div class="photo_comment"><img src="'.$src.'" width="50" /></div>
+			<div class="info_comment">
+				<div class="title_comment">'.$row['author'].'</div>
+				<div class="text_comment">'.$row['text'].'</div>
+				<div class="date_comment">'.Date::date_view($row['date'], "dd.mm.YY, hh:ii").'</div>
+			</div>
+			<div class="clear"></div>
+		</div>';
+    }
+	echo'</div>';
+    ?>
+</div>
+<div class="clear"></div>

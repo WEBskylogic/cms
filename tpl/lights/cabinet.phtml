@@ -1,0 +1,46 @@
+<script type="text/javascript" src="/js/cabinet.js"></script>
+<div id="cabinet-new">
+    <div id="holder">
+        <?
+            # Корзина, заказы и профиль
+            include 'cabinet-basket.phtml';
+            include 'cabinet-orders.phtml';
+            include 'cabinet-profile.phtml';
+        ?>
+        <div class="cabinet-main-menu">
+            <h4>Мой кабинет</h4>
+            <? if (isset($_SESSION['user_id'])) { ?>
+                <button value="" class="cabinet-submit" id="cabinet-show">Мои данные</button>
+                <button value="" class="cabinet-submit" id="orders-show">Мои заказы</button>
+            <? } ?>
+            <button value="" class="cabinet-submit active" id="basket-show">Корзина</button>
+        </div>
+    </div>
+    <div id="bottom_bar">
+        <div id="holder">
+            <div id="sum">
+                <p><?= $vars['translate']['total'] ?>: <?= Numeric::formatPrice($summa2) ?></p>
+            </div>
+            <div id="go">
+                <a href="#order" id="gogo" onclick="makeorder();">
+                    <img src="/images/order.png"/>
+                </a>
+            </div>
+            <div id="save" style="display:none;">
+                <a href="#order" onclick="saveprofile();">
+                    <img src="/images/p_save.png"/>
+                </a>
+            </div>
+            <div id="send" style="display:none;">
+                <a>
+                    <img src="/images/send.png"/>
+                </a>
+            </div>
+            <div id="back">
+                <a id="close-cabinet" href="#close">
+                    Вернуться к покупкам
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

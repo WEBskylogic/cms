@@ -1,0 +1,45 @@
+<?
+$price = Numeric::viewPrice($row['price'], $row['discount']);
+$summa = Numeric::formatPrice($price['cur_price'] * $row['amount']);
+$summa2 += $price['cur_price'] * $row['amount'];
+
+$dir = Dir::createDir($row['id']);
+if ($row['photo_id2'] != '') $row['photo_id'] = $row['photo_id2'];
+
+if (file_exists($dir[1] . $row['photo_id'] . "_s.jpg")) {
+    $src = '<img alt="' . $row['name'] . '" title="' . $row['name'] . '" src="/' . $dir[1] . $row['photo_id'] . '_s.jpg" />';
+} else {
+    $src = '<img alt="" src="/files/default.jpg" />';
+}
+
+echo "<div class='item' id='{$row['cart_id']}'>
+                <a class='name' href='" . LINK . "/product/{$row['url']}'>{$row['name']}</a>
+                <a class='del' dd='{$row['cart_id']}' title='" . $vars['translate']['delete'] . "'><img src='/images/del.png' /></a></br>
+                <div class='img'>{$src}</div>
+        <div class='code' style='display: none;'>Код товара: " . $row['code'] . "</br></br></div>
+        <div class='desc'><div class='desc2' style='display: none;'>" . mb_substr(htmlspecialchars_decode($row['body']), 0, 150, 'UTF-8') . "</br></br></div>";
+
+if (!(isset($_SESSION['usertype']) || (isset($_SESSION['usertype']) && ($_SESSION['usertype'] == '0')))) {
+    echo "<div class='st_size' id='status'>Размер: " . $row['size'] . "</div><div class='st_color' id='status'>Цвет: ";
+    if ($row['color'] == '') echo 'не выбран';
+    else echo '<div class="colorpicker" style="background-color:#' . $row['color'] . ';" title="' . $row['color'] . '"></div>';
+} else {
+    echo '<div id="status">В упаковке: ' . $row['cnt_opt'] . ' шт.</div></br>';
+    echo "<div id='status'><span style='float:left;'>Цвет: &nbsp;&nbsp;</span>";
+    if ($row['color'] == '') echo 'не выбран';
+    else echo '<div class="colorpicker" style="background-color:#' . $row['color'] . ';" title="' . $row['color'] . '"></div>';
+
+}
+
+echo "</div>
+            </div>
+                <div class='price'>" . $price['price'] . "</div>
+                <div class='count'>
+                <input type='text' id='cnt" . $i . "' value='{$row['amount']}' name='amount[]' class='amount' style='float: left;' readonly >
+                    <input type='hidden' value='{$row['cart_id']}' name='id[]' />
+                        <div style='float:left; width:10px; text-align:center; margin-left:5px;padding-top:4px;'>
+                            <a href='javascript:void(0);' class='cnt1' title='+' id='" . $i . "'><img src='".IMAGES."cnt_up.png' alt='' style='border:none;'></a>
+                            <a href='javascript:void(0);' class='cnt1' title='-' id='" . $i . "'><img src='".IMAGES."cnt_down.png' alt='' style='border:none;'></a>
+                                <br></div>
+                </div></div>";
+?>

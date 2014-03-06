@@ -1,0 +1,195 @@
+<table>
+	<tr>
+    	<td style="width:200px;">ID</td>
+        <td>
+        	<select style="width:200px;"name="id">
+            	<option value="" style="color:#666666;">Пусто</option>
+            <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='id товара')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Название</td>
+        <td>
+        	<select style="width:200px;"name="name">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='Название')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Краткое описание</td>
+        <td>
+        	<select style="width:200px;"name="body_m">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='Краткое описание')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Описание</td>
+        <td>
+        	<select style="width:200px;"name="body">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='Описание')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Артикул</td>
+        <td>
+        	<select style="width:200px;"name="code">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='Артикул')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Изображение большое</td>
+        <td>
+        	<select style="width:200px;"name="image">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='Изображение')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Цена</td>
+        <td>
+        	<select style="width:200px;"name="price">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='Цена')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>В наличии</td>
+        <td>
+        	<select style="width:200px;"name="stock">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='В наличии')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>ID категории</td>
+        <td>
+        	<select style="width:200px;"name="catalog_id">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='ID категории')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    
+    <tr>
+    	<td>Название категории</td>
+        <td>
+        	<select style="width:200px;"name="cat_name">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='Название категории')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>ID производителя</td>
+        <td>
+        	<select style="width:200px;"name="brend_id">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='ID производителя')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+    	<td>Название производителя</td>
+        <td>
+        	<select style="width:200px;"name="brend_name">
+				<option value="" style="color:#666666;">Пусто</option>
+             <?
+				$i=0;
+				foreach($vars['cols'] as $row)
+				{
+					echo'<option value="col'.$i.'"';if($row=='Название производителя')echo' selected';echo'>'.$row.'</option>';
+					$i++;	
+				}
+			?>
+            </select>
+        </td>
+    </tr>
+</table>

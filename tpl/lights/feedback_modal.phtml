@@ -1,0 +1,17 @@
+<div id="feedback">
+    <h3><?=$vars['translate']['feelback']?></h3>
+    <form method="post" onsubmit="return sendFeedback();">
+
+        <label for="f_name"><?=$vars['translate']['name']?> *:</label>
+        <input type="text" name="f_name" id="f_name" value="" />
+
+        <label for="f_name"><?=$vars['translate']['email']?> *:</label>
+        <input type="text" name="f_name" id="f_email" value="" />
+
+        <label for="f_message"><?=$vars['translate']['message']?> *:</label>
+        <textarea rows="5" cols="35" name="f_message" id="f_message"></textarea>
+        <div id="message"></div>
+        <input type="submit" name="f_submit" value="<?=$vars['translate']['send_message']?>" class="submit" />
+
+    </form>
+</div>

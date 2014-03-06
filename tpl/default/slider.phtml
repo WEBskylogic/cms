@@ -1,0 +1,27 @@
+<script type="text/javascript">
+$(function () {
+	$('.slider').AnySlider({
+		rtl: false,
+		showControls: true,
+		startSlide: 1
+	});
+});
+</script>
+<div class="slider">
+	<?php
+		$i=0;
+		foreach($vars['slider'] as $row)
+		{
+			if($row['url']=='')$link='javascript:void(0);';
+			else $link=LINK.$row['url'];
+			echo'<div><a href="'.$link.'"><img src="/files/slider/'.$row['id'].'_s.jpg" alt="'.$row['name'].'" title="'.$row['name'].'" id="wows'.$i.'"/></a></div>';
+			$i++;
+		}
+    ?>
+    
+</div>
+<div class="clear"></div>
+<div id="delay_slider" class="<?=$vars['settings']['delay_slider']?>"></div>
+<div id="speed_slider" class="<?=$vars['settings']['speed_slider']?>"></div>
+<div id="interval_slider" class="<?=$vars['settings']['interval_slider']?>"></div>
+<div id="animation_slider" class="<?=$vars['settings']['animation_slider']?>"></div>

@@ -1,0 +1,39 @@
+<tr class="noDrop">
+    <th width="25"></th>
+    <th width="10" class="center"><input type="checkbox" class="check_all2" title="Отметить/снять все" value="Y" name="check_all"></th>
+    <th width="30">ID</th>
+    <th width="50">Фото</th>
+    <th>Название</th>
+    <th width="15%">Статус</th>
+    <th width="70">&nbsp;</th>
+</tr>
+<?php
+	foreach($vars['photo'] as $row)
+	{
+		if($row['active']==1)$active='<div class="selected-status status-a"><a> Вкл. </a></div>';
+		else $active='<div class="selected-status status-d"><a> Выкл. </a></div>';
+		
+		if(file_exists($row['photo']))$src="/".$row['photo']."?".time();
+        else $src="/tpl/admin/images/no_image.gif";
+		
+		echo'<tr id="sort'.$row['id'].'">
+				<td class="move"></td>
+				<td class="center"><input type="checkbox" class="check-item" value="'.$row['id'].'" name="photo_id[]" /></td>
+				<td><span>'.$row['id'].'</span></td>
+				<td>
+					<a data-toggle="modal" href="#myModal" class="load_crop" title="Выбрать область миниатюры">
+						<img src="'.$src.'" alt="" width="50" id="'.$vars['path'].'-'.$row['id'].'" alt="Выбрать область миниатюры" />
+					</a>
+				</td>
+				<td><input type="text" value="'.$row['name'].'" name="photo_name[]" class="input-text"></td>
+				<td><input type="hidden" value="'.$row['id'].'" name="save_photo_id[]" />
+					<div class="select-popup-container active_status" id="active'.$row['id'].'">'.$active.' </div>
+				</td>
+				<td width="10%">
+					<ul class="cm-tools-list tools-list">
+						<li><a href="/admin/'.$vars['action'].'/edit/'.$vars['sub_id'].'/dellone/'.$row['id'].'" class="cm-confirm">Удалить</a></li>
+					</ul>
+				</td>
+			</tr>';
+	}
+?>

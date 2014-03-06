@@ -1,0 +1,16 @@
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#formID2").validationEngine();
+});
+</script>
+<div id="login_form">
+		<div class="title">ВХОД
+			<a href="#" id="close_btn"><img src="/images/close.png" /></a>
+		</div>		
+		<form action="/send" method="post" id="formID2"  onsubmit="return login();">
+			<input type="text" name="email_auth"  id="email_auth" class="validate[required,custom[email]]" placeholder="E-Mail"  /></br>	
+			<input type="password" name="pass_auth" id="pass_auth" class="validate[required]" placeholder="Пароль"  /></br>
+			<div id="zzz"></div>
+			<input type="submit" name="auth" value="<?=$vars['translate']['enter']?>" class="submit" />
+		</form>
+</div>
