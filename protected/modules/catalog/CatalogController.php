@@ -100,7 +100,7 @@ class CatalogController extends BaseController{
 				{
 					$data['breadcrumbs'] = $this->catalog->getBreadCat($catrow);////bread crumbs
 
-					$vars['sub'] = $this->catalog->find(array('select'=>'tb.id, tb.url, tb_lang.name',
+					$vars['sub'] = $this->catalog->find(array('select'=>'tb.id2, tb.url, tb_lang.name',
 															  'where'=>'__sub:='.$catrow['id'].'__', 
 															  'order'=>'sort asc', 
 															  'type'=>'rows'));

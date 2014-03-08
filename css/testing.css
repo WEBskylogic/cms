@@ -1,19 +1,19 @@
-#testing-block {
-	position: fixed;
-	z-index: 999;
-	display: none;
-	width: 100%;
-	top: 0;
-}
 #testing-line {
+    position: fixed;
+    top: 0;
+    z-index: 999;
 	background: url('../images/testing_line.png') repeat-x;
 	height: 5px;
+    width: 100%;
 }
-#testing-end {
-	margin: 0 auto;
-	position: relative;
+#testing {
+	position: fixed;
 	width: 499px;
 	height: 67px;
+    top: 5px;
+    z-index: 999;
+    left: 50%;
+    margin-left: -199px;
 	text-align: center;
 }
 #testing-main {
@@ -24,12 +24,12 @@
 	cursor: pointer;
 	z-index: 2;
 }
-#testing-end p {
+#testing p {
 	color: #e90f0f;
 	font-family: "Arial";
 	font-size: 18px;
 }
-#testing-end p span {
+#testing p span {
 	color: #635046;
 	font-family: "Arial";
 	font-size: 22px;

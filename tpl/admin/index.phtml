@@ -15,6 +15,7 @@
 	<div class="ajax-inner-loading-box" id="ajax-inner-loading-box">Загрузка...</div>
 </div>
 <?=$vars['menu_inc'];?>
+<?php echo htmlspecialchars_decode($vars['testing_mode']); ?>
 <?
 if(!isset($vars['login']))
 {

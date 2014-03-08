@@ -224,12 +224,13 @@ class Orders extends Model
 				$_SESSION['order_info'][$key]=$value;
 			}
 		}
-		
+
 		///Add order
+
 		$date=date("Y-m-d H:i:s");
 		$summa2=0;
-		$summa3=0;
-		$summa4=0;	
+		$summa4=0;
+
 		$text="<h4>Информация о отправителе</h4>
 			   ФИО: {$info['name']}<br />
 			   Контактный телефон: {$info['phone']}<br />";
@@ -250,7 +251,6 @@ class Orders extends Model
 			$q.=", __discount:=".$info['code_discount']."__";
 			$text.="Код скидки: {$info['code_discount']}<br />";
 		}
-		
 		
 		///////////Destination info
 		$d_info='';
@@ -284,11 +284,9 @@ class Orders extends Model
 			$q.=", __comment:=".$info['text']."__";
 			$d_info.="Примечание: <br />{$info['text']}<br /><br />";
 		}
-		
-		
+
 		if($d_info!='')$text.="<br /><h4>Информация о получателе</h4>".$d_info;
-		///////////////
-		
+
 		if(isset($info['phone']))$q.=", __phone:=".$info['phone']."__";
 
 		if($user_id!=0)$q.=", __user_id:=".$user_id."__";
@@ -296,7 +294,9 @@ class Orders extends Model
 		//echo $query;
 		$order_id = $this->query($q, true);			
 		$path=$_SERVER['HTTP_HOST'];
-		
+
+        $deliveryType = '';
+        $payType = '';
 
 		if(isset($info['delivery']))
 		{
@@ -306,7 +306,8 @@ class Orders extends Model
 				$row = Delivery::getObject($this->sets)->find((int)$info['delivery']);
 				$price = Numeric::viewPrice($row['price']);
 				$summa4 +=$row['price'];	
-				$summa2 =$price['price'];	
+				$summa2 =$price['price'];
+                $deliveryType .= $row['name'];
 				$text.="Способ доставки: {$row['name']}<br />";
 				$this->db->query("UPDATE orders SET delivery_id=? WHERE id=?", array($row['id'], $order_id));	
 			}
@@ -317,6 +318,7 @@ class Orders extends Model
 			if($row)
 			{
 				$row = Payment::getObject($this->sets)->find((int)$info['payment']);
+                $payType .= $row['name'];
 				$text.="Способ оплаты: {$row['name']}<br />";	
 				$this->db->query("UPDATE orders SET payment_id=? WHERE id=?", array($info['payment'], $order_id));
 			}
@@ -334,9 +336,67 @@ class Orders extends Model
 			</tr>";
 		$i=0;
 		$res = $query;
+
+
+        $xml = new DomDocument('1.0', 'utf-8');
+        $order = $xml->appendChild($xml->createElement('order'));
+
+        $xml_order_pid = $order->appendChild($xml->createElement('id'));
+        $xml_order_pid->appendChild($xml->createTextNode($order_id));
+
+        $xml_date = $order->appendChild($xml->createElement('date'));
+        $xml_date->appendChild($xml->createTextNode(date("Y-m-d H:i:s")));
+
+        $xml_username = $order->appendChild($xml->createElement('username'));
+        $xml_username->appendChild($xml->createTextNode($info['name']));
+
+        $xml_email = $order->appendChild($xml->createElement('email'));
+        $xml_email->appendChild($xml->createTextNode($info['email']));
+
+        $xml_phone = $order->appendChild($xml->createElement('phone'));
+        $xml_phone->appendChild($xml->createTextNode($info['phone']));
+
+        $xml_city = $order->appendChild($xml->createElement('city'));
+        $xml_city->appendChild($xml->createTextNode($info['city']));
+
+        $xml_address = $order->appendChild($xml->createElement('address'));
+        $xml_address->appendChild($xml->createTextNode($info['address']));
+
+        $xml_delivery = $order->appendChild($xml->createElement('delivery'));
+        $xml_delivery->appendChild($xml->createTextNode($deliveryType));
+
+        $xml_payment = $order->appendChild($xml->createElement('payment'));
+        $xml_payment->appendChild($xml->createTextNode($payType));
+
+        $products = $order->appendChild($xml->createElement('products'));
 		foreach($res as $row)
 		{
-			////////
+
+            // Adding data to XML
+
+            $product = $products->appendChild($xml->createElement('product'));
+
+            $xml_product_id = $product->appendChild($xml->createElement('id'));
+            $xml_product_id->appendChild($xml->createTextNode($row['id']));
+
+            $xml_product_name = $product->appendChild($xml->createElement('name'));
+            $xml_product_name->appendChild($xml->createTextNode($row['name']));
+
+            $xml_product_price = $product->appendChild($xml->createElement('price'));
+            $xml_product_price->appendChild($xml->createTextNode($row['price']));
+
+            $xml_product_amount = $product->appendChild($xml->createElement('amount'));
+            $xml_product_amount->appendChild($xml->createTextNode($row['amount']));
+
+            $xml_product_sum = $product->appendChild($xml->createElement('sum'));
+            $xml_product_sum->appendChild($xml->createTextNode($row['price'] * $row['amount']));
+
+            $xml_product_size = $product->appendChild($xml->createElement('size'));
+            $xml_product_size->appendChild($xml->createTextNode($row['size']));
+
+            $xml_product_color = $product->appendChild($xml->createElement('color'));
+            $xml_product_color->appendChild($xml->createTextNode($row['color']));
+
 			$price=Numeric::viewPrice($row['price'], $row['discount']);		
 			$summa = Numeric::formatPrice($price['cur_price'] * $row['amount']);
 			$summa2 +=$price['cur_price'] * $row['amount'];
@@ -368,7 +428,12 @@ class Orders extends Model
 					</tr>";	
 			$i+=$row['amount'];		
 		}
-		
+
+        $xml->formatOutput = true;
+        $vars['xml'] = $xml->saveXML();
+        file_put_contents('files/orders/'.$order_id.'.xml', $vars['xml']);
+
+
 		$text.="<tr>
 					<td colspan='5' align='right'>
 						<div style='font-size:14px;'>
@@ -433,7 +498,8 @@ class Orders extends Model
 			$row = $this->db->row("SELECT `price`, code, discount, product_id FROM `price` WHERE `id`=?", array($id));
 			
 			if($row['discount']!=0)$row['price']=Numeric::discount($row['discount'], $row['price']);
-			$param = array($row['price'], $_COOKIE['session_id'], $id, $row['product_id'], $row['code'], $row['discount'], $date, $amount, $size, $color);
+			//$param = array($row['price'], $_COOKIE['session_id'], $id, $row['product_id'], $row['code'], $row['discount'], $date, $amount, $size, $color);
+            $param = array($row['price'], session_id(), $id, $row['product_id'], $row['code'], $row['discount'], $date, $amount, $size, $color);
 			
 			$where="";
 			if(isset($_SESSION['user_id']))$where=", user_id='{$_SESSION['user_id']}'";
@@ -625,8 +691,11 @@ class Orders extends Model
 
 	function get_user_id($tb='b')
     {
-		if(isset($_SESSION['user_id']))$ssid = "($tb.user_id='".$_SESSION['user_id']."' OR $tb.session_id='".$_COOKIE['session_id']."')";
-        else $ssid = "$tb.session_id='".$_COOKIE['session_id']."'";
+		//if(isset($_SESSION['user_id']))$ssid = "($tb.user_id='".$_SESSION['user_id']."' OR $tb.session_id='".$_COOKIE['session_id']."')";
+        //else $ssid = "$tb.session_id='".$_COOKIE['session_id']."'";
+
+        if(isset($_SESSION['user_id']))$ssid = "($tb.user_id='".$_SESSION['user_id']."' OR $tb.session_id='".session_id()."')";
+        else $ssid = "$tb.session_id='".session_id()."'";
 		return $ssid;
 	}
 	

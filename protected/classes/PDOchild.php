@@ -60,7 +60,7 @@ class PDOchild Extends PDO
 			$this->error($e,$pattern,$info,$vars);
 			return false;
 		}
-		
+
 		return $this->lastInsertId();
 	}
 	

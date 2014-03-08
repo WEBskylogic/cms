@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<order>
+  <name>dfh</name>
+  <email>dhf@us.dfj</email>
+  <phone>34734357</phone>
+  <address>dfhdf</address>
+  <city>fhdfh</city>
+  <post_index>35783</post_index>
+  <delivery>1</delivery>
+  <payment>3</payment>
+  <text>df</text>
+  <products>
+    <product>
+      <id>18</id>
+      <name>Новый купальник 2</name>
+      <price>1220.00</price>
+      <amount>1</amount>
+      <sum>1220</sum>
+      <size></size>
+      <color></color>
+    </product>
+    <product>
+      <id>17</id>
+      <name>Новый купальник</name>
+      <price>1220.00</price>
+      <amount>2</amount>
+      <sum>2440</sum>
+      <size></size>
+      <color></color>
+    </product>
+  </products>
+</order>

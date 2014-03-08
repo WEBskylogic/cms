@@ -1,6 +1,5 @@
 $(document).ready(function () {
     bascket();
-    testing_mode();
 
     /////Subscribers
     $('#subscribe_form').live('submit', function () {
@@ -121,20 +120,6 @@ function bascket() {
         }
     });
 }
-
-function testing_mode() {
-    $.ajax
-    ({
-        type: "POST",
-        url: "/ajax/testingmode",
-        cache: false,
-        success: function (html) {
-            $("body").append(html);
-            $('#testing-block').slideToggle(150);
-        }
-    });
-}
-
 
 ////Add comments
 $('#form_comment').live('submit', function () {

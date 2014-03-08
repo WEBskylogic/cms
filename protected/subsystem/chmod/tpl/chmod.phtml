@@ -11,13 +11,13 @@
 				<input type="hidden" value="<?=$vars['modules_id']?>" name="id2" />
 				<div id="content_basic" style="display: block;">
                     <fieldset>
-                        <table width="50%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort" id="photos" style="margin-top: 0;">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="table table-fixed hidden-inputs tb_sort" id="photos" style="margin-top: 0;">
                             <tr>
-                                <th>Название модуля</th>
-                                <th style="text-align:center;" width="80">Чтение</th>
-                                <th style="text-align:center;" width="80">Изменение</th>
-                                <th style="text-align:center;" width="80">Удаление</th>
-                                <th style="text-align:center;" width="80">Добавление</th>
+                                <th>Название прав</th>
+                                <th style="text-align:center;" >Чтение</th>
+                                <th style="text-align:center;" >Изменение</th>
+                                <th style="text-align:center;" >Удаление</th>
+                                <th style="text-align:center;" >Добавление</th>
                             </tr>
                             <?php
                             $a=0;
@@ -61,7 +61,7 @@
                                     </tr>';
                             }
                                 echo'<tr>
-                                        <td></td>
+                                        <td style="font-style:italic;">Выбрать все</td>
                                         <td style="text-align:center;"><input type="checkbox" value="" id="read_all"';if($cnt==$r)echo' checked="checked"';echo' /></td>
 										<td style="text-align:center;"><input type="checkbox" value="" id="edit_all"';if($cnt==$e)echo' checked="checked"';echo' /></td>
                                         <td style="text-align:center;"><input type="checkbox" value="" id="del_all"';if($cnt==$d)echo' checked="checked"';echo' /></td>

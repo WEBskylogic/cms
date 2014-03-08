@@ -23,22 +23,116 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CatalogController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/catalog/CatalogController.php">
+      <file leaf-file-name="testing.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/testing.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="61" selection-start="751" selection-end="751" vertical-scroll-proportion="7.5" vertical-offset="630" max-vertical-offset="4500">
+            <state line="31" column="8" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AjaxController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/AjaxController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="204" column="107" selection-start="8059" selection-end="8059" vertical-scroll-proportion="0.40920097" vertical-offset="2677" max-vertical-offset="4515">
               <folding>
-                <marker date="1394136407285" expanded="true" signature="2668:2707" placeholder="SELECT `sub`..." />
-                <marker date="1394136407285" expanded="true" signature="6834:6872" placeholder="SELECT id, u..catalog..." />
+                <marker date="1394306081746" expanded="true" signature="430:850" placeholder="SELECT tb.id..." />
+                <marker date="1394306081746" expanded="true" signature="2830:2928" placeholder="SELECT id, t..." />
+                <marker date="1394306081746" expanded="true" signature="3887:3945" placeholder="SELECT `id` ..." />
+                <marker date="1394306081746" expanded="true" signature="6878:6934" placeholder="INSERT INTO ..." />
+                <marker date="1394306081746" expanded="true" signature="8786:8884" placeholder="SELECT id, t..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajax.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/ajax.js">
+      <file leaf-file-name="BaseController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/BaseController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="279" column="23" selection-start="9199" selection-end="9213" vertical-scroll-proportion="0.49573562" vertical-offset="3720" max-vertical-offset="4995">
+            <state line="234" column="88" selection-start="10063" selection-end="10063" vertical-scroll-proportion="-21.375" vertical-offset="2997" max-vertical-offset="3885">
+              <folding>
+                <marker date="1394305955758" expanded="true" signature="525:565" placeholder="SELECT * FRO..language..." />
+                <marker date="1394305955758" expanded="true" signature="648:678" placeholder="SELECT name,..config..." />
+                <marker date="1394305955758" expanded="true" signature="1522:1565" placeholder="SELECT id FR..modules..." />
+                <marker date="1394305955758" expanded="true" signature="1745:1782" placeholder="SELECT * FRO..." />
+                <marker date="1394305955758" expanded="true" signature="1931:1987" placeholder="SELECT * FRO..." />
+                <marker date="1394305955758" expanded="true" signature="2209:2244" placeholder="SELECT * FRO..." />
+                <marker date="1394305955758" expanded="true" signature="2317:2354" placeholder="SELECT * FRO..." />
+                <marker date="1394305955758" expanded="true" signature="3892:4273" placeholder="SELECT tb.*,..." />
+                <marker date="1394305955758" expanded="true" signature="4413:4724" placeholder="SELECT tb.* ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin/testing.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="16" selection-start="0" selection-end="1017" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="555">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/testing.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="50" column="36" selection-start="1606" selection-end="1609" vertical-scroll-proportion="-22.148148" vertical-offset="152" max-vertical-offset="975">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/admin/index.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="710" selection-end="771" vertical-scroll-proportion="-2.9166667" vertical-offset="185" max-vertical-offset="1020">
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1394304056902" expanded="true" signature="882:982" placeholder="..." />
+                <marker date="1394304056902" expanded="true" signature="901:982" placeholder="..." />
+                <marker date="1394304056902" expanded="true" signature="1056:1125" placeholder="..." />
+                <marker date="1394304056902" expanded="true" signature="1099:1125" placeholder="..." />
+                <marker date="1394304056902" expanded="true" signature="1774:2113" placeholder="..." />
+                <marker date="1394304056902" expanded="true" signature="1824:2104" placeholder="..." />
+                <marker date="1394304056902" expanded="true" signature="1824:2104" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/lights/index.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="139" column="61" selection-start="5793" selection-end="5793" vertical-scroll-proportion="-28.875" vertical-offset="1392" max-vertical-offset="2205">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/default/index.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="137" column="18" selection-start="6292" selection-end="6292" vertical-scroll-proportion="-32.375" vertical-offset="1278" max-vertical-offset="2385">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/default/testing.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="1017" selection-end="1017" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="555">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="testing.phtml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/lights/testing.phtml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="31" column="0" selection-start="1017" selection-end="1017" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="555">
               <folding />
             </state>
           </provider>
@@ -57,7 +151,6 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/protected/config.php" />
         <option value="$PROJECT_DIR$/protected/controllers/IndexController.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
         <option value="$PROJECT_DIR$/public_html/.htaccess" />
         <option value="$PROJECT_DIR$/public_html/protected/config.php" />
         <option value="$PROJECT_DIR$/public_html/protected/controllers/IndexController.php" />
@@ -66,7 +159,26 @@
         <option value="$PROJECT_DIR$/public_html/protected/classes/Captcha3D.php" />
         <option value="$PROJECT_DIR$/public_html/protected/modules/catalog/CatalogController.php" />
         <option value="$PROJECT_DIR$/public_html/protected/modules/catalog/Catalog.php" />
+        <option value="$PROJECT_DIR$/protected/modules/orders/Orders.php" />
+        <option value="$PROJECT_DIR$/protected/modules/orders/admin/tpl/view.phtml" />
+        <option value="$PROJECT_DIR$/download.php" />
+        <option value="$PROJECT_DIR$/.htaccess" />
+        <option value="$PROJECT_DIR$/protected/subsystem/chmod/tpl/chmod.phtml" />
+        <option value="$PROJECT_DIR$/protected/modules/catalog/Catalog.php" />
+        <option value="$PROJECT_DIR$/protected/modules/catalog/CatalogController.php" />
+        <option value="$PROJECT_DIR$/protected/classes/PDOchild.php" />
+        <option value="$PROJECT_DIR$/protected/classes/DataBase.php" />
+        <option value="$PROJECT_DIR$/tpl/admin/index.phtml" />
         <option value="$PROJECT_DIR$/js/ajax.js" />
+        <option value="$PROJECT_DIR$/tpl/lights/index.phtml" />
+        <option value="$PROJECT_DIR$/tpl/default/index.phtml" />
+        <option value="$PROJECT_DIR$/protected/controllers/BaseController.php" />
+        <option value="$PROJECT_DIR$/tpl/admin/testing.phtml" />
+        <option value="$PROJECT_DIR$/tpl/default/testing.phtml" />
+        <option value="$PROJECT_DIR$/tpl/lights/testing.phtml" />
+        <option value="$PROJECT_DIR$/js/testing.js" />
+        <option value="$PROJECT_DIR$/css/testing.css" />
+        <option value="$PROJECT_DIR$/protected/controllers/AjaxController.php" />
       </list>
     </option>
   </component>
@@ -75,7 +187,7 @@
     <option name="x" value="53" />
     <option name="y" value="24" />
     <option name="width" value="1867" />
-    <option name="height" value="1056" />
+    <option name="height" value="990" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -103,7 +215,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -132,7 +243,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lights" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -146,33 +261,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
+              <option name="myItemId" value="tpl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skylogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="skylogic" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="catalog" />
+              <option name="myItemId" value="default" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -186,11 +279,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
+              <option name="myItemId" value="tpl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -208,15 +301,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skylogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="skylogic" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../turismo/protected/config/main.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/tpl/admin/css" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="SearchEverywhereHistory" value="//" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/tpl/admin/css" />
+      <recent name="$PROJECT_DIR$/css" />
+      <recent name="$PROJECT_DIR$/tpl/admin" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public_html" />
     </key>
@@ -247,27 +361,27 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="53" y="24" width="1867" height="1056" extended-state="6" />
+    <frame x="53" y="24" width="1867" height="990" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24986301" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25260273" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32953367" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -287,43 +401,390 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/protected/modules/catalog/CatalogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="61" selection-start="751" selection-end="751" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="279" column="23" selection-start="9199" selection-end="9213" vertical-scroll-proportion="0.0" vertical-offset="3720" max-vertical-offset="4995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="6" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/orders/Orders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="226" column="0" selection-start="8325" selection-end="8325" vertical-scroll-proportion="0.0" vertical-offset="3134" max-vertical-offset="11325">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../turismo/protected/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3129103" vertical-offset="286" max-vertical-offset="1425">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.3129103" vertical-offset="286" max-vertical-offset="1425" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="6" selection-start="212" selection-end="212" vertical-scroll-proportion="0.0" vertical-offset="165" max-vertical-offset="615">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/cabinet.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="12" selection-start="660" selection-end="660" vertical-scroll-proportion="0.0" vertical-offset="1935" max-vertical-offset="4500">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/orders/7.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="32" column="0" selection-start="705" selection-end="705" vertical-scroll-proportion="0.5504587" vertical-offset="0" max-vertical-offset="872">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/orders/8.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="18" selection-start="491" selection-end="491" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/orders/admin/tpl/list.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="872">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/orders/admin/tpl/view.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="93" selection-start="1154" selection-end="1162" vertical-scroll-proportion="-15.0" vertical-offset="0" max-vertical-offset="705">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/download.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="43" selection-start="781" selection-end="781" vertical-scroll-proportion="-13.75" vertical-offset="0" max-vertical-offset="585">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.htaccess">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="149" selection-start="459" selection-end="459" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/product/admin/ProductController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="110" selection-start="1916" selection-end="1924" vertical-scroll-proportion="-5.1372547" vertical-offset="563" max-vertical-offset="5115">
+          <folding>
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..price_type..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT icon ..currency..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..price..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..price_type..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT icon ..currency..." />
+            <marker date="1394134251661" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/product/Product.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="44" selection-start="7030" selection-end="7030" vertical-scroll-proportion="-12.041667" vertical-offset="2591" max-vertical-offset="10335">
+          <folding>
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..language..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="insert into ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT id FR..params_product..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT id FR..params_product..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT icon ..currency..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT price..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT id FR..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..product..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..price..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..price_type..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT produ..price..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..price..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..price_type..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT pp.*,..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..price..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT pp.*,..product_property_sets..." />
+            <marker date="1394134251565" expanded="true" signature="-1:-1" placeholder="SELECT price..." />
+            <marker date="1394134251565" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1394134251565" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/orders/Orders.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="1" selection-start="30" selection-end="31" vertical-scroll-proportion="-0.625" vertical-offset="15" max-vertical-offset="12270">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/files/product/3/13/13.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/orders/admin/OrdersController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="89" selection-start="1331" selection-end="1331" vertical-scroll-proportion="-3.7916667" vertical-offset="479" max-vertical-offset="1890">
+          <folding>
+            <marker date="1394134249517" expanded="true" signature="-1:-1" placeholder="SELECT icon ..currency..." />
+            <marker date="1394134249517" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134249517" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134249517" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..orders_status..." />
+            <marker date="1394134249517" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..orders_product..." />
+            <marker date="1394134249517" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134249517" expanded="true" signature="-1:-1" placeholder="SELECT id FR..modules..." />
+            <marker date="1394134249517" expanded="true" signature="-1:-1" placeholder="SELECT icon ..currency..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/default/product_in.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1860">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/subsystem/chmod/tpl/add.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="850">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/subsystem/chmod/tpl/chmod.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="33" selection-start="1905" selection-end="1905" vertical-scroll-proportion="-24.375" vertical-offset="0" max-vertical-offset="1395">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#form#0;n#div#0;n#div#1;n#div#1;n#!!top" expanded="true" />
+            <marker date="1394301624594" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394301624594" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394301624594" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394301624594" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394301624594" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1394301624594" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/catalog/Catalog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="4260">
+        <state line="55" column="60" selection-start="1852" selection-end="1852" vertical-scroll-proportion="-28.75" vertical-offset="135" max-vertical-offset="4260">
           <folding>
-            <marker date="1394136535109" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..language..." />
-            <marker date="1394136535109" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1394136535109" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1394136535109" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
-            <marker date="1394136535109" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
-            <marker date="1394136535109" expanded="true" signature="-1:-1" placeholder="SELECT tb.ur..." />
-            <marker date="1394136535109" expanded="true" signature="-1:-1" placeholder="SELECT tb.ur..." />
-            <marker date="1394136535109" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1394302029406" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..language..." />
+            <marker date="1394302029406" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394302029406" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394302029406" expanded="true" signature="-1:-1" placeholder="DELETE FROM ..." />
+            <marker date="1394302029406" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394302029406" expanded="true" signature="-1:-1" placeholder="SELECT tb.ur..." />
+            <marker date="1394302029406" expanded="true" signature="-1:-1" placeholder="SELECT tb.ur..." />
+            <marker date="1394302029406" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/catalog/CatalogController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="61" selection-start="751" selection-end="751" vertical-scroll-proportion="7.5" vertical-offset="630" max-vertical-offset="4500">
+        <state line="102" column="79" selection-start="3740" selection-end="3740" vertical-scroll-proportion="0.65375304" vertical-offset="990" max-vertical-offset="4500">
           <folding>
-            <marker date="1394136407285" expanded="true" signature="2668:2707" placeholder="SELECT `sub`..." />
-            <marker date="1394136407285" expanded="true" signature="6834:6872" placeholder="SELECT id, u..catalog..." />
+            <marker date="1394302040958" expanded="true" signature="-1:-1" placeholder="SELECT `sub`..." />
+            <marker date="1394302040958" expanded="true" signature="-1:-1" placeholder="SELECT id, u..catalog..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/classes/Log.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="9" selection-start="541" selection-end="541" vertical-scroll-proportion="-15.625" vertical-offset="0" max-vertical-offset="570">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/classes/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="62" column="54" selection-start="1667" selection-end="1667" vertical-scroll-proportion="56.875" vertical-offset="2295" max-vertical-offset="8370">
+          <folding>
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..language..." />
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="SELECT m.`pe..." />
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..." />
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="SELECT tb.* ..subsystem..." />
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="SELECT `acti..." />
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+            <marker date="1394134241257" expanded="true" signature="-1:-1" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/classes/PDOchild.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="117" column="5" selection-start="3789" selection-end="3789" vertical-scroll-proportion="-11.254902" vertical-offset="1181" max-vertical-offset="2145">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/classes/DataBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="97" column="46" selection-start="3252" selection-end="3252" vertical-scroll-proportion="-16.583334" vertical-offset="1057" max-vertical-offset="5460">
+          <folding>
+            <marker date="1394303112922" expanded="true" signature="-1:-1" placeholder="SELECT * FRO..language..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/classes/View.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="43" selection-start="651" selection-end="663" vertical-scroll-proportion="-3.75" vertical-offset="225" max-vertical-offset="2790">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="710" selection-end="771" vertical-scroll-proportion="-2.9166667" vertical-offset="185" max-vertical-offset="1020">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1394304056902" expanded="true" signature="882:982" placeholder="..." />
+            <marker date="1394304056902" expanded="true" signature="901:982" placeholder="..." />
+            <marker date="1394304056902" expanded="true" signature="1056:1125" placeholder="..." />
+            <marker date="1394304056902" expanded="true" signature="1099:1125" placeholder="..." />
+            <marker date="1394304056902" expanded="true" signature="1774:2113" placeholder="..." />
+            <marker date="1394304056902" expanded="true" signature="1824:2104" placeholder="..." />
+            <marker date="1394304056902" expanded="true" signature="1824:2104" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/lights/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="139" column="61" selection-start="5793" selection-end="5793" vertical-scroll-proportion="-28.875" vertical-offset="1392" max-vertical-offset="2205">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/ajax.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="279" column="23" selection-start="9199" selection-end="9213" vertical-scroll-proportion="0.49573562" vertical-offset="3720" max-vertical-offset="4995">
+        <state line="128" column="22" selection-start="4578" selection-end="4578" vertical-scroll-proportion="0.35411766" vertical-offset="1619" max-vertical-offset="4770">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/default/index.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="137" column="18" selection-start="6292" selection-end="6292" vertical-scroll-proportion="-32.375" vertical-offset="1278" max-vertical-offset="2385">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="234" column="88" selection-start="10063" selection-end="10063" vertical-scroll-proportion="-21.375" vertical-offset="2997" max-vertical-offset="3885">
+          <folding>
+            <marker date="1394305955758" expanded="true" signature="525:565" placeholder="SELECT * FRO..language..." />
+            <marker date="1394305955758" expanded="true" signature="648:678" placeholder="SELECT name,..config..." />
+            <marker date="1394305955758" expanded="true" signature="1522:1565" placeholder="SELECT id FR..modules..." />
+            <marker date="1394305955758" expanded="true" signature="1745:1782" placeholder="SELECT * FRO..." />
+            <marker date="1394305955758" expanded="true" signature="1931:1987" placeholder="SELECT * FRO..." />
+            <marker date="1394305955758" expanded="true" signature="2209:2244" placeholder="SELECT * FRO..." />
+            <marker date="1394305955758" expanded="true" signature="2317:2354" placeholder="SELECT * FRO..." />
+            <marker date="1394305955758" expanded="true" signature="3892:4273" placeholder="SELECT tb.*,..." />
+            <marker date="1394305955758" expanded="true" signature="4413:4724" placeholder="SELECT tb.* ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/admin/testing.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="16" selection-start="0" selection-end="1017" vertical-scroll-proportion="-0.625" vertical-offset="0" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/default/testing.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="1017" selection-end="1017" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/lights/testing.phtml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="1017" selection-end="1017" vertical-scroll-proportion="-19.375" vertical-offset="0" max-vertical-offset="555">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/testing.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="50" column="36" selection-start="1606" selection-end="1609" vertical-scroll-proportion="-22.148148" vertical-offset="152" max-vertical-offset="975">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/testing.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="8" selection-start="548" selection-end="548" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1995">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/AjaxController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="204" column="107" selection-start="8059" selection-end="8059" vertical-scroll-proportion="0.40920097" vertical-offset="2677" max-vertical-offset="4515">
+          <folding>
+            <marker date="1394306081746" expanded="true" signature="430:850" placeholder="SELECT tb.id..." />
+            <marker date="1394306081746" expanded="true" signature="2830:2928" placeholder="SELECT id, t..." />
+            <marker date="1394306081746" expanded="true" signature="3887:3945" placeholder="SELECT `id` ..." />
+            <marker date="1394306081746" expanded="true" signature="6878:6934" placeholder="INSERT INTO ..." />
+            <marker date="1394306081746" expanded="true" signature="8786:8884" placeholder="SELECT id, t..." />
+          </folding>
         </state>
       </provider>
     </entry>

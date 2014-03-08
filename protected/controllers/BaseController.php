@@ -108,7 +108,7 @@ class BaseController{
 
 			if(isset($_SESSION['admin']))
 			{
-				$styles=array_merge(array('style.css', 'jquery.notification.css'), $param['styles']);								
+				$styles=array_merge(array('style.css', 'jquery.notification.css'), $param['styles']);
 				$scripts=array_merge(array('jquery-1.8.3.min.js', 'jquery-ui-1.10.3.custom.js', 'base.js', 'jquery.tablednd_0_5.js', 'ajax.js', 'jquery.cookie.js', 'autoresize.jquery.js'), $param['scripts']);
 				if(!isset($data['breadcrumb']))$data['breadcrumb']=$this->model->breadcrumbAdmin();
 				$data['menu'] = $this->db->rows("SELECT tb.*, subsystem_id
@@ -140,10 +140,27 @@ class BaseController{
 				$styles = array_merge(array('style.css', 'jquery.notification.css'), $param['styles']);
 				$scripts = array_merge(array('jquery-1.7.1.min.js', 'base.js'), $param['scripts']);				
 			}
-			
+
+            if((int)$this->settings['testing_on'] == 1)
+            {
+                $dateEnd = new DateTime($this->settings['testing_date_end']);
+                $dateNow = new DateTime(date("Y-m-d H:i:s"));
+                $interval = $dateEnd->diff($dateNow);
+
+                $testing['days'] = $interval->d;
+                $testing['hours'] = $interval->h;
+                $testing['minutes'] = $interval->i;
+                $testing['translate'] = $this->translation;
+
+                $styles = array_merge($styles, array('testing.css'));
+                $scripts = array_merge($scripts, array('html2canvas.js', 'testing.js'));
+                $data['testing_mode'] = $this->view->Render('testing.phtml', $testing);
+            }
+
 			$data['styles'] = $this->view->Load($styles, 'styles', 'admin');
 			$data['scripts'] = $this->view->Load($scripts, 'scripts', 'admin');
-			return ($this->view->Render('index.phtml', $data));//начальный шаблон	
+
+			return ($this->view->Render('index.phtml', $data));//начальный шаблон
 		}
 		//////Front side
 		else
@@ -155,7 +172,7 @@ class BaseController{
 			if($settings['webmaster_y']!="")$data['webmaster'].='<meta name="yandex-verification" content="'.$settings['webmaster_y'].'" />';
 			
 			///Include css and js
-            $styles = array_merge(array('style.css', 'fancy.css', 'testing.css', 'sticker.css', 'menu.css', 'skin.css', 'cabinet.css', 'bootstrap.css',  'forms.css'), $param['styles']);
+            $styles = array_merge(array('style.css', 'fancy.css', 'sticker.css', 'menu.css', 'skin.css', 'cabinet.css', 'bootstrap.css',  'forms.css'), $param['styles']);
             $scripts = array_merge(array('jquery-1.7.1.min.js', 
 									   'base.js', 
 									   'ajax.js', 
@@ -166,8 +183,7 @@ class BaseController{
 									   'bootstrap-modal.js',									   									   'html2canvas.js'
 									   ), 
 									   $param['scripts']);									   
-            $data['styles'] = $this->view->Load($styles, 'styles');
-            $data['scripts'] = $this->view->Load($scripts, 'scripts');
+
 			
             $data['translate'] = $this->translation;///Interface translations
             if(!isset($data['meta']))$data['meta']=array();
@@ -202,10 +218,29 @@ class BaseController{
                                                              'limit'=>$settings['limit_news_block']));
 			$data['news'] = $this->view->Render('news_block.phtml', array_merge($param, array('news'=>$news, 'translate'=>$data['translate'])));
 			#!End News blocks
-			
-			
-			$data['info_blocks'] = $this->model->getBlock(array(2,5,6,7,8));//Info blocks
-			
+
+
+            if((int)$this->settings['testing_on'] == 1)
+            {
+                $dateEnd = new DateTime($this->settings['testing_date_end']);
+                $dateNow = new DateTime(date("Y-m-d H:i:s"));
+                $interval = $dateEnd->diff($dateNow);
+
+                $testing['days'] = $interval->d;
+                $testing['hours'] = $interval->h;
+                $testing['minutes'] = $interval->i;
+                $testing['translate'] = $this->translation;
+
+                $styles = array_merge($styles, array('testing.css'));
+                $scripts = array_merge($scripts, array('html2canvas.js', 'testing.js'));
+                $data['testing_mode'] = $this->view->Render('testing.phtml', $testing);
+
+            }
+
+            $data['info_blocks'] = $this->model->getBlock(array(2,5,6,7,8));//Info blocks
+
+            $data['styles'] = $this->view->Load($styles, 'styles');
+            $data['scripts'] = $this->view->Load($scripts, 'scripts');
 			
 			////Auth form
 			if(!isset($_SESSION['user_id']))$data['sign_in'] = $this->view->Render('sign_in.phtml', array('translate'=>$data['translate']));

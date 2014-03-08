@@ -89,8 +89,8 @@ class DataBase{
 			$this->params_db=$where['params'];
 		}//echo $sql;
 
-		if((isset($sql['type'])&&$sql['type']=='rows')||isset($sql['paging'])&&is_array($sql)){return $this->db->rows($query, $where['params']);}
-		elseif(isset($sql['type'])&&$sql['type']=='rows_keys'){return $this->db->rows($query, $where['params']);}
+        if((isset($sql['type'])&&$sql['type']=='rows')||isset($sql['paging'])&&is_array($sql)){return $this->db->rows($query, $where['params']);}
+        elseif(isset($sql['type'])&&$sql['type']=='rows_keys'){return $this->db->rows($query, $where['params']);}
 		else return $this->db->row($query, $where['params']);
 		
     }
@@ -347,5 +347,13 @@ class DataBase{
 		
 		return $sql;
 	}
+
+    public function error($e,$info,$vars)
+    {
+        $msg = 'Catched error 406' .$e->getCode().': '.$e->getMessage()."\n	in ".$info[0]['file'].' on line '.	$info[0]['line'].".\n	Query: '$pattern'";
+        if($vars!='')$msg .= ":'".implode(", ", $vars)."'";
+        Log::echoLog($msg);
+        //header("location:/error");exit();
+    }
 }
 ?>

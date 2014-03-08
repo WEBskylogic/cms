@@ -164,24 +164,6 @@ class AjaxController extends BaseController{
 		}
 	}
 
-	function testingmodeAction()	
-	{			
-		$vars = array();				
-		$vars['translate'] = $this->translation;				
-		if((int)$this->settings['testing_on'] == 1)		
-		{						
-			$dateEnd = new DateTime($this->settings['testing_date_end']);			
-			$dateNow = new DateTime(date("Y-m-d H:i:s"));						
-			$interval = $dateEnd->diff($dateNow);						
-			$vars['days'] = $interval->d;						
-			$vars['hours'] = $interval->h;						
-			$vars['minutes'] = $interval->i;						
-			echo $this->view->Render('testing.phtml', $vars);					
-			} else {					
-			echo '';					
-			}
-	}		
-
 	function testingsendAction() 	
 	{		
 		$url = $_POST['URL'];		
@@ -218,7 +200,7 @@ class AjaxController extends BaseController{
 					"utf-8",
 					"Новый тикет на сайте ".$this->settings['sitename']." - ".$subject,
 					$body
-				  );
+	    );
 
 		if(isset($this->settings['testing_project_id']) && (int)$this->settings['testing_project_id']!=0) {
 
@@ -236,7 +218,7 @@ class AjaxController extends BaseController{
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 			curl_setopt($ch, CURLOPT_POST, 1);
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
-			$result = curl_exec($ch);
+			curl_exec($ch);
 			curl_close($ch);
 		}
 	}

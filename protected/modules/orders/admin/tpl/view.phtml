@@ -8,6 +8,7 @@
         <th>E-mail</th>
 		<th width="100">Сумма (<?=$vars['currency']['icon']?>)</th>
 		<th width="70">Статус</th>
+        <th width="50">XML</th>
 		<th width="170" style="text-align:center;">Действие</th>
 	</tr>
 	<?php
@@ -21,6 +22,7 @@
 					<td><a href="mailto:'.$row['email'].'" class="tool-link">'.$row['email'].'</a></td>
 					<td>'.$row['sum'].'</td>
 					<td>'.$row['status'].'</td>
+					<td>'.(file_exists('files/orders/'.$row['id'].'.xml')?'<a href="/download.php?type=orders&file='.$row['id'].'.xml">скачать</a>':'-').'</td>
 					<td>
 						<a href="/admin/'.$vars['action'].'/edit/'.$row['id'].'" class="tool-link">Редактировать</a>
 						&nbsp;&nbsp;|		

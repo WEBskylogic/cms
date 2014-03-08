@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<order>
+  <id>8</id>
+  <date>2014-03-08 19:38:23</date>
+  <username>sddfhdfhdf</username>
+  <email>b347@ya.ru</email>
+  <phone>2467347</phone>
+  <city>sdg</city>
+  <address>sdg dhdfh</address>
+  <delivery>Самовывоз</delivery>
+  <payment>ПриватБанк</payment>
+  <products>
+    <product>
+      <id>17</id>
+      <name>Новый купальник</name>
+      <price>1220.00</price>
+      <amount>2</amount>
+      <sum>2440</sum>
+      <size></size>
+      <color></color>
+    </product>
+    <product>
+      <id>15</id>
+      <name>victoria&amp;#039;s secret 14</name>
+      <price>2000.00</price>
+      <amount>1</amount>
+      <sum>2000</sum>
+      <size></size>
+      <color></color>
+    </product>
+  </products>
+</order>
